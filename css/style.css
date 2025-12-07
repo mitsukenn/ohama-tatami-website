@@ -750,7 +750,7 @@ img {
 }
 
 .basic-desc {
-    fontSize: 0.95rem;
+    font-size: 0.95rem;
     color: var(--text-light);
 }
 
@@ -920,8 +920,46 @@ img {
     transition-delay: 0.4s;
 }
 
-/* Responsive adjustments */
+/* Responsive adjustments & Mobile Optimization */
 @media (max-width: 768px) {
+
+    /* Layout & Spacing */
+    .section {
+        padding: 60px 0;
+    }
+
+    .section-header {
+        margin-bottom: 40px;
+    }
+
+    .container {
+        padding: 0 15px;
+    }
+
+    /* Typography */
+    .hero-title {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+    }
+
+    .hero-sub {
+        font-size: 1rem;
+        margin-bottom: 30px;
+    }
+
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .access-info h4 {
+        font-size: 1.4rem;
+    }
+
+    .tel {
+        font-size: 1.5rem;
+    }
+
+    /* Navigation */
     .nav {
         position: fixed;
         top: 0;
@@ -949,23 +987,113 @@ img {
         display: block;
     }
 
+    /* Hero */
     .hero {
         height: 75vh;
-    }
-
-    .hero-title {
-        font-size: 1.8rem;
+        padding-top: 80px;
     }
 
     .hero-actions {
         flex-direction: column;
+        gap: 15px;
     }
 
+    .btn-hero {
+        width: 100%;
+        max-width: 300px;
+        padding: 14px 20px;
+        font-size: 0.95rem;
+    }
+
+    /* Concept */
+    .concept-content {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .concept-text {
+        text-align: left;
+    }
+
+    .concept-image img {
+        max-height: 300px;
+        object-fit: cover;
+        width: 100%;
+    }
+
+    /* Goods */
+    .goods-item,
+    .goods-item:nth-child(even) {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .goods-img {
+        margin-bottom: 0;
+        width: 100%;
+    }
+
+    .goods-img img {
+        max-width: 100%;
+        max-height: 350px;
+        object-fit: contain;
+        margin: 0 auto;
+    }
+
+    .goods-info {
+        width: 100%;
+    }
+
+    /* Design */
+    .design-image-showcase img {
+        width: 100%;
+        height: auto;
+    }
+
+    .design-patterns {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .pattern-item {
+        width: 100%;
+        max-width: 350px;
+    }
+
+    /* Basics */
+    .basics-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Q&A */
+    .qa-item {
+        padding: 20px;
+    }
+
+    /* Access */
     .access-content {
         flex-direction: column;
+        gap: 30px;
     }
 
     .access-map {
         min-height: 300px;
     }
+}
+
+/* Specific Image Sizing Controls (PC/Mobile common) */
+.goods-img img {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.concept-image img {
+    max-width: 100%;
+}
+
+.design-image-showcase img {
+    max-height: 500px;
+    width: auto;
+    object-fit: cover;
 }
