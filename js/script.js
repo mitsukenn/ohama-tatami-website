@@ -77,9 +77,9 @@ document.addEventListener('DOMContentLoaded', () => {
         // Reset opacity/transform initially via JS to ensure they are visible if JS fails/loads late,
         // but since CSS sets them to visible by default for safety, we toggle a class here if needed.
         // The current CSS has opacity: 1 by default, so we might want to set oppacity: 0 in JS for the animation to work from 0 to 1.
-        el.style.opacity = '0';
+        // el.style.opacity = '0';
         if (el.classList.contains('fade-in-up')) {
-            el.style.transform = 'translateY(30px)';
+            // el.style.transform = 'translateY(30px)';
         }
         observer.observe(el);
     });
