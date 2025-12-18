@@ -1,16 +1,41 @@
 :root {
-    --primary-color: #556B2F;
-    /* Dark Olive Green */
-    --secondary-color: #8B4513;
-    /* Saddle Brown */
-    --accent-color: #D4AF37;
-    /* Gold/Straw */
-    --text-color: #333333;
-    --bg-color: #F9F9F7;
+    /* Main Colors */
+    --wakakusa: #7BA23F;
+    /* Main, CTA */
+    --seiji: #7EBEA5;
+    /* MIGUSA Accent */
+    --ama: #D6C6AF;
+    /* Section BG */
+    --kinari: #F5F1EB;
+    /* Page BG */
+    --sumi: #2B2B2B;
+    /* Body Text */
+    --keshizumi: #4A4A4A;
+    /* Sub Text */
+
+    /* Accent Colors */
+    --enji: #9B3B3B;
+    /* Important/Sale */
+    --kincha: #CB8E31;
+    /* Gold/Headings */
+    --aitetsu: #2B4B5F;
+    /* Footer */
+
+    /* Functional Mappings */
+    --primary-color: var(--wakakusa);
+    --secondary-color: var(--kincha);
+    --accent-color: var(--enji);
+    --text-color: var(--sumi);
+    --bg-color: var(--kinari);
+
     --white: #ffffff;
     --gray-light: #f4f4f4;
+
+    /* Fonts */
     --font-heading: 'Shippori Mincho', serif;
+    --font-sub-heading: 'Noto Serif JP', serif;
     --font-body: 'Noto Sans JP', sans-serif;
+
     --transition: all 0.3s ease;
 }
 
@@ -22,9 +47,15 @@
 
 body {
     font-family: var(--font-body);
+    font-size: 16px;
+    /* Base size */
     color: var(--text-color);
     background-color: var(--bg-color);
     line-height: 1.8;
+    background-image:
+        repeating-linear-gradient(0deg, transparent, transparent 19px, rgba(0, 0, 0, 0.06) 20px),
+        repeating-linear-gradient(90deg, transparent, transparent 19px, rgba(0, 0, 0, 0.06) 20px);
+    background-size: 100% 100%;
 }
 
 h1,
@@ -34,6 +65,7 @@ h4,
 h5 {
     font-family: var(--font-heading);
     font-weight: 700;
+    line-height: 1.4;
 }
 
 a {
@@ -93,9 +125,11 @@ img {
 .btn-map {
     margin-top: 15px;
     padding: 10px 25px;
-    background-color: var(--secondary-color);
+    background-color: var(--kincha);
+    /* Gold/Brown for map */
     color: var(--white);
     border-radius: 4px;
+    font-weight: bold;
 }
 
 .btn-tel {
@@ -120,22 +154,29 @@ img {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.98);
+    background-color: rgba(245, 241, 235, 0.95);
+    /* Kinari semi-transparent */
+    background-image:
+        repeating-linear-gradient(0deg, transparent, transparent 19px, rgba(0, 0, 0, 0.08) 20px),
+        repeating-linear-gradient(90deg, transparent, transparent 19px, rgba(0, 0, 0, 0.08) 20px);
+    backdrop-filter: blur(5px);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
     z-index: 1000;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .header-inner {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 15px 20px;
+    padding: 10px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 .logo {
-    font-size: 1.8rem;
+    font-size: 2rem;
+    /* ~32px */
     color: var(--text-color);
     display: flex;
     flex-direction: column;
@@ -256,10 +297,12 @@ img {
 }
 
 .hero-title {
-    font-size: 2.8rem;
+    font-size: 2.5rem;
+    /* ~40px, fits 32-40px range well */
     margin-bottom: 20px;
-    line-height: 1.4;
+    line-height: 1.5;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    letter-spacing: 0.05em;
 }
 
 .hero-sub {
@@ -273,8 +316,11 @@ img {
     left: 50%;
     transform: translateX(-50%);
     font-size: 0.9rem;
+    font-family: var(--font-heading);
+    /* Updated to Mincho */
     letter-spacing: 0.2em;
     animation: bounce 2s infinite;
+    opacity: 0.8;
 }
 
 @keyframes bounce {
@@ -296,25 +342,32 @@ img {
     }
 }
 
-/* Sections */
+/* Empathy (Problems) - Washi Texture */
+.empathy {
+    background-color: var(--kinari);
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.08'/%3E%3C/svg%3E");
+}
+
 .section {
     padding: 80px 0;
 }
 
 .section-title {
-    font-size: 2rem;
+    font-size: 1.75rem;
+    /* 28px */
     margin-bottom: 10px;
 }
 
 .section-subtitle {
-    color: var(--primary-color);
-    font-family: var(--font-body);
-    font-size: 0.9rem;
+    color: var(--kincha);
+    /* Gold */
+    font-family: var(--font-sub-heading);
+    font-size: 1rem;
     letter-spacing: 0.15em;
     text-transform: uppercase;
     margin-bottom: 50px;
     display: inline-block;
-    border-bottom: 2px solid var(--primary-color);
+    border-bottom: 2px solid var(--kincha);
     padding-bottom: 5px;
 }
 
@@ -402,6 +455,21 @@ img {
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
 }
 
+/* Design - Ichimatsu Pattern */
+.design {
+    background-color: var(--white);
+    background-image:
+        linear-gradient(45deg, #fdfdfd 25%, transparent 25%, transparent 75%, #fdfdfd 75%, #fdfdfd),
+        linear-gradient(45deg, #fdfdfd 25%, transparent 25%, transparent 75%, #fdfdfd 75%, #fdfdfd);
+    background-position: 0 0, 15px 15px;
+    background-size: 30px 30px;
+}
+
+.design-intro {
+    max-width: 800px;
+    margin: 0 auto 50px;
+}
+
 /* Goods */
 .goods-intro {
     max-width: 700px;
@@ -447,8 +515,10 @@ img {
 
 .goods-catch {
     font-weight: bold;
-    color: var(--secondary-color);
+    color: var(--enji);
+    /* Accent Color */
     margin-bottom: 15px;
+    font-family: var(--font-heading);
 }
 
 .goods-desc {
@@ -521,7 +591,8 @@ img {
 
 /* Q&A */
 .qa {
-    background-color: #fafafa;
+    background-color: var(--ama);
+    /* Flax color */
 }
 
 .qa-list {
@@ -592,10 +663,11 @@ img {
 
 /* Footer */
 .footer {
-    background: #333;
-    color: #ccc;
-    padding: 20px;
-    font-size: 0.8rem;
+    background: var(--aitetsu);
+    /* Footer color */
+    color: var(--white);
+    padding: 30px 20px;
+    font-size: 0.9rem;
 }
 
 /* Utilities */
