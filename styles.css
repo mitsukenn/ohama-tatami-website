@@ -753,13 +753,57 @@ img {
         display: block;
     }
 
+    /* Mobile Color Accents */
+    .mobile-menu-btn span {
+        background-color: var(--wakakusa);
+        /* Main Color */
+    }
+
+    .header {
+        border-bottom: 2px solid var(--wakakusa);
+        /* Main Color Accent */
+    }
+
     .hero {
         margin-top: 60px;
-        height: 60vh;
+        height: auto;
+        /* Remove fixed height constraint */
+        min-height: 85vh;
+        /* Ensure it covers most of screen */
+        padding: 40px 0;
     }
 
     .hero-title {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
+        /* Reduced from 1.8rem/2.5rem */
+        line-height: 1.4;
+    }
+
+    .hero-sub {
+        font-size: 0.95rem;
+        /* Reduced */
+        padding: 0 10px;
+        line-height: 1.6;
+    }
+
+    /* Mobile Buttons */
+    .hero-actions {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        padding: 0 20px;
+    }
+
+    .btn-hero {
+        width: 100%;
+        padding: 12px 20px;
+        font-size: 1rem;
+    }
+
+    .btn-hero.primary {
+        background-color: var(--wakakusa);
+        border-color: var(--wakakusa);
+        font-weight: bold;
     }
 
     .concept-content,
