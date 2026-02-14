@@ -1,0 +1,1256 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>大浜畳商店 サブページ デザインモック</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;700&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --main: #556B2F;
+      --main-light: #6B8A3E;
+      --sub: #8B7E66;
+      --accent: #C9A84C;
+      --bg-base: #FAF8F5;
+      --bg-alt: #F0EDE6;
+      --text: #333;
+      --text-light: #666;
+      --white: #FFF;
+      --line-green: #06C755;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      color: var(--text);
+      background: var(--bg-base);
+      line-height: 1.8;
+    }
+
+    /* Header */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.97);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+      padding: 0 40px;
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .header-logo {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--main);
+      letter-spacing: 0.08em;
+    }
+
+    .header-logo small {
+      display: block;
+      font-size: 0.65rem;
+      font-weight: 500;
+      color: var(--text-light);
+      font-family: 'Noto Sans JP', sans-serif;
+    }
+
+    nav {
+      display: flex;
+      gap: 28px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--text);
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--main);
+    }
+
+    .header-cta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .header-phone {
+      font-size: 0.85rem;
+      color: var(--main);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .header-phone span {
+      font-size: 0.7rem;
+      font-weight: 500;
+      color: var(--text-light);
+      display: block;
+    }
+
+    .btn-line-sm {
+      background: var(--line-green);
+      color: var(--white);
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    /* Page navigation */
+    .page-nav {
+      margin-top: 72px;
+      background: var(--main);
+      padding: 12px 0;
+      text-align: center;
+    }
+
+    .page-nav a {
+      color: rgba(255, 255, 255, 0.8);
+      text-decoration: none;
+      font-size: 0.85rem;
+      padding: 8px 20px;
+      border-radius: 6px;
+      margin: 0 4px;
+      transition: all 0.3s;
+      font-weight: 500;
+    }
+
+    .page-nav a:hover,
+    .page-nav a.active {
+      background: rgba(255, 255, 255, 0.15);
+      color: var(--white);
+    }
+
+    .page-nav-label {
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 0.75rem;
+      margin-right: 12px;
+    }
+
+    /* Common */
+    section {
+      padding: 72px 0;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    h1 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 12px;
+      letter-spacing: 0.06em;
+    }
+
+    h2 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 12px;
+      letter-spacing: 0.06em;
+    }
+
+    .section-line {
+      width: 40px;
+      height: 3px;
+      background: var(--main);
+      margin: 16px auto 40px;
+      border-radius: 2px;
+    }
+
+    .section-sub {
+      text-align: center;
+      color: var(--text-light);
+      font-size: 0.92rem;
+      margin-bottom: 48px;
+      line-height: 2;
+    }
+
+    .page-header {
+      padding: 48px 0 0;
+      text-align: center;
+    }
+
+    .page-header p {
+      color: var(--text-light);
+      font-size: 0.95rem;
+      margin-top: 16px;
+      line-height: 2;
+    }
+
+    /* Page divider */
+    .page-divider {
+      text-align: center;
+      padding: 60px 24px;
+      background: linear-gradient(135deg, var(--main) 0%, #3A4A20 100%);
+      color: var(--white);
+    }
+
+    .page-divider h2 {
+      color: var(--white);
+      font-size: 1.6rem;
+      margin-bottom: 8px;
+    }
+
+    .page-divider p {
+      opacity: 0.7;
+      font-size: 0.9rem;
+    }
+
+    /* 3-method cards */
+    .method-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .method-card {
+      background: var(--white);
+      border-radius: 14px;
+      padding: 32px 24px;
+      text-align: center;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+      position: relative;
+      transition: transform 0.3s;
+    }
+
+    .method-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .method-card.popular {
+      border: 2px solid var(--accent);
+    }
+
+    .method-card.popular::before {
+      content: '人気 No.1';
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--accent);
+      color: var(--white);
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 4px 16px;
+      border-radius: 100px;
+    }
+
+    .method-icon {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: var(--bg-alt);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      font-size: 1.5rem;
+    }
+
+    .method-card h3 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1.1rem;
+      margin-bottom: 12px;
+    }
+
+    .method-card .price-highlight {
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--main);
+      margin: 12px 0;
+    }
+
+    .method-card .price-highlight small {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--text-light);
+    }
+
+    .method-card p {
+      font-size: 0.85rem;
+      color: var(--text-light);
+      line-height: 1.8;
+    }
+
+    /* Price table */
+    .price-block {
+      margin-bottom: 48px;
+    }
+
+    .price-block h3 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      padding-left: 16px;
+      border-left: 4px solid var(--main);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--white);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    }
+
+    th {
+      background: var(--main);
+      color: var(--white);
+      padding: 14px 20px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-align: left;
+    }
+
+    td {
+      padding: 16px 20px;
+      font-size: 0.9rem;
+      border-bottom: 1px solid #eee;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    tr.recommend {
+      background: #FFFDF5;
+    }
+
+    .badge {
+      display: inline-block;
+      background: var(--accent);
+      color: var(--white);
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 100px;
+      margin-left: 8px;
+      vertical-align: middle;
+    }
+
+    .price-val {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--main);
+    }
+
+    .price-val small {
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--text-light);
+    }
+
+    .price-notes {
+      font-size: 0.82rem;
+      color: var(--text-light);
+      margin-top: 16px;
+      line-height: 1.8;
+    }
+
+    /* Quality section */
+    .quality-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .quality-text h3 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1.2rem;
+      margin-bottom: 16px;
+      text-align: left;
+    }
+
+    .quality-text p {
+      font-size: 0.92rem;
+      color: var(--text-light);
+      line-height: 2;
+    }
+
+    .quality-img {
+      height: 280px;
+      background: var(--white);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--sub);
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+    }
+
+    /* Flow steps */
+    .flow-timeline {
+      max-width: 700px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .flow-timeline::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 32px;
+      width: 2px;
+      background: var(--main);
+      opacity: 0.2;
+    }
+
+    .timeline-item {
+      display: flex;
+      gap: 24px;
+      margin-bottom: 40px;
+      position: relative;
+    }
+
+    .timeline-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .timeline-num {
+      flex-shrink: 0;
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: var(--main);
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.8rem;
+      flex-direction: column;
+      line-height: 1.2;
+      position: relative;
+      z-index: 1;
+    }
+
+    .timeline-num span {
+      font-size: 1.3rem;
+    }
+
+    .timeline-content {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 24px 28px;
+      flex: 1;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    }
+
+    .timeline-content h3 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: var(--text);
+    }
+
+    .timeline-content p {
+      font-size: 0.88rem;
+      color: var(--text-light);
+      line-height: 1.9;
+    }
+
+    .timeline-note {
+      display: inline-block;
+      margin-top: 10px;
+      font-size: 0.8rem;
+      color: var(--main);
+      font-weight: 500;
+      background: rgba(85, 107, 47, 0.08);
+      padding: 4px 12px;
+      border-radius: 4px;
+    }
+
+    /* FAQ */
+    .faq-list {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .faq-item {
+      background: var(--white);
+      border-radius: 10px;
+      margin-bottom: 12px;
+      overflow: hidden;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+    }
+
+    .faq-q {
+      padding: 18px 24px;
+      font-weight: 700;
+      font-size: 0.92rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .faq-q::before {
+      content: 'Q';
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      background: var(--main);
+      color: var(--white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+
+    .faq-a {
+      padding: 0 24px 18px 64px;
+      font-size: 0.88rem;
+      color: var(--text-light);
+      line-height: 1.9;
+    }
+
+    /* Contact methods */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .contact-card {
+      background: var(--white);
+      border-radius: 14px;
+      padding: 32px 24px;
+      text-align: center;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+    }
+
+    .contact-icon {
+      font-size: 2.4rem;
+      margin-bottom: 16px;
+    }
+
+    .contact-card h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .contact-card p {
+      font-size: 0.85rem;
+      color: var(--text-light);
+      line-height: 1.8;
+      margin-bottom: 16px;
+    }
+
+    .contact-card .contact-btn {
+      display: inline-block;
+      padding: 12px 28px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+
+    .contact-card .contact-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-tel {
+      background: var(--main);
+      color: var(--white);
+    }
+
+    .btn-line {
+      background: var(--line-green);
+      color: var(--white);
+    }
+
+    .btn-form {
+      background: var(--bg-alt);
+      color: var(--main);
+      border: 2px solid var(--main);
+    }
+
+    .phone-number {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--main);
+      margin: 8px 0;
+      letter-spacing: 0.04em;
+    }
+
+    /* Form */
+    .form-wrap {
+      max-width: 640px;
+      margin: 0 auto;
+      background: var(--white);
+      border-radius: 14px;
+      padding: 40px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+    }
+
+    .form-group {
+      margin-bottom: 24px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.88rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .form-group label .required {
+      color: #C75050;
+      font-size: 0.75rem;
+      margin-left: 6px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-family: inherit;
+      transition: border-color 0.3s;
+      background: var(--bg-base);
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--main);
+    }
+
+    .form-group textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .form-submit {
+      text-align: center;
+      margin-top: 32px;
+    }
+
+    .form-submit button {
+      background: var(--main);
+      color: var(--white);
+      border: none;
+      padding: 16px 56px;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.3s;
+      font-family: inherit;
+    }
+
+    .form-submit button:hover {
+      background: var(--main-light);
+      transform: translateY(-2px);
+    }
+
+    /* CTA */
+    .cta-section {
+      background: var(--main);
+      background-image: radial-gradient(ellipse at 20% 50%, rgba(107, 138, 62, 0.4) 0%, transparent 50%), radial-gradient(ellipse at 80% 50%, rgba(85, 107, 47, 0.6) 0%, transparent 50%);
+      color: var(--white);
+      text-align: center;
+      padding: 72px 24px;
+    }
+
+    .cta-section h2 {
+      color: var(--white);
+      font-size: 1.6rem;
+      margin-bottom: 16px;
+    }
+
+    .cta-section p {
+      font-size: 0.92rem;
+      opacity: 0.9;
+      max-width: 480px;
+      margin: 0 auto 32px;
+      line-height: 2;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-white {
+      background: var(--white);
+      color: var(--main);
+      padding: 16px 36px;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.3s;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn-white:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-line-lg {
+      background: var(--line-green);
+      color: var(--white);
+      padding: 16px 36px;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+
+    .btn-line-lg:hover {
+      transform: translateY(-2px);
+    }
+
+    .cta-note {
+      margin-top: 20px;
+      font-size: 0.82rem;
+      opacity: 0.7;
+      line-height: 1.8;
+    }
+
+    /* Footer */
+    footer {
+      background: #2A2A2A;
+      color: rgba(255, 255, 255, 0.7);
+      padding: 48px 24px 24px;
+      font-size: 0.82rem;
+      text-align: center;
+      line-height: 2;
+    }
+
+    footer a {
+      color: rgba(255, 255, 255, 0.6);
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    /* Mobile */
+    @media(max-width:768px) {
+
+      nav,
+      .header-cta {
+        display: none;
+      }
+
+      .method-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .quality-grid {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      .page-nav a {
+        font-size: 0.75rem;
+        padding: 6px 12px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header>
+    <a href="index.html" style="text-decoration:none;">
+      <div class="header-logo">大浜畳商店<small>有限会社 大浜畳商店</small></div>
+    </a>
+    <nav>
+      <a href="#price-page">料金・メニュー</a>
+      <a href="#flow-page">ご依頼の流れ</a>
+      <a href="index.html#works">施工事例</a>
+      <a href="index.html#guide">畳の基礎知識</a>
+      <a href="index.html#about">会社概要</a>
+    </nav>
+    <div class="header-cta">
+      <a href="tel:095-823-1905" class="header-phone"><span>お電話でのご相談</span>095-823-1905</a>
+      <a href="https://lin.ee/qy8UCpf" class="btn-line-sm">LINEで相談</a>
+    </div>
+  </header>
+
+  <!-- Page Nav (for mockup navigation) -->
+  <div class="page-nav">
+    <span class="page-nav-label">モック表示：</span>
+    <a href="#price-page" class="active">料金・メニュー</a>
+    <a href="#flow-page">ご依頼の流れ</a>
+    <a href="#contact-page">お問い合わせ</a>
+  </div>
+
+  <!-- ══════════════════════════════════════ -->
+  <!--       PAGE 1: 料金・メニュー            -->
+  <!-- ══════════════════════════════════════ -->
+  <div id="price-page">
+
+    <div class="page-divider">
+      <h2>📄 料金・メニュー</h2>
+      <p>/price/</p>
+    </div>
+
+    <!-- Header -->
+    <section class="page-header" style="background:var(--bg-base);">
+      <div class="container">
+        <h1>料金・メニュー</h1>
+        <p>畳の状態やご予算に合わせて、最適なプランをご提案します。<br>表示価格はすべて税込です。最終的な金額は現地お見積もりにてご案内いたします。</p>
+      </div>
+    </section>
+
+    <!-- 3 Methods -->
+    <section style="background:var(--bg-alt);">
+      <div class="container">
+        <h2>畳替えには3つの方法があります</h2>
+        <div class="section-line"></div>
+        <p class="section-sub">「畳を新しくしたい」と思っても、実は全部取り替える必要がないケースもあります。</p>
+        <div class="method-grid">
+          <div class="method-card">
+            <div class="method-icon">↩️</div>
+            <h3>裏返し</h3>
+            <div class="price-highlight">5,000<small>円〜／1畳</small></div>
+            <p>今の畳表をひっくり返して再利用。費用を抑えたい方に。目安：5〜7年以内。</p>
+          </div>
+          <div class="method-card popular">
+            <div class="method-icon">🔄</div>
+            <h3>表替え</h3>
+            <div class="price-highlight">9,000<small>円〜／1畳</small></div>
+            <p>畳表を新品に交換。見た目も香りも新品同様に。もっとも多いご依頼です。</p>
+          </div>
+          <div class="method-card">
+            <div class="method-icon">✨</div>
+            <h3>新畳</h3>
+            <div class="price-highlight">17,000<small>円〜／1畳</small></div>
+            <p>畳床ごとすべて新しく。処分費込み。足踏みの感触から変わります。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Price Tables -->
+    <section style="background:var(--bg-base);">
+      <div class="container">
+        <h2>料金表</h2>
+        <div class="section-line"></div>
+
+        <div class="price-block">
+          <h3>表替え（縁付き畳）</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>グレード</th>
+                <th>1畳あたり</th>
+                <th>こんな方に</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>上質</td>
+                <td><span class="price-val">18,000<small>円〜</small></span></td>
+                <td>肌触り・耐久性にこだわりたい方。来客用にも</td>
+              </tr>
+              <tr class="recommend">
+                <td>おすすめ <span class="badge">迷ったらコレ</span></td>
+                <td><span class="price-val">12,000<small>円〜</small></span></td>
+                <td>耐久性と見た目のバランスが◎</td>
+              </tr>
+              <tr>
+                <td>お手頃</td>
+                <td><span class="price-val">9,000<small>円〜</small></span></td>
+                <td>日常使いに十分。コスト重視の方に</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="price-block">
+          <h3>表替え（縁なし畳・半畳）</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>グレード</th>
+                <th>半畳あたり</th>
+                <th>こんな方に</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>上質</td>
+                <td><span class="price-val">要相談</span></td>
+                <td>素材・サイズにより個別お見積もり</td>
+              </tr>
+              <tr class="recommend">
+                <td>おすすめ <span class="badge">迷ったらコレ</span></td>
+                <td><span class="price-val">13,000<small>円〜</small></span></td>
+                <td>市松模様が映える人気の仕上がり</td>
+              </tr>
+              <tr>
+                <td>お手頃</td>
+                <td><span class="price-val">10,000<small>円〜</small></span></td>
+                <td>手軽に縁なし畳を楽しみたい方に</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="price-block">
+          <h3>裏返し・その他</h3>
+          <table>
+            <thead>
+              <tr>
+                <th>メニュー</th>
+                <th>価格</th>
+                <th>備考</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>裏返し（1畳）</td>
+                <td><span class="price-val">5,000<small>円〜</small></span></td>
+                <td>半畳も同額</td>
+              </tr>
+              <tr>
+                <td>襖（ふすま）張替え</td>
+                <td>〇〇円〜</td>
+                <td>テキストテキスト</td>
+              </tr>
+              <tr>
+                <td>障子（しょうじ）張替え</td>
+                <td>〇〇円〜</td>
+                <td>テキストテキスト</td>
+              </tr>
+              <tr>
+                <td>網戸張替え</td>
+                <td>〇〇円〜</td>
+                <td>テキストテキスト</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="price-notes">※表示価格はすべて税込です ※サイズ・素材のグレードにより変動します ※新畳の処分費は1枚1,000円（価格に含まれています） ※最終的な金額は現地お見積もりにてご案内いたします
+        </p>
+      </div>
+    </section>
+
+    <!-- Quality -->
+    <section style="background:var(--bg-alt);">
+      <div class="container">
+        <div class="quality-grid">
+          <div class="quality-text">
+            <h3>「安い畳」と「良い畳」、<br>何が違うの？</h3>
+            <p>畳表には、はっきりとした品質の差があります。見た目の美しさだけでなく、触り心地や耐久性にも大きく影響します。</p>
+            <p>「素人にはわからないのでは？」そうおっしゃる方も多いのですが、実際に見比べて触っていただくと、ほとんどの方が「これは全然違う！」と驚かれます。</p>
+            <p>お見積もりの際に見本をお持ちしますので、実物を見て、触って、比べてからお選びください。<br><strong>最終的に価格と品質を決めるのは、お客様ご自身です。</strong></p>
+          </div>
+          <div class="quality-img" style="padding:0; overflow:hidden;">
+            <img src="images/mihon.webp" alt="畳表の品質比較"
+              style="width:100%; height:100%; object-fit:cover; border-radius:12px;">
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div><!-- /price-page -->
+
+
+  <!-- ══════════════════════════════════════ -->
+  <!--       PAGE 2: ご依頼の流れ             -->
+  <!-- ══════════════════════════════════════ -->
+  <div id="flow-page">
+
+    <div class="page-divider">
+      <h2>📄 ご依頼の流れ</h2>
+      <p>/flow/</p>
+    </div>
+
+    <section class="page-header" style="background:var(--bg-base);">
+      <div class="container">
+        <h1>ご依頼の流れ</h1>
+        <p>お問い合わせから納品まで、<br>畳替えが初めての方にもわかりやすくご案内します。</p>
+      </div>
+    </section>
+
+    <!-- Timeline -->
+    <section style="background:var(--bg-alt);">
+      <div class="container">
+        <div class="flow-timeline">
+
+          <div class="timeline-item">
+            <div class="timeline-num">STEP<span>1</span></div>
+            <div class="timeline-content">
+              <h3>お問い合わせ</h3>
+              <p>
+                まずはお電話（095-823-1905）または公式LINEでご連絡ください。<br><br>「畳がそろそろ気になる」「まだ替えるかわからないけど相談したい」そんな段階でも大丈夫です。<br><br>ご都合のよい日時をお伺いし、訪問日を調整します。
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-num">STEP<span>2</span></div>
+            <div class="timeline-content">
+              <h3>ご自宅訪問・現地確認</h3>
+              <p>
+                ご自宅にお伺いし、畳の状態を確認します。採寸を行い、畳表・畳縁の見本をお持ちして、実物を見て触りながらお選びいただけます。<br><br>「裏返しで十分」「表替えがおすすめ」など、畳の状態に合わせて正直にお伝えします。
+              </p>
+              <div class="timeline-note">※ お見積もり・採寸は土日も対応可能です</div>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-num">STEP<span>3</span></div>
+            <div class="timeline-content">
+              <h3>お見積もり・ご注文</h3>
+              <p>
+                現地の状態をもとに、正確なお見積もりをご提示します。<br><br>ご納得いただいてからのご注文ですので、「思っていたより高い」と感じられた場合は、グレードの調整などもご相談いただけます。<br><br>お見積もりだけでも大丈夫です。
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-num">STEP<span>4</span></div>
+            <div class="timeline-content">
+              <h3>施工・納品</h3>
+              <p>ご注文後、施工日を調整します。<br><br>表替えの場合、2部屋程度までなら朝お預かり → 夕方にはお届けが可能です。家具の移動も対応いたします。</p>
+              <div class="timeline-note">※ 地域・枚数により納品日は前後します</div>
+            </div>
+          </div>
+
+          <div class="timeline-item">
+            <div class="timeline-num">STEP<span>5</span></div>
+            <div class="timeline-content">
+              <h3>お引き渡し・アフターフォロー</h3>
+              <p>納品後、畳の状態をご確認いただきます。お手入れ方法もその場でご案内します。<br><br>気になることがあれば、納品後もお気軽にご連絡ください。</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section style="background:var(--bg-base);">
+      <div class="container">
+        <h2>よくあるご質問</h2>
+        <div class="section-line"></div>
+        <div class="faq-list">
+          <div class="faq-item">
+            <div class="faq-q">見積もりだけでも来てもらえますか？</div>
+            <div class="faq-a">はい、もちろんです。お見積もりは無料です。「まだ決めていないけど、とりあえず見てほしい」というご依頼も多くいただいています。</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">畳の上の家具はどうすればいいですか？</div>
+            <div class="faq-a">家具の移動はこちらで行いますので、そのままで大丈夫です。ただし、家具の処分については別途ご相談ください。</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">何日くらいかかりますか？</div>
+            <div class="faq-a">表替えの場合、2部屋程度までなら朝お預かりして夕方にはお届けできます。枚数が多い場合や新畳の場合は、事前にスケジュールをご相談させていただきます。</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">土日でも対応してもらえますか？</div>
+            <div class="faq-a">お見積もり・採寸・納品は土日も対応可能です。まずはお気軽にお問い合わせください。</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">支払い方法は？</div>
+            <div class="faq-a">現金のほか、PayPayもご利用いただけます。お支払いは納品時にお願いしております。</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">賃貸でも畳替えできますか？</div>
+            <div class="faq-a">賃貸の場合はオーナー様の許可が必要ですが、市営・県営住宅などでは個人で替える方もいらっしゃいます。また、工事不要の「置き畳」という選択肢もございます。</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div><!-- /flow-page -->
+
+
+  <!-- ══════════════════════════════════════ -->
+  <!--       PAGE 3: お問い合わせ              -->
+  <!-- ══════════════════════════════════════ -->
+  <div id="contact-page">
+
+    <div class="page-divider">
+      <h2>📄 お問い合わせ</h2>
+      <p>/contact/</p>
+    </div>
+
+    <section class="page-header" style="background:var(--bg-base);">
+      <div class="container">
+        <h1>お問い合わせ</h1>
+        <p>畳のことでお悩みでしたら、お気軽にご相談ください。<br>お見積もりは無料です。「まだ替えるか決めていない」という段階でも大丈夫です。</p>
+      </div>
+    </section>
+
+    <!-- 3 Methods -->
+    <section style="background:var(--bg-alt);">
+      <div class="container">
+        <div class="contact-grid">
+          <div class="contact-card">
+            <div class="contact-icon">📞</div>
+            <h3>お電話でのご相談</h3>
+            <div class="phone-number">095-823-1905</div>
+            <p>営業時間：8:30〜17:00（平日）<br>作業中で出られない場合は折り返します</p>
+            <a href="tel:095-823-1905" class="contact-btn btn-tel">タップして電話する</a>
+          </div>
+          <div class="contact-card">
+            <div class="contact-icon">💬</div>
+            <h3>LINEでのご相談</h3>
+            <p>写真を送るだけでおおよその状態も確認できます。お気軽にお友だち追加してください。</p>
+            <div
+              style="width:100px;height:100px;background:var(--bg-alt);border-radius:8px;margin:12px auto;display:flex;align-items:center;justify-content:center;color:var(--sub);font-size:0.8rem;">
+              QRコード</div>
+            <a href="https://lin.ee/qy8UCpf" class="contact-btn btn-line">友だち追加する</a>
+          </div>
+          <div class="contact-card">
+            <div class="contact-icon">📝</div>
+            <h3>フォームでのご相談</h3>
+            <p>下のフォームからお問い合わせいただけます。2営業日以内にご返信いたします。</p>
+            <a href="#form" class="contact-btn btn-form">フォームへ進む ↓</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Form -->
+    <section style="background:var(--bg-base);" id="form">
+      <div class="container">
+        <h2>お問い合わせフォーム</h2>
+        <div class="section-line"></div>
+        <div class="form-wrap">
+          <div class="form-group">
+            <label>お名前 <span class="required">必須</span></label>
+            <input type="text" placeholder="例：山田 太郎">
+          </div>
+          <div class="form-group">
+            <label>お電話番号 <span class="required">必須</span></label>
+            <input type="tel" placeholder="例：090-1234-5678">
+          </div>
+          <div class="form-group">
+            <label>メールアドレス</label>
+            <input type="email" placeholder="メールでの返信をご希望の場合">
+          </div>
+          <div class="form-group">
+            <label>ご住所・地域</label>
+            <input type="text" placeholder="市町村名だけでも結構です（例：長崎市宝町）">
+          </div>
+          <div class="form-group">
+            <label>お問い合わせ内容</label>
+            <select>
+              <option value="">選択してください</option>
+              <option>畳の表替え</option>
+              <option>新畳</option>
+              <option>裏返し</option>
+              <option>縁なし畳</option>
+              <option>置き畳</option>
+              <option>襖・障子・網戸</option>
+              <option>その他</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>畳の枚数（目安）</label>
+            <input type="text" placeholder="わからなければ空欄で結構です">
+          </div>
+          <div class="form-group">
+            <label>ご相談内容</label>
+            <textarea placeholder="畳の状態やご希望をお書きください（例：6畳の表替えを検討中です。ささくれが気になっています。）"></textarea>
+          </div>
+          <div class="form-submit">
+            <button type="button">送信する</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mini FAQ -->
+    <section style="background:var(--bg-alt);">
+      <div class="container">
+        <h2>お問い合わせの前に</h2>
+        <div class="section-line"></div>
+        <div class="faq-list">
+          <div class="faq-item">
+            <div class="faq-q">見積もりに費用はかかりますか？</div>
+            <div class="faq-a">いいえ、お見積もりは無料です。</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">見積もりだけでも来てもらえますか？</div>
+            <div class="faq-a">はい、お見積もりだけでも大歓迎です。</div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-q">どのくらいで返信がもらえますか？</div>
+            <div class="faq-a">フォームの場合は2営業日以内、お電話・LINEはできるだけ当日中にお返事します。</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div><!-- /contact-page -->
+
+
+  <!-- CTA (shared) -->
+  <section class="cta-section">
+    <h2>まずはお気軽にご相談ください</h2>
+    <p>畳のお悩み、「こんなこと聞いていいのかな」ということでも遠慮なくお問い合わせください。お見積もりは無料です。</p>
+    <div class="cta-buttons">
+      <a href="tel:095-823-1905" class="btn-white">📞 電話する　095-823-1905</a>
+      <a href="https://lin.ee/qy8UCpf" class="btn-line-lg">💬 LINEで相談する</a>
+    </div>
+    <p class="cta-note">営業時間：8:30〜17:00（平日）<br>お見積もり・納品は土日も対応いたします。</p>
+  </section>
+
+  <footer>
+    <p>有限会社 大浜畳商店　｜　〒850-0052 長崎県長崎市筑後町4-3　｜　📞 095-823-1905</p>
+    <p style="margin-top:8px;">
+      <a href="index.html">トップ</a><a href="#price-page">料金</a><a href="#flow-page">流れ</a><a
+        href="index.html#reasons">エリア</a><a href="index.html#works">施工事例</a><a href="index.html#guide">基礎知識</a><a
+        href="index.html#about">会社概要</a><a href="#contact-page">お問い合わせ</a><a href="index.html#guide">ブログ</a>
+    </p>
+    <p style="margin-top:16px;opacity:0.4;">© 有限会社 大浜畳商店　|　制作：まちのAI屋さん</p>
+  </footer>
+
+</body>
+
+</html>

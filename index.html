@@ -1,0 +1,1402 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>大浜畳商店 トップページ デザインモック</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;700&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --main: #556B2F;
+      --main-light: #6B8A3E;
+      --sub: #8B7E66;
+      --accent: #C9A84C;
+      --bg-base: #FAF8F5;
+      --bg-alt: #F0EDE6;
+      --text: #333333;
+      --text-light: #666666;
+      --white: #FFFFFF;
+      --line-green: #06C755;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      color: var(--text);
+      background: var(--bg-base);
+      line-height: 1.8;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Header ── */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.97);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+      padding: 0 40px;
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .header-logo {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--main);
+      letter-spacing: 0.08em;
+    }
+
+    .header-logo small {
+      display: block;
+      font-size: 0.65rem;
+      font-weight: 500;
+      color: var(--text-light);
+      letter-spacing: 0.04em;
+      font-family: 'Noto Sans JP', sans-serif;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--text);
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      position: relative;
+      transition: color 0.3s;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--main);
+      transition: width 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--main);
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .header-cta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-left: 20px;
+    }
+
+    .header-phone {
+      font-size: 0.85rem;
+      color: var(--main);
+      font-weight: 700;
+      text-decoration: none;
+      letter-spacing: 0.02em;
+    }
+
+    .header-phone span {
+      font-size: 0.7rem;
+      font-weight: 500;
+      color: var(--text-light);
+      display: block;
+    }
+
+    .btn-line-sm {
+      background: var(--line-green);
+      color: var(--white);
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: opacity 0.3s;
+    }
+
+    .btn-line-sm:hover {
+      opacity: 0.85;
+    }
+
+    /* ── Section base ── */
+    section {
+      padding: 80px 0;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    h2 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1.75rem;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 12px;
+      color: var(--text);
+      letter-spacing: 0.06em;
+    }
+
+    .section-sub {
+      text-align: center;
+      color: var(--text-light);
+      font-size: 0.9rem;
+      margin-bottom: 48px;
+    }
+
+    .section-line {
+      width: 40px;
+      height: 3px;
+      background: var(--main);
+      margin: 16px auto 40px;
+      border-radius: 2px;
+    }
+
+    /* ── 1. Hero ── */
+    .hero {
+      margin-top: 72px;
+      position: relative;
+      overflow: hidden;
+      height: 75vh;
+      min-height: 500px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background:
+        linear-gradient(135deg, rgba(85, 107, 47, 0.15) 0%, transparent 50%),
+        linear-gradient(180deg, rgba(51, 51, 51, 0.35) 0%, rgba(51, 51, 51, 0.2) 100%),
+        url('images/hero_bg_real.jpg');
+      background-color: #7A8B60;
+      background-size: cover;
+      padding: 0 24px;
+    }
+
+    .hero-content {
+      text-align: center;
+      color: var(--white);
+      max-width: 680px;
+      animation: fadeUp 1s ease-out;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      padding: 6px 20px;
+      border-radius: 100px;
+      font-size: 0.8rem;
+      margin-bottom: 28px;
+      letter-spacing: 0.08em;
+    }
+
+    .hero h1 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 2.8rem;
+      font-weight: 700;
+      line-height: 1.5;
+      margin-bottom: 16px;
+      letter-spacing: 0.08em;
+      text-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .hero p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      margin-bottom: 36px;
+      opacity: 0.92;
+      letter-spacing: 0.04em;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 16px 36px;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.3s;
+      letter-spacing: 0.04em;
+    }
+
+    .btn-primary {
+      background: var(--white);
+      color: var(--main);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 28px rgba(0, 0, 0, 0.2);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border: 2px solid rgba(255, 255, 255, 0.7);
+    }
+
+    .btn-outline:hover {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: var(--white);
+    }
+
+    /* ── 2. Concerns ── */
+    .concerns {
+      background: var(--bg-alt);
+    }
+
+    .check-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      max-width: 860px;
+      margin: 0 auto 40px;
+    }
+
+    .check-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      background: var(--white);
+      padding: 18px 20px;
+      border-radius: 10px;
+      box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+      transition: transform 0.2s;
+    }
+
+    .check-item:hover {
+      transform: translateY(-2px);
+    }
+
+    .check-icon {
+      flex-shrink: 0;
+      width: 28px;
+      height: 28px;
+      background: var(--main);
+      color: var(--white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+
+    .check-item p {
+      font-size: 0.92rem;
+      line-height: 1.6;
+    }
+
+    .concerns-message {
+      text-align: center;
+      font-size: 1rem;
+      line-height: 2;
+      color: var(--text-light);
+      max-width: 520px;
+      margin: 0 auto;
+    }
+
+    .concerns-message strong {
+      color: var(--main);
+      font-weight: 700;
+    }
+
+    /* ── 3. Reasons ── */
+    .reasons-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .reason-card {
+      background: var(--white);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .reason-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    }
+
+    .reason-img {
+      height: 200px;
+      background: var(--bg-alt);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-light);
+      font-size: 0.85rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .reason-img::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(85, 107, 47, 0.08), rgba(139, 126, 102, 0.08));
+    }
+
+    .reason-img .img-placeholder {
+      position: relative;
+      z-index: 1;
+      font-size: 0.85rem;
+      color: var(--sub);
+      text-align: center;
+      padding: 20px;
+    }
+
+    .reason-num {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      font-family: 'Noto Serif JP', serif;
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--main);
+      opacity: 0.25;
+      line-height: 1;
+      z-index: 1;
+    }
+
+    .reason-body {
+      padding: 24px;
+    }
+
+    .reason-body h3 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    .reason-body p {
+      font-size: 0.88rem;
+      color: var(--text-light);
+      line-height: 1.8;
+    }
+
+    /* ── 4. Price ── */
+    .price-section {
+      background: var(--bg-alt);
+    }
+
+    .price-table-wrap {
+      max-width: 800px;
+      margin: 0 auto;
+      background: var(--white);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    .price-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .price-table th {
+      background: var(--main);
+      color: var(--white);
+      padding: 14px 20px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-align: left;
+      letter-spacing: 0.04em;
+    }
+
+    .price-table td {
+      padding: 18px 20px;
+      font-size: 0.92rem;
+      border-bottom: 1px solid #eee;
+    }
+
+    .price-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .price-table .popular {
+      background: #FFFDF5;
+    }
+
+    .badge-popular {
+      display: inline-block;
+      background: var(--accent);
+      color: var(--white);
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 100px;
+      margin-left: 8px;
+      vertical-align: middle;
+    }
+
+    .price-amount {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--main);
+      font-family: 'Noto Sans JP', sans-serif;
+    }
+
+    .price-amount small {
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--text-light);
+    }
+
+    .price-notes {
+      max-width: 800px;
+      margin: 20px auto 0;
+      font-size: 0.8rem;
+      color: var(--text-light);
+      line-height: 1.8;
+      padding: 0 8px;
+    }
+
+    .btn-center {
+      text-align: center;
+      margin-top: 36px;
+    }
+
+    .btn-main {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--main);
+      color: var(--white);
+      padding: 16px 40px;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+
+    .btn-main:hover {
+      background: var(--main-light);
+      transform: translateY(-2px);
+    }
+
+    /* ── 5. Works ── */
+    .works-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .work-card {
+      background: var(--white);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      transition: transform 0.3s;
+    }
+
+    .work-card:hover {
+      transform: translateY(-3px);
+    }
+
+    .work-img {
+      height: 180px;
+      background: var(--bg-alt);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .work-img .img-placeholder {
+      color: var(--sub);
+      font-size: 0.85rem;
+    }
+
+    .work-tag {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: var(--main);
+      color: var(--white);
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 4px;
+    }
+
+    .work-body {
+      padding: 18px;
+    }
+
+    .work-body h3 {
+      font-size: 0.92rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      line-height: 1.5;
+    }
+
+    .work-body p {
+      font-size: 0.8rem;
+      color: var(--text-light);
+    }
+
+    /* ── 6. Flow ── */
+    .flow-section {
+      background: var(--bg-alt);
+    }
+
+    .flow-steps {
+      display: flex;
+      gap: 0;
+      max-width: 900px;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .flow-steps::before {
+      content: '';
+      position: absolute;
+      top: 36px;
+      left: 60px;
+      right: 60px;
+      height: 2px;
+      background: linear-gradient(to right, var(--main) 0%, var(--main) 100%);
+      opacity: 0.2;
+    }
+
+    .flow-step {
+      flex: 1;
+      text-align: center;
+      position: relative;
+      padding: 0 12px;
+    }
+
+    .step-num {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: var(--white);
+      border: 3px solid var(--main);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+      position: relative;
+      z-index: 1;
+      font-family: 'Noto Serif JP', serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--main);
+      flex-direction: column;
+      line-height: 1.2;
+    }
+
+    .step-num span {
+      font-size: 1.4rem;
+    }
+
+    .flow-step h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: var(--text);
+    }
+
+    .flow-step p {
+      font-size: 0.82rem;
+      color: var(--text-light);
+      line-height: 1.7;
+    }
+
+    /* ── 7. Blog ── */
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .blog-card {
+      display: flex;
+      gap: 16px;
+      background: var(--white);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 1px 6px rgba(0, 0, 0, 0.04);
+      transition: transform 0.2s;
+    }
+
+    .blog-card:hover {
+      transform: translateY(-2px);
+    }
+
+    .blog-thumb {
+      width: 120px;
+      min-height: 100px;
+      flex-shrink: 0;
+      background: var(--bg-alt);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .blog-thumb .img-placeholder {
+      font-size: 0.7rem;
+      color: var(--sub);
+    }
+
+    .blog-text {
+      padding: 16px 16px 16px 0;
+    }
+
+    .blog-text h3 {
+      font-size: 0.88rem;
+      font-weight: 700;
+      line-height: 1.5;
+      margin-bottom: 6px;
+    }
+
+    .blog-text p {
+      font-size: 0.78rem;
+      color: var(--text-light);
+    }
+
+    /* ── 8. About ── */
+    .about-section {
+      background: var(--bg-alt);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .about-img {
+      height: 360px;
+      background: var(--white);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    }
+
+    .about-img .img-placeholder {
+      color: var(--sub);
+      font-size: 0.85rem;
+    }
+
+    .about-text h3 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .about-text p {
+      font-size: 0.92rem;
+      line-height: 2;
+      color: var(--text-light);
+      margin-bottom: 24px;
+    }
+
+    .about-info {
+      font-size: 0.85rem;
+      color: var(--text);
+      border-top: 1px solid #ddd;
+      padding-top: 16px;
+      line-height: 2;
+    }
+
+    .map-embed {
+      max-width: 900px;
+      margin: 40px auto 0;
+      height: 280px;
+      background: var(--white);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-light);
+      font-size: 0.9rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    }
+
+    /* ── 9. CTA ── */
+    .cta-section {
+      background: var(--main);
+      background-image:
+        radial-gradient(ellipse at 20% 50%, rgba(107, 138, 62, 0.4) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 50%, rgba(85, 107, 47, 0.6) 0%, transparent 50%);
+      color: var(--white);
+      text-align: center;
+      padding: 80px 24px;
+    }
+
+    .cta-section h2 {
+      color: var(--white);
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+    }
+
+    .cta-section p {
+      font-size: 0.95rem;
+      opacity: 0.9;
+      max-width: 480px;
+      margin: 0 auto 36px;
+      line-height: 2;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn-white {
+      background: var(--white);
+      color: var(--main);
+      padding: 18px 40px;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.3s;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn-white:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.15);
+    }
+
+    .btn-line-lg {
+      background: var(--line-green);
+      color: var(--white);
+      padding: 18px 40px;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.3s;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn-line-lg:hover {
+      transform: translateY(-2px);
+      opacity: 0.9;
+    }
+
+    .cta-note {
+      margin-top: 24px;
+      font-size: 0.85rem;
+      opacity: 0.75;
+      line-height: 1.8;
+    }
+
+    /* ── Footer ── */
+    footer {
+      background: #2A2A2A;
+      color: rgba(255, 255, 255, 0.7);
+      padding: 60px 24px 32px;
+      font-size: 0.85rem;
+      line-height: 2;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+
+    .footer-info h3 {
+      font-family: 'Noto Serif JP', serif;
+      color: var(--white);
+      font-size: 1.1rem;
+      margin-bottom: 16px;
+    }
+
+    .footer-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 24px;
+    }
+
+    .footer-nav a {
+      color: rgba(255, 255, 255, 0.7);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .footer-nav a:hover {
+      color: var(--white);
+    }
+
+    .footer-area {
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .footer-area span {
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 0.8rem;
+    }
+
+    .footer-bottom {
+      max-width: 1100px;
+      margin: 32px auto 0;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      text-align: center;
+      font-size: 0.78rem;
+      color: rgba(255, 255, 255, 0.4);
+    }
+
+    /* ── Mobile fixed bar ── */
+    .mobile-bar {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: var(--white);
+      box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.1);
+      padding: 10px 16px;
+    }
+
+    .mobile-bar-inner {
+      display: flex;
+      gap: 10px;
+    }
+
+    .mobile-bar a {
+      flex: 1;
+      text-align: center;
+      padding: 14px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      text-decoration: none;
+    }
+
+    .mobile-bar .bar-phone {
+      background: var(--main);
+      color: var(--white);
+    }
+
+    .mobile-bar .bar-line {
+      background: var(--line-green);
+      color: var(--white);
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+      }
+
+      .header-cta {
+        display: none;
+      }
+
+      .hero h1 {
+        font-size: 1.75rem;
+      }
+
+      .hero p {
+        font-size: 0.9rem;
+      }
+
+      .hero {
+        height: 65vh;
+      }
+
+      .reasons-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .works-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .flow-steps {
+        flex-direction: column;
+        gap: 24px;
+      }
+
+      .flow-steps::before {
+        display: none;
+      }
+
+      .blog-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .mobile-bar {
+        display: block;
+      }
+
+      footer {
+        padding-bottom: 100px;
+      }
+
+      section {
+        padding: 56px 0;
+      }
+
+      h2 {
+        font-size: 1.4rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ── Header ── -->
+  <header>
+    <div class="header-logo">
+      大浜畳商店
+      <small>有限会社 大浜畳商店</small>
+    </div>
+    <nav>
+      <a href="#price">料金・メニュー</a>
+      <a href="#flow">ご依頼の流れ</a>
+      <a href="#works">施工事例</a>
+      <a href="#guide">畳の基礎知識</a>
+      <a href="#about">会社概要</a>
+    </nav>
+    <div class="header-cta">
+      <a href="tel:095-823-1905" class="header-phone">
+        <span>お電話でのご相談</span>
+        095-823-1905
+      </a>
+      <a href="https://lin.ee/qy8UCpf" class="btn-line-sm">LINEで相談</a>
+    </div>
+  </header>
+
+  <!-- ── 1. Hero ── -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-badge">長崎県内全域対応・お見積もり無料</div>
+      <h1>畳のことなら、<br>大浜畳商店。</h1>
+      <p>1枚から、お気軽にご相談ください。<br>朝お預かり、夕方にはお届けします。</p>
+      <div class="hero-buttons">
+        <a href="sub.html#contact-page" class="btn btn-primary">お見積もり・ご相談はこちら</a>
+        <a href="#price" class="btn btn-outline">料金を見る</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 2. Concerns ── -->
+  <section class="concerns">
+    <div class="container">
+      <h2>お部屋の畳、<br>こんな状態になっていませんか？</h2>
+      <div class="section-line"></div>
+      <div class="check-grid">
+        <div class="check-item">
+          <div class="check-icon">✓</div>
+          <p>畳のささくれが気になってきた</p>
+        </div>
+        <div class="check-item">
+          <div class="check-icon">✓</div>
+          <p>衣服に白い繊維がつくようになった</p>
+        </div>
+        <div class="check-item">
+          <div class="check-icon">✓</div>
+          <p>い草の色がまだらに変色している</p>
+        </div>
+        <div class="check-item">
+          <div class="check-icon">✓</div>
+          <p>子どもが大きくなったので、そろそろきれいにしたい</p>
+        </div>
+        <div class="check-item">
+          <div class="check-icon">✓</div>
+          <p>お客さんが来る前に、見栄えを良くしたい</p>
+        </div>
+      </div>
+      <p class="concerns-message">
+        畳は「替えどき」がわかりにくいもの。<br>
+        <strong>「そろそろかな？」と思ったときが、ちょうどいいタイミングです。</strong>
+      </p>
+    </div>
+  </section>
+
+  <!-- ── 3. Reasons ── -->
+  <section class="reasons" id="reasons">
+    <div class="container">
+      <h2>大浜畳商店が選ばれる 3つの理由</h2>
+      <div class="section-line"></div>
+      <div class="reasons-grid">
+        <div class="reason-card">
+          <div class="reason-img"
+            style="background-image: url('images/sample1.jpg'); background-size: cover; background-position: center;">
+            <div class="reason-num">01</div>
+          </div>
+          <div class="reason-body">
+            <h3>朝お預かり、夕方お届け</h3>
+            <p>「何日もかかるんでしょ？」と思われがちですが、2部屋程度までなら朝お預かりして夕方にはお届けできます。お仕事前にお渡しいただき、帰宅時には新しい畳でお迎えします。</p>
+          </div>
+        </div>
+        <div class="reason-card">
+          <div class="reason-img"
+            style="background-image: url('images/mihon.webp'); background-size: cover; background-position: center;">
+            <div class="reason-num">02</div>
+          </div>
+          <div class="reason-body">
+            <h3>ご自宅で見て、触って、選べます</h3>
+            <p>お見積もりの際に、畳表や畳縁の見本をお持ちします。手触り・厚み・色味の違いを実際に確かめていただけます。初めての畳替えでも安心です。</p>
+          </div>
+        </div>
+        <div class="reason-card">
+          <div class="reason-img"
+            style="background-image: url('images/tizu.gif'); background-size: contain; background-position: center; background-repeat: no-repeat; background-color: #fff;">
+            <div class="reason-num">03</div>
+          </div>
+          <div class="reason-body">
+            <h3>長崎県内全域に対応</h3>
+            <p>長崎市内はもちろん、諫早・大村・時津・長与・西海まで。長崎市内なら当日納品も可能です。まずはお気軽にお問い合わせください。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 4. Price ── -->
+  <section class="price-section" id="price">
+    <div class="container">
+      <h2>料金の目安</h2>
+      <div class="section-line"></div>
+      <div class="price-table-wrap">
+        <table class="price-table">
+          <thead>
+            <tr>
+              <th>メニュー</th>
+              <th>1畳あたりの目安</th>
+              <th>こんな方に</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>裏返し</td>
+              <td><span class="price-amount">5,000<small>円〜</small></span></td>
+              <td>まだ畳が新しい方（5〜7年目安）</td>
+            </tr>
+            <tr class="popular">
+              <td>表替え（縁付き）<span class="badge-popular">人気</span></td>
+              <td><span class="price-amount">9,000<small>円〜</small></span></td>
+              <td>確実にきれいにしたい方</td>
+            </tr>
+            <tr>
+              <td>表替え（縁なし・半畳）</td>
+              <td><span class="price-amount">10,000<small>円〜</small></span></td>
+              <td>モダンな見た目にしたい方</td>
+            </tr>
+            <tr>
+              <td>新畳（縁付き）</td>
+              <td><span class="price-amount">17,000<small>円〜</small></span></td>
+              <td>畳ごと新しくしたい方</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="price-notes">
+        ※表示価格はすべて税込です　※サイズ・素材のグレードにより変動します<br>
+        ※最終的な金額は現地お見積もりにてご案内いたします
+      </p>
+      <div class="btn-center">
+        <a href="sub.html#price-page" class="btn-main">詳しい料金表を見る →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 5. Works ── -->
+  <section class="works" id="works">
+    <div class="container">
+      <h2>施工事例</h2>
+      <div class="section-line"></div>
+      <div class="works-grid">
+        <div class="work-card">
+          <div class="work-img"
+            style="background-image: url('images/sample2.jpg'); background-size: cover; background-position: center;">
+            <span class="work-tag">表替え</span>
+          </div>
+          <div class="work-body">
+            <h3>【長崎市宝町】6畳の表替え・即日納品</h3>
+            <p>築25年の戸建て。子ども独立を機に畳替え。国産い草おすすめグレード使用。</p>
+          </div>
+        </div>
+        <div class="work-card">
+          <div class="work-img"
+            style="background-image: url('images/02-migusa-ichimatsu-ivory-living-room.png'); background-size: cover; background-position: center;">
+            <span class="work-tag">縁なし畳</span>
+          </div>
+          <div class="work-body">
+            <h3>【長崎市〇〇町】マンション和室を縁なし畳に</h3>
+            <p>4.5畳の和室をモダンにリニューアル。美草（MIGUSA）で市松模様に。</p>
+          </div>
+        </div>
+        <div class="work-card">
+          <div class="work-img"
+            style="background-image: url('images/sample3.jpg'); background-size: cover; background-position: center;">
+            <span class="work-tag">新畳</span>
+          </div>
+          <div class="work-body">
+            <h3>【諫早市〇〇】8畳の新畳入替え</h3>
+            <p>築30年で畳床からリニューアル。テキストテキストテキスト。</p>
+          </div>
+        </div>
+      </div>
+      <div class="btn-center">
+        <a href="#works" class="btn-main">施工事例をもっと見る →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 6. Flow ── -->
+  <section class="flow-section" id="flow">
+    <div class="container">
+      <h2>ご依頼の流れ</h2>
+      <div class="section-line"></div>
+      <div class="flow-steps">
+        <div class="flow-step">
+          <div class="step-num">STEP<span>1</span></div>
+          <h3>お問い合わせ</h3>
+          <p>お電話または<br>公式LINEで<br>お気軽にどうぞ</p>
+        </div>
+        <div class="flow-step">
+          <div class="step-num">STEP<span>2</span></div>
+          <h3>ご自宅訪問・採寸</h3>
+          <p>見本をお持ちして<br>実物を見ながら<br>ご提案します</p>
+        </div>
+        <div class="flow-step">
+          <div class="step-num">STEP<span>3</span></div>
+          <h3>お見積もり</h3>
+          <p>ご納得いただいて<br>から作業に<br>入ります</p>
+        </div>
+        <div class="flow-step">
+          <div class="step-num">STEP<span>4</span></div>
+          <h3>施工・納品</h3>
+          <p>朝お預かり→<br>夕方お届け。<br>家具移動もOK</p>
+        </div>
+      </div>
+      <div class="btn-center" style="margin-top: 48px;">
+        <a href="sub.html#flow-page" class="btn-main">詳しい流れを見る →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 7. Blog ── -->
+  <section class="blog-section" id="guide">
+    <div class="container">
+      <h2>畳のお役立ち情報</h2>
+      <div class="section-line"></div>
+      <div class="blog-grid">
+        <div class="blog-card">
+          <div class="blog-thumb">
+            <img src="images/hero_tatami.png" alt="畳の表替えと裏返し" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="blog-text">
+            <h3>畳の表替えと裏返し、どっちがいい？</h3>
+            <p>違いをわかりやすく解説します</p>
+          </div>
+        </div>
+        <div class="blog-card">
+          <div class="blog-thumb">
+            <img src="images/sample1.jpg" alt="畳替えの費用相場" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="blog-text">
+            <h3>畳替えの費用相場は？</h3>
+            <p>長崎の畳屋が正直にお伝えします</p>
+          </div>
+        </div>
+        <div class="blog-card">
+          <div class="blog-thumb">
+            <img src="images/sample2.jpg" alt="畳にカビが生えたら" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="blog-text">
+            <h3>畳にカビが生えたら？</h3>
+            <p>原因と対策を畳屋が解説</p>
+          </div>
+        </div>
+        <div class="blog-card">
+          <div class="blog-thumb">
+            <img src="images/sample3.jpg" alt="縁なし畳が人気の理由" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="blog-text">
+            <h3>縁なし畳が人気の理由</h3>
+            <p>選ぶときの注意点も</p>
+          </div>
+        </div>
+      </div>
+      <div class="btn-center">
+        <a href="#guide" class="btn-main">ブログ一覧を見る →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── 8. About ── -->
+  <section class="about-section" id="about">
+    <div class="container">
+      <h2>職人紹介</h2>
+      <div class="section-line"></div>
+      <div class="about-grid">
+        <div class="about-img" style="padding:0; overflow:hidden;">
+          <img src="images/syokunin.jpg" alt="大濱さんの作業風景"
+            style="width:100%; height:100%; object-fit:cover; border-radius:12px;">
+        </div>
+        <div class="about-text">
+          <h3>畳のことなら<br>何でもご相談ください。</h3>
+          <p>
+            大浜畳商店の大濱〇〇です。<br><br>
+            畳の張替えから新調、縁なし畳、置き畳まで、畳のことなら何でもお任せください。<br><br>
+            お見積もりの際には見本をお持ちして、実際に見て触っていただきながらご提案しています。<br><br>
+            「こんなこと聞いてもいいのかな」ということでも、遠慮なくご相談ください。
+          </p>
+          <div class="about-info">
+            有限会社 大浜畳商店<br>
+            〒850-0052 長崎県長崎市筑後町4-3<br>
+            📞 095-823-1905
+          </div>
+        </div>
+      </div>
+      <div class="map-embed">[ Googleマップ埋め込み ]</div>
+    </div>
+  </section>
+
+  <!-- ── 9. CTA ── -->
+  <section class="cta-section" id="contact">
+    <h2>まずはお気軽にご相談ください</h2>
+    <p>
+      畳のお悩み、「こんなこと聞いていいのかな」ということでも遠慮なくお問い合わせください。<br>
+      お見積もりは無料です。
+    </p>
+    <div class="cta-buttons">
+      <a href="tel:095-823-1905" class="btn-white">📞 電話する　095-823-1905</a>
+      <a href="https://lin.ee/qy8UCpf" class="btn-line-lg">💬 LINEで相談する</a>
+    </div>
+    <p class="cta-note">
+      営業時間：8:30〜17:00（平日）<br>
+      お見積もり・納品は土日も対応いたします。
+    </p>
+  </section>
+
+  <!-- ── Footer ── -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-info">
+        <h3>大浜畳商店</h3>
+        <p>
+          有限会社 大浜畳商店<br>
+          〒850-0052 長崎県長崎市筑後町4-3<br>
+          📞 095-823-1905<br>
+          営業時間：8:30〜17:00（平日）<br>
+          お見積もり・納品は土日も対応可能
+        </p>
+        <div class="footer-area">
+          <span>【対応エリア】</span><br>
+          長崎市全域、時津町、長与町、諫早市、大村市、西海市ほか長崎県内全域
+        </div>
+      </div>
+      <div>
+        <div class="footer-nav">
+          <a href="/">トップページ</a>
+          <a href="/price/">料金・メニュー</a>
+          <a href="/flow/">ご依頼の流れ</a>
+          <a href="/area/">対応エリア</a>
+          <a href="/works/">施工事例</a>
+          <a href="/guide/">畳の基礎知識</a>
+          <a href="/about/">会社概要</a>
+          <a href="/contact/">お問い合わせ</a>
+          <a href="/blog/">ブログ</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 有限会社 大浜畳商店　|　制作：まちのAI屋さん
+    </div>
+  </footer>
+
+  <!-- ── Mobile Fixed Bar ── -->
+  <div class="mobile-bar">
+    <div class="mobile-bar-inner">
+      <a href="tel:095-823-1905" class="bar-phone">📞 電話する</a>
+      <a href="https://lin.ee/qy8UCpf" class="bar-line">💬 LINEで相談</a>
+    </div>
+  </div>
+
+</body>
+
+</html>
