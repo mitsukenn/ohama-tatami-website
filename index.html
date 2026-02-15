@@ -1051,6 +1051,12 @@
   <section class="hero">
     <div class="hero-content">
       <div class="hero-badge">長崎県内全域対応・お見積もり無料</div>
+      <!-- TODO: SWELL実装時にスライド3枚に変更
+        スライド1：洗練された和室の施工写真
+        スライド2：身近なマンションの和室
+        スライド3：要検討（作業風景 or 縁なし畳）
+        ※AI生成画像は使用しない。実際の施工写真のみ。
+      -->
       <h1>畳のことなら、<br>大浜畳商店。</h1>
       <p>1枚から、お気軽にご相談ください。<br>朝お預かり、夕方にはお届けします。</p>
       <div class="hero-buttons">
@@ -1074,10 +1080,7 @@
           <div class="check-icon">✓</div>
           <p>衣服に白い繊維がつくようになった</p>
         </div>
-        <div class="check-item">
-          <div class="check-icon">✓</div>
-          <p>い草の色がまだらに変色している</p>
-        </div>
+
         <div class="check-item">
           <div class="check-icon">✓</div>
           <p>子どもが大きくなったので、そろそろきれいにしたい</p>
@@ -1112,22 +1115,24 @@
         </div>
         <div class="reason-card">
           <div class="reason-img"
-            style="background-image: url('images/mihon.webp'); background-size: cover; background-position: center;">
+            style="background-image: url('images/syokunin.jpg'); background-size: cover; background-position: center;">
             <div class="reason-num">02</div>
           </div>
           <div class="reason-body">
-            <h3>ご自宅で見て、触って、選べます</h3>
-            <p>お見積もりの際に、畳表や畳縁の見本をお持ちします。手触り・厚み・色味の違いを実際に確かめていただけます。初めての畳替えでも安心です。</p>
+            <h3>見積もりから納品まで、同じ職人が担当します</h3>
+            <p>
+              お見積もりで現地にお伺いするのも、お預かりした畳を自社工場で加工するのも、仕上がった畳をお届けするのも、同じ職人です。<br><br>「え、本人が来るんですか？」と驚かれることもありますが、最初から最後まで責任を持って対応しています。
+            </p>
           </div>
         </div>
         <div class="reason-card">
           <div class="reason-img"
-            style="background-image: url('images/tizu.gif'); background-size: contain; background-position: center; background-repeat: no-repeat; background-color: #fff;">
+            style="background-image: url('images/sample3.jpg'); background-size: cover; background-position: center;">
             <div class="reason-num">03</div>
           </div>
           <div class="reason-body">
-            <h3>長崎県内全域に対応</h3>
-            <p>長崎市内はもちろん、諫早・大村・時津・長与・西海まで。長崎市内なら当日納品も可能です。まずはお気軽にお問い合わせください。</p>
+            <h3>お部屋に合わせて、1枚ずつ作っています</h3>
+            <p>畳は既製品ではありません。お部屋の壁や柱に合わせて、1枚ずつサイズを測り、加工しています。<br><br>工場の大量生産ではなく、あなたのお部屋専用の畳を自社工場で手作業で仕上げます。</p>
           </div>
         </div>
       </div>
@@ -1171,6 +1176,29 @@
             </tr>
           </tbody>
         </table>
+      </div>
+
+      <!-- セット価格シミュレーション -->
+      <div
+        style="max-width:800px; margin:32px auto 0; background:var(--white); border-radius:12px; padding:28px 32px; box-shadow:0 2px 8px rgba(0,0,0,0.04); border-left:4px solid var(--accent);">
+        <h3
+          style="font-family:'Noto Serif JP',serif; font-size:1.05rem; font-weight:700; margin-bottom:16px; color:var(--text);">
+          💡 おすすめグレードの場合の目安
+        </h3>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+          <div style="background:var(--bg-alt); padding:16px 20px; border-radius:8px;">
+            <div style="font-size:0.82rem; color:var(--text-light); margin-bottom:6px;">表替え（縁付き）6畳の場合</div>
+            <div style="font-size:1.4rem; font-weight:700; color:var(--main);">72,000<span
+                style="font-size:0.85rem; font-weight:500; color:var(--text-light);">円〜（税込）</span></div>
+          </div>
+          <div style="background:var(--bg-alt); padding:16px 20px; border-radius:8px;">
+            <div style="font-size:0.82rem; color:var(--text-light); margin-bottom:6px;">縁なし畳 9枚（3畳分）の場合</div>
+            <div style="font-size:1.4rem; font-weight:700; color:var(--main);">117,000<span
+                style="font-size:0.85rem; font-weight:500; color:var(--text-light);">円〜（税込）</span></div>
+          </div>
+        </div>
+        <p style="font-size:0.78rem; color:var(--text-light); margin-top:12px;">※枚数・素材により変動します。正確な金額は現地お見積もりにてご案内します。
+        </p>
       </div>
       <p class="price-notes">
         ※表示価格はすべて税込です　※サイズ・素材のグレードにより変動します<br>
@@ -1239,7 +1267,7 @@
         <div class="flow-step">
           <div class="step-num">STEP<span>2</span></div>
           <h3>ご自宅訪問・採寸</h3>
-          <p>見本をお持ちして<br>実物を見ながら<br>ご提案します</p>
+          <p>最適なプランを<br>ご予算に合わせて<br>ご提案します</p>
         </div>
         <div class="flow-step">
           <div class="step-num">STEP<span>3</span></div>
@@ -1322,7 +1350,7 @@
           <p>
             大浜畳商店の大濱〇〇です。<br><br>
             畳の張替えから新調、縁なし畳、置き畳まで、畳のことなら何でもお任せください。<br><br>
-            お見積もりの際には見本をお持ちして、実際に見て触っていただきながらご提案しています。<br><br>
+            お見積もりから製作、納品まで、すべて職人が直接対応しています。<br><br>
             「こんなこと聞いてもいいのかな」ということでも、遠慮なくご相談ください。
           </p>
           <div class="about-info">
@@ -1349,7 +1377,7 @@
     </div>
     <p class="cta-note">
       営業時間：8:30〜17:00（平日）<br>
-      お見積もり・納品は土日も対応いたします。
+      お見積もり・納品は土曜日もご相談いただければ対応いたします。
     </p>
   </section>
 
@@ -1363,7 +1391,7 @@
           〒850-0052 長崎県長崎市筑後町4-3<br>
           📞 095-823-1905<br>
           営業時間：8:30〜17:00（平日）<br>
-          お見積もり・納品は土日も対応可能
+          お見積もり・納品は土曜日もご相談により対応
         </p>
         <div class="footer-area">
           <span>【対応エリア】</span><br>
@@ -1381,6 +1409,7 @@
           <a href="/about/">会社概要</a>
           <a href="/contact/">お問い合わせ</a>
           <a href="/blog/">ブログ</a>
+          <a href="#" style="color:rgba(255,255,255,0.7);">📷 Instagram</a>
         </div>
       </div>
     </div>
