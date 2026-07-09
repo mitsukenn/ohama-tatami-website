@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#556B2F;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#3A4A20;stop-opacity:1" />
+    </linearGradient>
+    <!-- Tatami pattern -->
+    <pattern id="tatami" x="0" y="0" width="120" height="80" patternUnits="userSpaceOnUse">
+      <rect width="120" height="80" fill="none"/>
+      <line x1="0" y1="0" x2="120" y2="0" stroke="#6B8A3E" stroke-width="0.5" opacity="0.15"/>
+      <line x1="0" y1="40" x2="120" y2="40" stroke="#6B8A3E" stroke-width="0.5" opacity="0.1"/>
+      <line x1="60" y1="0" x2="60" y2="80" stroke="#6B8A3E" stroke-width="0.5" opacity="0.08"/>
+    </pattern>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#tatami)"/>
+
+  <!-- Decorative accent line -->
+  <rect x="80" y="180" width="60" height="4" rx="2" fill="#C9A84C"/>
+
+  <!-- Main title -->
+  <text x="110" y="250" font-family="'Noto Serif JP', 'Yu Mincho', serif" font-size="72" font-weight="700" fill="#FFFFFF" letter-spacing="6">
+    大浜畳商店
+  </text>
+
+  <!-- Subtitle -->
+  <text x="110" y="310" font-family="'Noto Sans JP', 'Yu Gothic', sans-serif" font-size="28" font-weight="400" fill="rgba(255,255,255,0.85)" letter-spacing="2">
+    畳のことなら、大浜畳商店。
+  </text>
+
+  <!-- Description line 1 -->
+  <text x="110" y="380" font-family="'Noto Sans JP', 'Yu Gothic', sans-serif" font-size="22" fill="rgba(255,255,255,0.7)" letter-spacing="1">
+    朝お預かり、夕方にはお届けします。
+  </text>
+
+  <!-- Description line 2 -->
+  <text x="110" y="415" font-family="'Noto Sans JP', 'Yu Gothic', sans-serif" font-size="22" fill="rgba(255,255,255,0.7)" letter-spacing="1">
+    家具の移動も、お見積もりも無料です。
+  </text>
+
+  <!-- Badges -->
+  <rect x="110" y="460" width="160" height="40" rx="20" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+  <text x="190" y="486" font-family="'Noto Sans JP', sans-serif" font-size="15" fill="#FFFFFF" text-anchor="middle" letter-spacing="1">家具移動無料</text>
+
+  <rect x="290" y="460" width="200" height="40" rx="20" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+  <text x="390" y="486" font-family="'Noto Sans JP', sans-serif" font-size="15" fill="#FFFFFF" text-anchor="middle" letter-spacing="1">LINEでお見積もり</text>
+
+  <rect x="510" y="460" width="170" height="40" rx="20" fill="rgba(255,255,255,0.15)" stroke="rgba(255,255,255,0.3)" stroke-width="1"/>
+  <text x="595" y="486" font-family="'Noto Sans JP', sans-serif" font-size="15" fill="#FFFFFF" text-anchor="middle" letter-spacing="1">長崎駅前すぐ</text>
+
+  <!-- Company info -->
+  <text x="110" y="570" font-family="'Noto Sans JP', sans-serif" font-size="16" fill="rgba(255,255,255,0.5)" letter-spacing="1">
+    有限会社 大浜畳商店｜長崎県長崎市筑後町4-3｜095-823-1905
+  </text>
+
+  <!-- Right side decorative tatami leaf icon -->
+  <g transform="translate(920, 180)" opacity="0.12">
+    <ellipse cx="120" cy="200" rx="90" ry="180" fill="none" stroke="#FFFFFF" stroke-width="2"/>
+    <line x1="120" y1="20" x2="120" y2="380" stroke="#FFFFFF" stroke-width="1.5"/>
+    <line x1="40" y1="100" x2="200" y2="100" stroke="#FFFFFF" stroke-width="0.8" opacity="0.6"/>
+    <line x1="50" y1="160" x2="190" y2="160" stroke="#FFFFFF" stroke-width="0.8" opacity="0.6"/>
+    <line x1="40" y1="220" x2="200" y2="220" stroke="#FFFFFF" stroke-width="0.8" opacity="0.6"/>
+    <line x1="50" y1="280" x2="190" y2="280" stroke="#FFFFFF" stroke-width="0.8" opacity="0.6"/>
+    <line x1="60" y1="340" x2="180" y2="340" stroke="#FFFFFF" stroke-width="0.8" opacity="0.6"/>
+  </g>
+</svg>

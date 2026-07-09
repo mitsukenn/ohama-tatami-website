@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <rect width="120" height="120" fill="#F0EDE6" rx="12"/>
+  <!-- Tatami mat body -->
+  <rect x="18" y="38" width="84" height="52" rx="6" fill="#8CB87A" stroke="#556B2F" stroke-width="2"/>
+  <!-- Tatami weave lines horizontal -->
+  <line x1="18" y1="51" x2="102" y2="51" stroke="#6B9A58" stroke-width="1" opacity="0.6"/>
+  <line x1="18" y1="64" x2="102" y2="64" stroke="#6B9A58" stroke-width="1" opacity="0.6"/>
+  <line x1="18" y1="77" x2="102" y2="77" stroke="#6B9A58" stroke-width="1" opacity="0.6"/>
+  <!-- Border stripe -->
+  <rect x="18" y="38" width="84" height="8" rx="3" fill="#C9A84C" opacity="0.7"/>
+  <rect x="18" y="82" width="84" height="8" rx="3" fill="#C9A84C" opacity="0.7"/>
+  <!-- Flip arrow -->
+  <path d="M 40 28 Q 60 14 80 28" fill="none" stroke="#556B2F" stroke-width="3" stroke-linecap="round"/>
+  <polygon points="76,22 82,30 88,24" fill="#556B2F"/>
+  <!-- Label -->
+  <text x="60" y="108" text-anchor="middle" font-family="serif" font-size="12" fill="#556B2F" font-weight="bold">裏返し</text>
+</svg>

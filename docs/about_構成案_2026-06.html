@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>大浜畳商店 会社概要ページ 構成案 2026-06</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--m:#556B2F;--ml:#6B8A3E;--bg:#FAFAF8;--c:#FFF;--tx:#2C2C2A;--txl:#6B6B68;--b:#E5E3DC;--r:#C53030;--rb:#FFF5F5;--bl:#2B6CB0;--blb:#EBF4FF;--gb:#F0FFF4;--ab:#FFFBEB;--a:#B7791F;--pb:#FAF5FF;--p:#6B46C1}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Noto Sans JP',sans-serif;color:var(--tx);background:var(--bg);line-height:1.8;-webkit-font-smoothing:antialiased}
+.hd{background:linear-gradient(135deg,var(--m),#3D5222);color:#fff;padding:40px 24px 36px;text-align:center}
+.hd h1{font-family:'Noto Serif JP',serif;font-size:1.4rem;font-weight:700;letter-spacing:.08em;margin-bottom:6px}
+.hd .v{font-size:.78rem;opacity:.7;margin-bottom:12px}
+.hd .mt{font-size:.72rem;opacity:.55;line-height:1.7}
+.s{background:var(--c);border:1px solid var(--b);border-radius:12px;padding:32px 28px;margin:20px auto;max-width:880px}
+.sn{font-size:.7rem;font-weight:700;color:var(--m);letter-spacing:.1em;margin-bottom:4px}
+.s h2{font-family:'Noto Serif JP',serif;font-size:1.2rem;font-weight:700;margin-bottom:6px}
+.s h3{font-size:.95rem;font-weight:700;margin:24px 0 10px;padding-bottom:6px;border-bottom:2px solid var(--m);display:inline-block}
+.s h4{font-size:.88rem;font-weight:700;margin:16px 0 6px;color:var(--m)}
+.s p,.s li{font-size:.85rem}
+.s ul,.s ol{padding-left:20px;margin:6px 0 14px}
+.s li{margin-bottom:5px}
+.ld{color:var(--txl);font-size:.85rem;margin-bottom:20px}
+.ic{border-radius:8px;padding:14px 18px;margin:14px 0;font-size:.82rem}
+.ic.r{background:var(--rb);border-left:4px solid var(--r)}
+.ic.b{background:var(--blb);border-left:4px solid var(--bl)}
+.ic.g{background:var(--gb);border-left:4px solid var(--m)}
+.ic.a{background:var(--ab);border-left:4px solid var(--a)}
+.ic.p{background:var(--pb);border-left:4px solid var(--p)}
+table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.8rem}
+th{background:var(--m);color:#fff;padding:9px 10px;text-align:left;font-weight:500;font-size:.75rem}
+td{padding:9px 10px;border-bottom:1px solid var(--b);vertical-align:top}
+tr:nth-child(even) td{background:#FAFAF8}
+.tag{display:inline-block;padding:2px 8px;border-radius:4px;font-size:.68rem;font-weight:700;white-space:nowrap}
+.tg{background:#FED7D7;color:var(--r)}
+.tb{background:#BEE3F8;color:var(--bl)}
+.tgr{background:#C6F6D5;color:#276749}
+.ta{background:#FEFCBF;color:var(--a)}
+.copy{background:#F7F7F4;border:1px solid var(--b);border-radius:8px;padding:14px 18px;margin:10px 0;font-size:.85rem}
+.copy .lb{font-size:.7rem;font-weight:700;color:var(--m);margin-bottom:6px}
+.copy p{line-height:2}
+.imgbox{background:repeating-linear-gradient(45deg,#F0EFEA,#F0EFEA 10px,#E8E7E1 10px,#E8E7E1 20px);border:1px dashed #BDBBB2;border-radius:8px;padding:18px;margin:10px 0;text-align:center;font-size:.78rem;color:var(--txl)}
+.cta-demo{display:inline-block;margin:4px 6px 4px 0;padding:8px 16px;border-radius:6px;font-size:.78rem;font-weight:700}
+.cta-line{background:#06C755;color:#fff}
+.cta-tel{background:var(--m);color:#fff}
+.legend{display:flex;flex-wrap:wrap;gap:10px;margin:10px 0}
+.legend span{font-size:.76rem}
+.ft{text-align:center;padding:36px 20px;font-size:.72rem;color:var(--txl)}
+.flow-step{font-size:.78rem;color:var(--m);font-weight:700;text-align:center;margin:2px 0}
+@media(max-width:640px){.s{padding:20px 14px}table{font-size:.73rem}th,td{padding:7px}}
+</style>
+</head>
+<body>
+
+<div class="hd">
+  <h1>会社概要ページ 構成案</h1>
+  <div class="v">about.html リニューアル たたき台 ／ 2026-06-09</div>
+  <div class="mt">
+    GA4分析で「会社概要ページが平均4分04秒（全ページ最長）読まれている」と判明したことを受けた強化案です。<br>
+    ※これは新垣が作成した<strong>たたき台</strong>です。コピーは仮の文章なので、大浜さんの言葉で確認・修正した上で本番化します。
+  </div>
+</div>
+
+<!-- ═══ なぜ強化するか ═══ -->
+<div class="s">
+  <div class="sn">はじめに</div>
+  <h2>なぜ「会社概要」を強化するのか（GA4の根拠）</h2>
+  <p class="ld">アクセス解析が示した、このページの"本当の役割"。</p>
+
+  <table>
+    <tr><th>GA4でわかったこと（過去28日）</th><th>意味</th></tr>
+    <tr><td><strong>会社概要ページの平均滞在＝4分04秒</strong>（トップは1分09秒。全ページ中で最長）</td><td>「畳を頼むか迷っている人」が、じっくり読んで<strong>"この店で大丈夫か"を見極めている</strong></td></tr>
+    <tr><td>検索・SNSから<strong>いきなり会社概要ページに来る人もいる</strong>（着地ページ5位）</td><td>店の名前で調べて、人柄・信頼性を確認しに来ている</td></tr>
+    <tr><td>問い合わせ行動は28日で6件（LINE3・電話2・フォーム1）と<strong>まだ少ない</strong></td><td>これだけ読まれているのに、<strong>行動に変わるボタン（導線）が弱い</strong></td></tr>
+  </table>
+
+  <div class="ic g">
+    <strong>結論：</strong>会社概要ページは「会社情報の置き場」ではなく、<strong>検討の最後のひと押し＝信頼を完成させて問い合わせに渡すページ</strong>です。<br>
+    今は事実テーブル中心で、4分読む熱量を行動に変える設計が弱い。ここが一番の伸びしろです。
+  </div>
+
+  <h3>このページの読み方（着手タイミングの色分け）</h3>
+  <div class="legend">
+    <span><span class="tag tgr">🟢 今すぐ</span> 既存の事実だけで実装できる（写真・取材なしでOK）</span><br>
+    <span><span class="tag ta">🟡 写真後</span> 横内さんのプロ撮影写真が届いてから</span><br>
+    <span><span class="tag tb">🔵 6/17後</span> 6/17 MTGで大浜さんにヒアリングしてから</span>
+  </div>
+</div>
+
+<!-- ═══ 全体の流れ（目次） ═══ -->
+<div class="s">
+  <div class="sn">全体構成</div>
+  <h2>新しい会社概要ページの流れ（目次）</h2>
+  <p class="ld">「共感→信頼→安心→納得→親近→確認→行動」という、人の気持ちが動く順番に並べています。<br>
+  ＝印は現状ページにある要素、＋印は今回足す提案です。</p>
+
+  <table>
+    <tr><th>順</th><th>セクション</th><th>役割（気持ちの段階）</th><th>着手</th></tr>
+    <tr><td>1</td><td>ページ見出し ＝</td><td>入口</td><td><span class="tag tgr">🟢 今すぐ</span></td></tr>
+    <tr><td>2</td><td>代表のごあいさつ（物語型に強化）＝＋</td><td>共感</td><td><span class="tag ta">🟡</span> <span class="tag tb">🔵</span></td></tr>
+    <tr><td>3</td><td><strong>信頼の数字</strong> ＋（新設）</td><td>信頼</td><td><span class="tag tgr">🟢 今すぐ</span></td></tr>
+    <tr><td>4</td><td><strong>私たちの約束</strong> ＋（新設）</td><td>安心</td><td><span class="tag tgr">🟢 今すぐ</span></td></tr>
+    <tr><td>5</td><td>素材・産地へのこだわり ＋（新設）</td><td>納得</td><td><span class="tag tb">🔵 6/17後</span></td></tr>
+    <tr><td>6</td><td>長崎への想い ＋（新設）</td><td>親近</td><td><span class="tag tgr">🟢</span> <span class="tag tb">🔵</span></td></tr>
+    <tr><td>7</td><td>会社概要テーブル ＝（資格を追記）</td><td>客観確認</td><td><span class="tag tgr">🟢 今すぐ</span></td></tr>
+    <tr><td>8</td><td>アクセス・地図 ＝</td><td>所在</td><td><span class="tag tgr">🟢 今すぐ</span></td></tr>
+    <tr><td>9</td><td><strong>施工事例・お客様の声へ</strong> ＋（導線）</td><td>裏取り</td><td><span class="tag tgr">🟢</span>（一部データ待ち）</td></tr>
+    <tr><td>10</td><td>最終CTA ＝（安心文言を強化）</td><td>行動</td><td><span class="tag tgr">🟢 今すぐ</span></td></tr>
+  </table>
+
+  <div class="ic b">
+    <strong>CV導線の考え方（重要）：</strong>今はボタンが最下部に1つだけ。4分読む人の気持ちが上がった瞬間（②挨拶の直後・④約束の直後）にもボタンを置きます。<br>
+    <span class="cta-demo cta-tel">電話する</span><span class="cta-demo cta-line">LINEで相談</span> を要所に。スマホ閲覧が51%なので追従バナーは既にありOK。
+  </div>
+</div>
+
+<!-- ═══ ② 代表のごあいさつ ═══ -->
+<div class="s">
+  <div class="sn">セクション 2</div>
+  <h2>代表のごあいさつ（物語型に強化） <span class="tag ta">🟡 写真後</span> <span class="tag tb">🔵 6/17後</span></h2>
+  <p class="ld">狙い：「どんな人が家に来るのか」を見せて心理的な抵抗を取り除く。4分読む人が一番知りたいのは"人柄"。ここが共感の入口。</p>
+
+  <h4>現状</h4>
+  <p>手紙風カード＋工場での畳製作写真1枚＋4段落＋署名（「大」アイコン）。文章は誠実で良いが、<strong>「なぜこの仕事をしているのか」という物語と、大浜さん本人の写真がない</strong>。</p>
+
+  <h4>強化案：いまの挨拶に「物語」と「本人写真」を足す</h4>
+  <div class="imgbox">［写真枠 🟡］ 大浜さん本人の写真（横内さんプロ撮影）<br>※顔出しが難しければ、手元・畳に向かう後ろ姿でも"人の気配"は作れます</div>
+
+  <div class="copy">
+    <div class="lb">ごあいさつ コピー案（たたき台 ／ 物語＋約束 を融合）</div>
+    <p>
+      大浜畳商店の大濵 健太郎です。<br><br>
+      当店は、長崎駅前で<strong>三代</strong>にわたり畳・襖・障子の張り替えを続けてきた、創業<strong>75年</strong>の畳屋です。<br><br>
+      〔ここに大浜さんの言葉で「なぜこの仕事を続けているか」を一段落 🔵〕<br>
+      ──たとえば、お客様にいただいた忘れられない一言、先代から受け継いだもの、長崎の和室への想い、など。<br><br>
+      お見積もりから納品まで、すべて私たち職人が直接うかがいます。<br>
+      「営業の人に話したことが職人に伝わっていなかった」ということは、当店では起こりません。<br>
+      家具の移動もこちらで行いますので、お客様にご負担をおかけすることはありません。<br><br>
+      畳のことで気になることがあれば、どうぞお気軽にお声がけください。<br>
+      「まだ替え時かわからない」という段階でも、お力になれると思います。
+    </p>
+  </div>
+
+  <h4>↓ この直後にCV（共感した瞬間に置く）</h4>
+  <p><span class="cta-demo cta-tel">お電話で相談</span><span class="cta-demo cta-line">LINEで相談（無料）</span></p>
+
+  <div class="ic b">
+    <strong>6/17 ヒアリング（物語づくり）：</strong> 下の4問を大浜さんに伺って、〔　〕部分を本人の言葉で仕上げます。<br>
+    ① なぜ畳の仕事を続けているのですか？（きっかけ・想い）<br>
+    ② お客様に言われて一番うれしかった言葉は？<br>
+    ③ 仕事で一番大切にしていることは？<br>
+    ④ 長崎の畳屋として、地域への想いはありますか？
+  </div>
+</div>
+
+<!-- ═══ ③ 信頼の数字 ═══ -->
+<div class="s">
+  <div class="sn">セクション 3（新設）</div>
+  <h2>信頼の数字 <span class="tag tgr">🟢 今すぐ</span></h2>
+  <p class="ld">狙い：畳は形のないサービス。だからこそ"数字"が信頼の言語になる。調べた競合トップ（伊藤・さかえ・杉山・丸信）は全社がこれを主役にしている。大浜さんは事実が揃っているので<strong>今すぐ作れる</strong>。</p>
+
+  <table>
+    <tr><th>数字</th><th>表示コピー案</th><th>根拠</th></tr>
+    <tr><td><strong>創業 75年</strong></td><td>三代続く、長崎の畳専門店</td><td>事実 ✅</td></tr>
+    <tr><td><strong>職人歴 20年</strong></td><td>代表自らが施工</td><td>事実 ✅</td></tr>
+    <tr><td><strong>1日 最大40枚</strong></td><td>繁忙期の仕上げ能力（業界最上位水準）</td><td>事実 ✅</td></tr>
+    <tr><td><strong>許可 第012410号</strong></td><td>長崎県知事許可（内装仕上工事業）</td><td>事実 ✅</td></tr>
+    <tr><td>（あれば）<strong>1級畳製作技能士</strong></td><td>国家資格の保有を明示</td><td><span class="tag tb">🔵 6/17で資格の有無を確認</span></td></tr>
+  </table>
+
+  <div class="ic a">
+    <strong>大浜さん確認ポイント：</strong> ① 技能士などの資格はお持ちですか？（あれば最強の信頼材料）　② 「1日40枚」を表に出して問題ないですか？（競合より強い数字なので訴求したい）
+  </div>
+</div>
+
+<!-- ═══ ④ 私たちの約束 ═══ -->
+<div class="s">
+  <div class="sn">セクション 4（新設）</div>
+  <h2>私たちの約束 <span class="tag tgr">🟢 今すぐ</span></h2>
+  <p class="ld">狙い：「誰が来て、何をしてくれるのか」の不安を消す。今は挨拶文の中に埋もれている安心材料を、箇条書きで分かりやすく見せる。</p>
+
+  <div class="copy">
+    <div class="lb">約束コピー案（たたき台）</div>
+    <ul>
+      <li><strong>お見積もりから納品まで、職人が直接対応</strong>します（営業任せにしません）</li>
+      <li><strong>家具の移動も私たちが行います</strong>（追加費用はいただきません）</li>
+      <li><strong>朝お預かりして、夕方にお届け</strong>します（2部屋・12畳までが目安。枚数が多い場合は日数をご相談）</li>
+      <li><strong>お見積もりは無料</strong>。ご検討の上、お断りいただいてもかまいません</li>
+      <li><strong>あとから追加料金が発生することはありません</strong>（※横付けできない場所・対応エリア外は別途諸経費／古い畳の処分は新畳の場合のみ別途・有料）</li>
+    </ul>
+  </div>
+
+  <h4>↓ この直後にもCV</h4>
+  <p><span class="cta-demo cta-tel">電話する</span><span class="cta-demo cta-line">LINEで相談</span></p>
+
+  <div class="ic r">
+    <strong>表現の注意（確定済みルール）：</strong> 「即日対応」「コミコミ」「追加料金は一切ありません」「古畳処分込み（無料）」はNG。上記コピーは大浜さんの判断基準に沿って調整済みです。
+  </div>
+</div>
+
+<!-- ═══ ⑤ 素材・産地 ═══ -->
+<div class="s">
+  <div class="sn">セクション 5（新設）</div>
+  <h2>素材・産地へのこだわり <span class="tag tb">🔵 6/17後</span></h2>
+  <p class="ld">狙い：素材の"出どころ"を語ると信頼が増す（競合の吉村・小川・丸信が産地ストーリーで差別化）。ただし大浜さんが自信を持って語れる事実だけを載せる。</p>
+
+  <div class="imgbox">［写真枠 🟡］ い草のアップ／畳表サンプル／仕入れの様子 など</div>
+
+  <div class="ic b">
+    <strong>6/17 ヒアリング（い草の仕入れストーリー）：</strong><br>
+    ・畳表はどこの産地のものを主に扱っていますか？（熊本産など）<br>
+    ・仕入れで気をつけていること・選び方の基準は？<br>
+    ・畳床はどんなものを仕入れていますか？<br>
+    → 語れる事実が固まり次第、写真＋短文で1セクション作ります。<br>
+    <span style="color:var(--r)">※「自社で一貫製造」はNG（畳床は仕入れ）。「畳表の張替え・仕上げは自社工場で丁寧に」が正確な表現。</span>
+  </div>
+</div>
+
+<!-- ═══ ⑥ 長崎への想い ═══ -->
+<div class="s">
+  <div class="sn">セクション 6（新設）</div>
+  <h2>長崎への想い <span class="tag tgr">🟢</span> <span class="tag tb">🔵</span></h2>
+  <p class="ld">狙い：地元密着の信頼を出す。Googleマップ（MEO）対策とも一貫し、「長崎の畳屋」という検索とも相性が良い。</p>
+
+  <div class="copy">
+    <div class="lb">コピー案（たたき台 ／ ②の物語④と連動）</div>
+    <p>
+      長崎駅前・筑後町で三代。<br>
+      長崎のお住まいの和室を、私たちはずっと見守ってきました。<br>
+      〔大浜さんの地域への想いを一言 🔵〕<br>
+      長崎市内はもちろん、時津町・長与町・諫早市・大村市まで、お気軽にお声がけください。
+    </p>
+  </div>
+  <p style="font-size:.8rem;color:var(--txl)">※ ②の挨拶ヒアリング④と内容が重なる場合は、どちらか一方に集約します。</p>
+</div>
+
+<!-- ═══ ⑦ 会社概要テーブル ═══ -->
+<div class="s">
+  <div class="sn">セクション 7</div>
+  <h2>会社概要テーブル <span class="tag tgr">🟢 今すぐ</span></h2>
+  <p class="ld">狙い：客観的な事実で裏を取る。現状のテーブルはほぼ完成。資格行の追加を提案。</p>
+
+  <table>
+    <tr><th>項目</th><th>内容（現状維持）</th></tr>
+    <tr><td>会社名</td><td>有限会社 大浜畳商店</td></tr>
+    <tr><td>創業</td><td>創業75周年（三代続く長崎の畳専門店）</td></tr>
+    <tr><td>代表者</td><td>大濵 健太郎</td></tr>
+    <tr><td>所在地</td><td>〒850-0052 長崎県長崎市筑後町4-3</td></tr>
+    <tr><td>電話番号</td><td>095-823-1905</td></tr>
+    <tr><td>営業時間 / 定休日</td><td>8:30〜17:00 ／ 日曜・祝日（土曜不定休）</td></tr>
+    <tr><td>資本金 / 許可</td><td>300万円 ／ 長崎県知事許可 第012410号</td></tr>
+    <tr><td>対応エリア / 支払い</td><td>長崎市全域・時津町・長与町・諫早市・大村市 ほか ／ 現金・銀行振込・PayPay</td></tr>
+    <tr style="background:#FFFBEB"><td><strong>保有資格 ＋</strong></td><td><span class="tag tb">🔵</span> 1級畳製作技能士 等があれば1行追加（6/17で確認）</td></tr>
+  </table>
+</div>
+
+<!-- ═══ ⑨ 社会的証明への導線 ═══ -->
+<div class="s">
+  <div class="sn">セクション 9（新設・導線）</div>
+  <h2>施工事例・お客様の声へつなぐ <span class="tag tgr">🟢</span>（一部データ待ち）</h2>
+  <p class="ld">狙い：4分読んで熱量が最高潮の読者を、"証拠"のページへ送る絶好の位置。会社概要の最後にカードで橋渡しする。</p>
+
+  <table>
+    <tr><th>リンク先</th><th>状態</th></tr>
+    <tr><td>施工事例（works.html）を見る</td><td>6件あり ✅ → before/after写真が揃えば強化</td></tr>
+    <tr><td>お客様の声（voice.html）を見る</td><td><span class="tag ta">準備中</span>（アンケート回収後）</td></tr>
+    <tr><td>Instagram（@ohama_tatami）</td><td>あり ✅（日記ブログのため、控えめなリンクで）</td></tr>
+    <tr><td>Googleのクチコミ</td><td><span class="tag ta">これから</span>（投稿カード運用後）</td></tr>
+  </table>
+</div>
+
+<!-- ═══ ⑩ 最終CTA ═══ -->
+<div class="s">
+  <div class="sn">セクション 10</div>
+  <h2>最終CTA（安心文言を強化） <span class="tag tgr">🟢 今すぐ</span></h2>
+  <p class="ld">狙い：背中を押す最後のボタン。現状のCTAに「迷っていてもOK」の安心文言を添える。</p>
+
+  <div class="copy">
+    <div class="lb">CTAコピー案</div>
+    <p style="text-align:center">
+      <strong>まずはお気軽にご相談ください</strong><br>
+      「こんなこと聞いていいのかな」ということでも遠慮なく。<br>
+      <strong>お見積もりは無料・お断りいただいてもかまいません。</strong><br><br>
+      <span class="cta-demo cta-tel">電話する 095-823-1905</span><span class="cta-demo cta-line">LINEで相談する</span>
+    </p>
+  </div>
+</div>
+
+<!-- ═══ まとめ：着手スケジュール ═══ -->
+<div class="s">
+  <div class="sn">まとめ</div>
+  <h2>着手スケジュール（提案）</h2>
+
+  <h3><span class="tag tgr">🟢 今すぐ（写真・取材なしで実装可）</span></h3>
+  <ul>
+    <li>③ 信頼の数字ブロックの新設</li>
+    <li>④ 私たちの約束ブロックの新設</li>
+    <li>⑥ 長崎への想い（事実部分）</li>
+    <li>⑨ 施工事例・お客様の声への導線</li>
+    <li>② 挨拶直後・④約束直後・⑩最後の <strong>CV導線（ボタン）追加</strong></li>
+    <li>⑦ 会社概要テーブルの微調整</li>
+  </ul>
+
+  <h3><span class="tag ta">🟡 横内さんプロ写真が届いてから</span></h3>
+  <ul>
+    <li>② 大浜さん本人の写真（顔出し or 手元・後ろ姿）</li>
+    <li>⑤ 素材・工程の写真</li>
+  </ul>
+
+  <h3><span class="tag tb">🔵 6/17 MTGのヒアリング後</span></h3>
+  <ul>
+    <li>② ごあいさつの「物語」部分（なぜこの仕事を／嬉しかった言葉／大切にしていること）</li>
+    <li>⑤ い草の産地・仕入れストーリー</li>
+    <li>③ 資格（技能士等）の有無を確認して反映</li>
+    <li>⑥ 地域への想い（本人の言葉）</li>
+  </ul>
+
+  <div class="ic g">
+    <strong>進め方：</strong> この構成案で方向OKをいただけたら、まず🟢を実装して骨格を作り、6/17で🔵をヒアリング、横内さん写真が届いたら🟡を差し込む——という三段構えが最短です。
+  </div>
+</div>
+
+<div class="ft">
+  <p>大浜畳商店 会社概要ページ 構成案（たたき台）<br>
+  作成：まちのAI屋さん 新垣 ／ 2026-06-09<br>
+  ※GA4分析（過去28日）に基づく</p>
+</div>
+
+</body>
+</html>

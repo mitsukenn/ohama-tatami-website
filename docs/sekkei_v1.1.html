@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>大浜畳商店 Webサイト設計書 v1.1</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --main: #556B2F;
+  --main-l: #6B8A3E;
+  --accent: #C9A84C;
+  --bg: #FAFAF8;
+  --card: #FFFFFF;
+  --tx: #2C2C2A;
+  --txl: #6B6B68;
+  --border: #E5E3DC;
+  --red: #C53030;
+  --red-bg: #FFF5F5;
+  --blue: #2B6CB0;
+  --blue-bg: #EBF4FF;
+  --green-bg: #F0FFF4;
+  --amber: #B7791F;
+  --amber-bg: #FFFBEB;
+  --purple: #6B46C1;
+  --purple-bg: #FAF5FF;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  color: var(--tx);
+  background: var(--bg);
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+}
+.doc-header {
+  background: linear-gradient(135deg, var(--main), #3D5222);
+  color: #fff;
+  padding: 48px 24px 40px;
+  text-align: center;
+}
+.doc-header h1 {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  margin-bottom: 8px;
+}
+.doc-header .ver {
+  font-size: 0.8rem;
+  opacity: 0.7;
+  margin-bottom: 16px;
+}
+.doc-header .meta {
+  font-size: 0.78rem;
+  opacity: 0.6;
+}
+.container { max-width: 880px; margin: 0 auto; padding: 0 20px; }
+
+/* TOC */
+.toc {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 28px 32px;
+  margin: 32px auto;
+  max-width: 880px;
+}
+.toc h2 {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--main);
+  margin-bottom: 16px;
+  letter-spacing: 0.06em;
+}
+.toc ol { padding-left: 20px; }
+.toc li { margin-bottom: 6px; font-size: 0.88rem; color: var(--txl); }
+.toc a { color: var(--blue); text-decoration: none; }
+.toc a:hover { text-decoration: underline; }
+
+/* Sections */
+.section {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 36px 32px;
+  margin: 24px auto;
+  max-width: 880px;
+}
+.section-num {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--main);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.section h2 {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+.section h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 28px 0 12px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--main);
+  display: inline-block;
+}
+.section h4 {
+  font-size: 0.92rem;
+  font-weight: 700;
+  margin: 20px 0 8px;
+  color: var(--main);
+}
+.section p, .section li { font-size: 0.88rem; }
+.section ul, .section ol { padding-left: 20px; margin: 8px 0 16px; }
+.section li { margin-bottom: 6px; }
+.lead { color: var(--txl); font-size: 0.88rem; margin-bottom: 24px; }
+
+/* Cards inside sections */
+.info-card {
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin: 16px 0;
+  font-size: 0.85rem;
+}
+.info-card.red { background: var(--red-bg); border-left: 4px solid var(--red); }
+.info-card.blue { background: var(--blue-bg); border-left: 4px solid var(--blue); }
+.info-card.green { background: var(--green-bg); border-left: 4px solid var(--main); }
+.info-card.amber { background: var(--amber-bg); border-left: 4px solid var(--amber); }
+.info-card.purple { background: var(--purple-bg); border-left: 4px solid var(--purple); }
+.info-card strong { font-weight: 700; }
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+  font-size: 0.82rem;
+}
+th {
+  background: var(--main);
+  color: #fff;
+  padding: 10px 12px;
+  text-align: left;
+  font-weight: 500;
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+}
+td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+}
+tr:nth-child(even) td { background: #FAFAF8; }
+
+/* Tags */
+.tag {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  margin-right: 4px;
+}
+.tag-red { background: #FED7D7; color: var(--red); }
+.tag-blue { background: #BEE3F8; color: var(--blue); }
+.tag-green { background: #C6F6D5; color: #276749; }
+.tag-amber { background: #FEFCBF; color: var(--amber); }
+.tag-purple { background: #E9D8FD; color: var(--purple); }
+
+/* Copy blocks */
+.copy-block {
+  background: #F7F7F4;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin: 12px 0;
+  font-size: 0.88rem;
+}
+.copy-block .label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--main);
+  margin-bottom: 4px;
+  letter-spacing: 0.06em;
+}
+.copy-block .main-copy {
+  font-family: 'Noto Serif JP', serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  line-height: 1.7;
+  color: var(--tx);
+}
+.copy-block .sub-copy {
+  font-size: 0.85rem;
+  color: var(--txl);
+  margin-top: 4px;
+}
+
+/* Wireframe blocks */
+.wire-section {
+  border: 2px dashed var(--border);
+  border-radius: 8px;
+  padding: 16px 20px;
+  margin: 12px 0;
+  position: relative;
+}
+.wire-section .wire-label {
+  position: absolute;
+  top: -10px;
+  left: 16px;
+  background: var(--card);
+  padding: 0 8px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+.wire-section .wire-label.wall-1 { color: var(--red); }
+.wire-section .wire-label.wall-2 { color: var(--blue); }
+.wire-section .wire-label.wall-3 { color: #276749; }
+
+/* Priority badges */
+.priority {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 10px;
+  border-radius: 100px;
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+.priority-must { background: #FED7D7; color: var(--red); }
+.priority-should { background: #FEFCBF; color: var(--amber); }
+.priority-nice { background: #C6F6D5; color: #276749; }
+
+.footer {
+  text-align: center;
+  padding: 40px 20px;
+  font-size: 0.75rem;
+  color: var(--txl);
+}
+
+@media (max-width: 640px) {
+  .section { padding: 24px 16px; }
+  .doc-header h1 { font-size: 1.3rem; }
+  table { font-size: 0.75rem; }
+  th, td { padding: 8px; }
+}
+</style>
+</head>
+<body>
+
+<div class="doc-header">
+  <h1>大浜畳商店 Webサイト設計書</h1>
+  <div class="ver">Version 1.1</div>
+  <div class="meta">作成日：2026年3月31日｜更新日：2026年3月31日｜作成者：充生<br>
+  根拠資料：市場の痛み調査 / SNSの声 / 間接競合分析 / 直接競合分析 / 「勝てるHPの作り方」フレームワーク<br>
+  v1.1変更点：FVの方針をLP型→ウェブサイト型に修正。悩み共感セクションにキャッチコピーを移設。</div>
+</div>
+
+<!-- TOC -->
+<div class="toc container">
+  <h2>目次</h2>
+  <ol>
+    <li><a href="#s1">戦略の前提：誰に・何を・どうするか</a></li>
+    <li><a href="#s2">サイト全体のページ構成（サイトマップ）</a></li>
+    <li><a href="#s3">トップページ：セクション設計とコピー案</a></li>
+    <li><a href="#s4">料金・メニューページ</a></li>
+    <li><a href="#s5">施工事例ページ</a></li>
+    <li><a href="#s6">お客様の声ページ</a></li>
+    <li><a href="#s7">畳替えの流れページ</a></li>
+    <li><a href="#s8">会社概要・代表挨拶ページ</a></li>
+    <li><a href="#s9">お問い合わせページ</a></li>
+    <li><a href="#s10">コラム（ブログ）ページ</a></li>
+    <li><a href="#s11">デザインガイドライン</a></li>
+    <li><a href="#s12">実装優先度とロードマップ</a></li>
+    <li><a href="#s13">現行HTMLからの改修ポイント</a></li>
+  </ol>
+</div>
+
+<!-- ═══ Section 1 ═══ -->
+<div class="section" id="s1">
+  <div class="section-num">Section 01</div>
+  <h2>戦略の前提：誰に・何を・どうするか</h2>
+  <p class="lead">「勝てるHP」の最上位概念。デザインやSEOの前に、この3つが明確でなければ何を作っても意味がない。</p>
+
+  <h3>コアターゲット</h3>
+  <div class="info-card blue">
+    <strong>長崎市在住、40代の共働き夫婦（妻が意思決定者）。</strong>築20年の戸建て。和室は6畳×2部屋。子どもは小学生。畳のささくれが気になり始めたが、どこに頼めばいいかわからない。チラシの激安業者には不信感がある。電話するのが面倒なので、まずLINEで相場を知りたい。重い家具の移動がネックで先送りしている。
+  </div>
+
+  <h3>誰に</h3>
+  <p>「畳替えを検討しているが、業者選びに不安がある長崎市内の30〜60代の家庭」。中でも、初めて畳替えを依頼する層（スマホ検索 → 比較検討 → LINE or 電話）が最重要。</p>
+
+  <h3>何を</h3>
+  <div class="info-card green">
+    <strong>USP（独自の売り）：</strong>「長崎駅前の畳屋が、写真1枚で無料診断。見積もりから納品まで同じ職人が担当します。」
+    <br><br>
+    <strong>3つの差別化軸：</strong><br>
+    ① LINEで写真を送るだけで無料診断＋概算見積り（競合12社中1社のみ対応）<br>
+    ② 見積もり→採寸→施工→納品まで同一職人が一貫対応（大手チェーンとの決定的差異）<br>
+    ③ 朝お預かり・夕方お届け＋家具移動無料（行動障壁の完全除去）
+  </div>
+
+  <h3>どうするか</h3>
+  <p>新PASONAの法則 ×「3つの壁」突破を構成原理としたWebサイトで、「検索 → 安心 → 問い合わせ」の最短導線を設計する。</p>
+
+  <table>
+    <tr><th>壁</th><th>突破方法</th><th>該当ページ・要素</th></tr>
+    <tr>
+      <td><span class="tag tag-red">見ない壁</span></td>
+      <td>FVは信頼感で迎え入れ、直後の悩み共感セクションで感情に刺す二段構え</td>
+      <td>トップFV（信頼）/ 悩み共感セクション（感情トリガー）</td>
+    </tr>
+    <tr>
+      <td><span class="tag tag-blue">信用しない壁</span></td>
+      <td>社会的証明（お客様の声・施工実績）＋顔の見える安心感（代表写真・職人紹介）</td>
+      <td>施工事例 / お客様の声 / 会社概要 / 選ばれる理由</td>
+    </tr>
+    <tr>
+      <td><span class="tag tag-green">行動しない壁</span></td>
+      <td>行動の言い訳を提供。摩擦ゼロの導線（LINE・電話の2軸）</td>
+      <td>CTA / お問い合わせ / 料金シミュレーター / 追従バナー</td>
+    </tr>
+  </table>
+</div>
+
+<!-- ═══ Section 2 ═══ -->
+<div class="section" id="s2">
+  <div class="section-num">Section 02</div>
+  <h2>サイト全体のページ構成（サイトマップ）</h2>
+  <p class="lead">3層構造：CV導線ページ → 信頼構築ページ → 教育・SEOページ。各ページは独立HTMLで作成し、SWELL移行時にそのまま固定ページ化する。</p>
+
+  <table>
+    <tr><th>層</th><th>ページ名</th><th>ファイル名</th><th>役割</th><th>壁</th><th>優先度</th></tr>
+    <tr>
+      <td rowspan="3" style="background:#FFF5F5; color:var(--red); font-weight:700; text-align:center; writing-mode:vertical-rl;">CV導線</td>
+      <td>トップページ</td><td>index.html</td>
+      <td>全体の入口。FV→悩み共感→強み→料金→事例→声→流れ→CTA</td>
+      <td><span class="tag tag-red">見ない</span><span class="tag tag-blue">信用</span><span class="tag tag-green">行動</span></td>
+      <td><span class="priority priority-must">MUST</span></td>
+    </tr>
+    <tr>
+      <td>料金・メニュー</td><td>price.html</td>
+      <td>裏返し/表替え/新畳の料金表。シミュレーター。グレード比較。</td>
+      <td><span class="tag tag-red">見ない</span><span class="tag tag-green">行動</span></td>
+      <td><span class="priority priority-must">MUST</span></td>
+    </tr>
+    <tr>
+      <td>お問い合わせ</td><td>contact.html</td>
+      <td>LINE / 電話 / フォームの3導線。追従バナーからの着地先。</td>
+      <td><span class="tag tag-green">行動</span></td>
+      <td><span class="priority priority-must">MUST</span></td>
+    </tr>
+    <tr>
+      <td rowspan="4" style="background:#EBF4FF; color:var(--blue); font-weight:700; text-align:center; writing-mode:vertical-rl;">信頼構築</td>
+      <td>施工事例</td><td>works.html</td>
+      <td>B/A写真＋費用＋工期。カテゴリ別。月2〜3件追加。</td>
+      <td><span class="tag tag-blue">信用</span></td>
+      <td><span class="priority priority-must">MUST</span></td>
+    </tr>
+    <tr>
+      <td>お客様の声</td><td>voice.html</td>
+      <td>写真＋地域名＋感想。施工完了ごとに蓄積。</td>
+      <td><span class="tag tag-blue">信用</span></td>
+      <td><span class="priority priority-must">MUST</span></td>
+    </tr>
+    <tr>
+      <td>畳替えの流れ</td><td>flow.html</td>
+      <td>5ステップ図解＋よくある質問15問。</td>
+      <td><span class="tag tag-blue">信用</span><span class="tag tag-green">行動</span></td>
+      <td><span class="priority priority-should">SHOULD</span></td>
+    </tr>
+    <tr>
+      <td>会社概要</td><td>about.html</td>
+      <td>代表挨拶＋経歴＋理念＋会社情報＋アクセス。</td>
+      <td><span class="tag tag-blue">信用</span></td>
+      <td><span class="priority priority-should">SHOULD</span></td>
+    </tr>
+    <tr>
+      <td rowspan="2" style="background:#FFFBEB; color:var(--amber); font-weight:700; text-align:center; writing-mode:vertical-rl;">教育SEO</td>
+      <td>コラム一覧</td><td>blog.html</td>
+      <td>畳の豆知識記事一覧。ニッチSEOの入口。</td>
+      <td><span class="tag tag-red">見ない</span></td>
+      <td><span class="priority priority-nice">NICE</span></td>
+    </tr>
+    <tr>
+      <td>い草グッズ</td><td>goods.html</td>
+      <td>副商材の紹介。EC化は将来的に検討。</td>
+      <td>—</td>
+      <td><span class="priority priority-nice">NICE</span></td>
+    </tr>
+  </table>
+
+  <div class="info-card amber">
+    <strong>現状からの変更点：</strong>sub.htmlに4ページを集約していた構造を解体し、各ページを独立させる。理由は3つ。①各ページに固有のtitleタグ・meta descriptionを設定しSEO効果を最大化するため、②Google Analyticsでページ別の流入・離脱を計測するため、③SWELL移行時に固定ページへの1対1対応を容易にするため。
+  </div>
+</div>
+
+<!-- ═══ Section 3 ═══ -->
+<div class="section" id="s3">
+  <div class="section-num">Section 03</div>
+  <h2>トップページ：セクション設計とコピー案</h2>
+  <p class="lead">新PASONAの法則に基づき、ユーザーの心理経路に沿った8セクション構成。各セクションがどの壁を突破するかを明示。</p>
+
+  <!-- 設計原則 -->
+  <div class="info-card purple">
+    <strong>v1.1 設計原則：ウェブサイトとLPの温度感を分ける</strong><br><br>
+    LPは「一回きりの勝負」だから、感情を煽るコピーが有効。しかしウェブサイトは「何度も訪れる場所」であり、信頼感が土台にないと逆効果になる。<br><br>
+    <strong>FV = 信頼感のある看板。</strong>「この店は安心できそうだ」と感じさせるトーン。<br>
+    <strong>悩み共感セクション = 感情に刺すフック。</strong>スクロールした先で「自分のことだ」と引っかからせる。<br><br>
+    この二段構えにより、信頼で迎え入れ → 共感で引き込む、というウェブサイトに適した心理導線を設計する。
+  </div>
+
+  <!-- FV -->
+  <div class="wire-section">
+    <div class="wire-label wall-1">① FV（ファーストビュー）─ 信頼感で迎え入れる</div>
+    <h4>目的</h4>
+    <p>「ちゃんとした畳屋だ」という信頼感を与え、安心してスクロールを続けてもらう。煽りではなく、品格のあるトーンで「何をしてくれる店なのか」を30秒以内に伝える。</p>
+    <h4>方針</h4>
+    <div class="info-card green">
+      <strong>現行の「畳のことなら、大浜畳商店。」を維持する。</strong><br>
+      このコピーが持つ「堂々とした信頼感」「地に足がついたトーン」はウェブサイトのFVとして正しく機能している。LP的な煽りコピーに変更しない。ただし、このコピーだけでは「何をしてくれる店なのか」が伝わらないため、サブコピーと差別化バッジで補強する。
+    </div>
+
+    <h4>FV構成</h4>
+    <div class="copy-block">
+      <div class="label">メインコピー（現行維持）</div>
+      <div class="main-copy">畳のことなら、<br>大浜畳商店。</div>
+    </div>
+    <div class="copy-block">
+      <div class="label">サブコピー案</div>
+      <div class="sub-copy" style="font-size:0.95rem;">朝お預かり、夕方にはお届けします。<br>家具の移動も、お見積もりも無料です。</div>
+    </div>
+
+    <h4>差別化バッジ（3つ）</h4>
+    <p>FV内にバッジとして視覚的に配置。「一目で何をしてくれる店かわかる」ための要素。</p>
+    <table>
+      <tr><th>バッジ</th><th>伝えること</th><th>突破する痛み</th></tr>
+      <tr><td>家具移動無料</td><td>重い家具を動かす必要がないこと</td><td>面倒くさい → 先送り</td></tr>
+      <tr><td>LINEでお見積もり</td><td>電話しなくていいこと</td><td>電話のハードル</td></tr>
+      <tr><td>長崎駅前すぐ</td><td>地元の信頼できる店であること</td><td>業者選びの不安</td></tr>
+    </table>
+
+    <h4>CTA（2つ）</h4>
+    <ul>
+      <li>「無料でお見積もり」（メインCTA → contact.htmlまたはLINE）</li>
+      <li>「料金を見る」（サブCTA → #priceアンカーリンク）</li>
+    </ul>
+
+    <h4>背景画像</h4>
+    <ul>
+      <li>実際の施工写真を使用（AI生成画像は絶対に使わない）</li>
+      <li>候補：美しい仕上がりの和室 / 作業風景 / 縁なし畳のモダンな空間</li>
+    </ul>
+  </div>
+
+  <!-- 悩み共感 -->
+  <div class="wire-section" style="margin-top:24px;">
+    <div class="wire-label wall-1">② 悩み共感 ─ ここで感情に刺す</div>
+    <h4>目的</h4>
+    <p>FVの信頼感で「安心できそうだ」と感じた訪問者に対し、このセクションで「自分のことだ」と引っかからせる。ウェブサイト全体の中で、ここが最も感情強度の高いセクション。</p>
+
+    <h4>キャッチコピー候補（セクション見出し）</h4>
+    <p>FVではなくこのセクションの見出しとして使うことで、ウェブサイトの品格を保ちつつ感情トリガーを活かせる。</p>
+    <div class="copy-block">
+      <div class="label">候補A：恥ずかしさ起点（SNS調査 恥ずかしさ系より）</div>
+      <div class="main-copy">その畳、お客さんに<br>見られても大丈夫ですか？</div>
+    </div>
+    <div class="copy-block">
+      <div class="label">候補B：先送り起点（市場の痛み 第2位より）</div>
+      <div class="main-copy">「そろそろかな」と思ってから、<br>何年経ちましたか？</div>
+    </div>
+    <div class="copy-block">
+      <div class="label">候補C：現行の穏やかなトーン（現状ベース）</div>
+      <div class="main-copy">こんなお悩み、ありませんか？</div>
+    </div>
+    <div class="info-card amber">
+      <strong>大浜さん確認事項：</strong>候補A〜Cのうち、大浜畳商店のトーンに合うものを選択。AまたはBを使う場合、ウェブサイトとしての品格は維持しつつ「自分ごと化」の効果が高まる。Cは無難だが刺さり方は弱い。
+    </div>
+
+    <h4>悩み6項目</h4>
+    <table>
+      <tr><th>#</th><th>悩みのコピー</th><th>感情カテゴリ</th><th>調査根拠</th></tr>
+      <tr><td>1</td><td>畳がボロボロで、来客のたびに恥ずかしい</td><td>恥ずかしさ</td><td>SNS調査「座らないようにお願いしていた」</td></tr>
+      <tr><td>2</td><td>服にい草のカスがつくようになった</td><td>不便・不満</td><td>SNS「超苦手！畳はこれだから嫌い」</td></tr>
+      <tr><td>3</td><td>子どもが素足で歩くのに、ささくれが心配</td><td>不安（健康）</td><td>SNS「10ヶ月の娘を自由にさせるのに抵抗」</td></tr>
+      <tr><td>4</td><td>カビやダニが気になるけど、どうすればいいかわからない</td><td>不安（衛生）</td><td>市場痛み第3位：カビ・ダニ</td></tr>
+      <tr><td>5</td><td>家具が重くて、畳替えを何年も先送りしている</td><td>面倒くさい</td><td>市場痛み第2位：物理的障壁</td></tr>
+      <tr><td>6</td><td>いくらかかるのか見当もつかない</td><td>恐怖（価格）</td><td>市場痛み第1位：ぼったくり恐怖</td></tr>
+    </table>
+    <p style="margin-top:12px;">最後に「ひとつでも当てはまったら、まずはご相談ください。」で共感→行動への橋渡し。</p>
+  </div>
+
+  <!-- 選ばれる理由 -->
+  <div class="wire-section" style="margin-top:24px;">
+    <div class="wire-label wall-2">③ 選ばれる理由 ─ 信用しない壁突破</div>
+    <h4>目的</h4>
+    <p>「なぜ大浜畳商店を選ぶべきか」の根拠を3つに絞って提示。</p>
+    <h4>現状の評価</h4>
+    <p>現在の3つ（朝預かり夕方届け / 同じ職人 / お部屋に合わせて）は内容として良い。ただし「同じ職人が担当」の価値が十分に伝わっていない。消費者が業者に対して抱く「営業と職人が違う人で話が伝わらない」「勝手に畳を持ち帰られた」という恐怖（SNS調査 怒り系）に紐づけると、刺さり方が変わる。</p>
+    <h4>改善案</h4>
+    <table>
+      <tr><th>#</th><th>タイトル</th><th>サブコピー案</th><th>突破する痛み</th></tr>
+      <tr>
+        <td>1</td>
+        <td>朝お預かり、夕方お届け。<br>家具の移動も無料です。</td>
+        <td>お出かけ前にお渡しいただければ、帰宅時には新しい畳の部屋が待っています。タンスやベッドはそのままで大丈夫。私たちが移動します。</td>
+        <td>面倒くささ / 先送り</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>見積もりから納品まで、<br>ぜんぶ同じ職人が担当します。</td>
+        <td>営業マンが来て、別の職人が施工する。大手ではよくある話です。当店は、お見積もり・採寸・製作・納品まで同じ職人が一貫して担当。「話が違う」は絶対にありません。</td>
+        <td>業者不信 / 強引営業恐怖</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>お見積もり金額が、<br>そのまま最終金額です。</td>
+        <td>畳表代（畳床代）・施工費・家具移動・配送費など、必要な費用を明示してお見積もりします。あとから追加料金が発生することはありません。（横付け不可・対応エリア外は別途諸経費の場合あり。古畳処分は新畳の場合のみ別途）</td>
+        <td>ぼったくり恐怖 / 価格不透明</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- 料金 -->
+  <div class="wire-section" style="margin-top:24px;">
+    <div class="wire-label wall-2">④ 料金の目安 ─ 信用しない壁突破</div>
+    <h4>目的</h4>
+    <p>「いくらかかるか不安」を解消。ここで価格を見せることで、下層の料金ページへの導線も兼ねる。</p>
+    <h4>掲載内容</h4>
+    <ul>
+      <li>裏返し / 表替え / 新畳の3カテゴリの料金概要（1畳あたり最低〜最高）</li>
+      <li>「6畳パックの参考価格」を目立つ位置に表示（具体金額が最も行動を促す）</li>
+      <li>「詳しい料金表を見る」ボタン → price.htmlへ</li>
+      <li>概算シミュレーター（現在sub.htmlにあるものを移植、またはiframe）</li>
+    </ul>
+    <div class="info-card amber">
+      <strong>注意：</strong>現状のトップページの料金セクションは縁付き3グレード＋裏返しのカード表示で良い構成だが、シミュレーターがsub.htmlにしかない。トップページにもシミュレーターへの導線を設けるか、簡易版を埋め込むべき。
+    </div>
+  </div>
+
+  <!-- 施工事例 -->
+  <div class="wire-section" style="margin-top:24px;">
+    <div class="wire-label wall-2">⑤ 施工事例ピックアップ ─ 信用しない壁突破</div>
+    <h4>目的</h4>
+    <p>ビフォーアフター写真で「視覚的な説得力」を提供。競合12社中、体系的なB/A事例を載せているのは1社のみ。</p>
+    <h4>掲載内容</h4>
+    <ul>
+      <li>最新3〜4件の施工事例をカードで表示（B/A写真・地域名・工事種別・費用）</li>
+      <li>「施工事例をもっと見る」ボタン → works.htmlへ</li>
+    </ul>
+    <div class="info-card red">
+      <strong>最重要：</strong>現在このセクションはコメントアウトされている。施工写真の蓄積が始まるまでは、最低でもプレースホルダーではなく「準備中」と明示するか、セクション自体を非表示にする。ダミー画像の掲載は信頼を損なうため絶対NG。
+    </div>
+  </div>
+
+  <!-- お客様の声 -->
+  <div class="wire-section" style="margin-top:24px;">
+    <div class="wire-label wall-2">⑥ お客様の声ピックアップ ─ 信用しない壁突破</div>
+    <h4>目的</h4>
+    <p>第三者の言葉で信頼を構築。競合12社中、顔写真付きのお客様の声を掲載している業者はゼロ。ここを押さえるだけで圧倒的な差別化。</p>
+    <h4>掲載内容</h4>
+    <ul>
+      <li>2〜3件のお客様の声（写真・地域名・年代・施工内容・感想要約）</li>
+      <li>「お客様の声をもっと見る」ボタン → voice.htmlへ</li>
+    </ul>
+    <div class="info-card green">
+      <strong>収集の仕組み化：</strong>施工完了時に①写真撮影（畳＋お客様了承あれば顔写真）②アンケート用紙③Googleクチコミ投稿依頼（QRコード付きカード）──この3点セットを納品時のルーティンに組み込む。
+    </div>
+  </div>
+
+  <!-- 流れ -->
+  <div class="wire-section" style="margin-top:24px;">
+    <div class="wire-label wall-3">⑦ 畳替えの流れ ─ 行動しない壁突破</div>
+    <h4>目的</h4>
+    <p>「何が起きるかわからない」という不安を解消し、行動のハードルを下げる。</p>
+    <h4>掲載内容</h4>
+    <p>5ステップの簡略版（お問い合わせ → 訪問・採寸 → お見積もり → 施工・納品 → アフターフォロー）。詳細はflow.htmlへ。</p>
+  </div>
+
+  <!-- CTA -->
+  <div class="wire-section" style="margin-top:24px;">
+    <div class="wire-label wall-3">⑧ CTA（最終行動喚起）─ 行動しない壁突破</div>
+    <h4>目的</h4>
+    <p>ページ最下部でもう一度行動を促す。「行動する言い訳」を提供する。</p>
+    <h4>コピー案</h4>
+    <div class="copy-block">
+      <div class="label">メインコピー</div>
+      <div class="main-copy">まずはLINEで写真を送るだけ。<br>60秒で無料お見積もり。</div>
+      <div class="sub-copy">「まだ替え時かわからない」「とりあえず金額だけ知りたい」──それだけでも大丈夫です。</div>
+    </div>
+    <h4>CTA要素</h4>
+    <ul>
+      <li>LINEボタン（メインCTA・緑色・大きく）</li>
+      <li>電話ボタン（サブCTA）＋営業時間表示</li>
+      <li>「お見積もり後のお断りも歓迎します」の一文（心理的ハードルを最小化）</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ═══ Section 4 ═══ -->
+<div class="section" id="s4">
+  <div class="section-num">Section 04</div>
+  <h2>料金・メニューページ</h2>
+  <p class="lead">消費者の痛み第1位「相場がわからない・ぼったくりが怖い」を正面から解消するページ。</p>
+
+  <h3>セクション構成</h3>
+  <table>
+    <tr><th>順番</th><th>セクション</th><th>内容</th></tr>
+    <tr><td>1</td><td>ページヘッダー</td><td>「畳替えには3つの方法があります」──裏返し/表替え/新畳の図解比較</td></tr>
+    <tr><td>2</td><td>料金表</td><td>表替え（縁付き3グレード）/ 表替え（縁なし）/ 新畳 / 裏返し / オプション</td></tr>
+    <tr><td>3</td><td>概算シミュレーター</td><td>現在のsimulator.jsxを埋め込み。工事種類→グレード→部屋の広さの3ステップ</td></tr>
+    <tr><td>4</td><td>品質の違い解説</td><td>「安い畳と良い畳、何が違うの？」──グレード比較を写真付きで</td></tr>
+    <tr><td>5</td><td>明朗お見積もり</td><td>「料金に含まれるもの」を明記（畳表代・施工費・家具移動・配送費など。古畳処分は新畳の場合のみ別途・有料）</td></tr>
+    <tr><td>6</td><td>CTA</td><td>LINE見積もり＋電話</td></tr>
+  </table>
+
+  <div class="info-card blue">
+    <strong>現状HTMLからの変更点：</strong>sub.html内の料金ページ部分はほぼ完成度が高い。独立ファイルに切り出し、以下を追加する。①「コミコミ宣言」セクション（追加費用なし宣言）②料金表の上に「※すべて税込・出張費込みの価格です」の注記を目立つ位置に配置。
+  </div>
+</div>
+
+<!-- ═══ Section 5 ═══ -->
+<div class="section" id="s5">
+  <div class="section-num">Section 05</div>
+  <h2>施工事例ページ</h2>
+  <p class="lead">競合の致命的弱点「B/A写真がほぼ皆無」を突く最重要コンテンツ。</p>
+
+  <h3>1件あたりの掲載情報</h3>
+  <table>
+    <tr><th>項目</th><th>内容</th><th>例</th></tr>
+    <tr><td>写真</td><td>ビフォー・アフター各1枚以上</td><td>同アングルで撮影必須</td></tr>
+    <tr><td>施工内容</td><td>工事種別＋畳表の種類</td><td>表替え / 熊本県産い草 おすすめグレード</td></tr>
+    <tr><td>費用</td><td>実費（税込）</td><td>72,000円（6畳）</td></tr>
+    <tr><td>工期</td><td>実日数</td><td>朝お預かり → 当日夕方お届け</td></tr>
+    <tr><td>地域</td><td>長崎市○○町</td><td>長崎市宝町</td></tr>
+    <tr><td>お客様コメント</td><td>一言感想（任意）</td><td>「もっと早くお願いすればよかった」</td></tr>
+  </table>
+
+  <h3>カテゴリフィルター</h3>
+  <p>工事種別（表替え / 裏返し / 新畳 / 縁なし畳）でフィルタリングできるUI。</p>
+
+  <div class="info-card amber">
+    <strong>目標数値：</strong>公開時に最低5件。月2〜3件追加。半年後に20件以上が理想。
+  </div>
+</div>
+
+<!-- ═══ Section 6 ═══ -->
+<div class="section" id="s6">
+  <div class="section-num">Section 06</div>
+  <h2>お客様の声ページ</h2>
+  <p class="lead">競合12社中ゼロの「顔写真付きお客様の声」を実現する。これだけで市場唯一の存在になれる。</p>
+
+  <h3>1件あたりの掲載情報</h3>
+  <ul>
+    <li>お客様の写真（了承が得られた場合。難しければ施工写真のみ）</li>
+    <li>地域名＋年代＋家族構成（「長崎市○○町 40代ご夫婦」など）</li>
+    <li>施工内容＋費用</li>
+    <li>感想（100〜200字程度。手書きアンケートのスキャン画像があれば最強）</li>
+    <li>「ご依頼のきっかけ」「仕上がりへの感想」の2問構成がシンプルで答えやすい</li>
+  </ul>
+
+  <div class="info-card green">
+    <strong>SNS調査から得られた「刺さる言葉」：</strong>消費者が施工後に使う言葉は「もっと早くやればよかった」「い草の香りが最高」「子どもが大喜び」「部屋が明るくなった」。これらの言葉がお客様の声にそのまま含まれていれば、検討中のユーザーの背中を最も強く押す。
+  </div>
+</div>
+
+<!-- ═══ Section 7 ═══ -->
+<div class="section" id="s7">
+  <div class="section-num">Section 07</div>
+  <h2>畳替えの流れページ</h2>
+  <p class="lead">「何が起きるかわからない」という不安を先回りで解消。</p>
+
+  <h3>5ステップ構成</h3>
+  <table>
+    <tr><th>Step</th><th>タイトル</th><th>補足コピー</th></tr>
+    <tr><td>1</td><td>お問い合わせ</td><td>お電話またはLINEでお気軽にどうぞ。畳の写真を送っていただければ、その場で概算をお伝えします。</td></tr>
+    <tr><td>2</td><td>ご自宅訪問・採寸</td><td>職人が直接お伺いし、畳の状態を診断。お部屋に合わせて1枚ずつ採寸します。所要時間は約30分です。</td></tr>
+    <tr><td>3</td><td>お見積もり</td><td>その場で正確な金額をご提示。ご家族でゆっくりご検討ください。お断りも歓迎です。</td></tr>
+    <tr><td>4</td><td>施工・納品</td><td>朝お預かり → 自社工場で加工 → 夕方お届け。家具の移動は私たちが行います。</td></tr>
+    <tr><td>5</td><td>アフターフォロー</td><td>納品後に気になる点があれば、いつでもご連絡ください。</td></tr>
+  </table>
+
+  <h3>よくある質問（FAQ）</h3>
+  <p>最低15問を掲載。市場の痛み調査から抽出した「消費者の先入観・迷い・疑い」を先回りで解消する。</p>
+  <table>
+    <tr><th>カテゴリ</th><th>質問例</th></tr>
+    <tr><td>価格</td><td>「見積もり後に追加料金はかかりませんか？」「家具の移動に別途費用はかかりますか？」</td></tr>
+    <tr><td>品質</td><td>「国産と中国産の違いは何ですか？」「グレードの違いがわかりません」</td></tr>
+    <tr><td>時間</td><td>「畳替えには何日かかりますか？」「その日のうちに終わりますか？」</td></tr>
+    <tr><td>タイミング</td><td>「何年くらいで替えるべきですか？」「裏返しと表替え、どっちがいいですか？」</td></tr>
+    <tr><td>衛生</td><td>「カビやダニは防げますか？」「赤ちゃんがいても安全ですか？」</td></tr>
+    <tr><td>対応</td><td>「マンションでも対応できますか？」「長崎市外でも来てもらえますか？」</td></tr>
+  </table>
+</div>
+
+<!-- ═══ Section 8 ═══ -->
+<div class="section" id="s8">
+  <div class="section-num">Section 08</div>
+  <h2>会社概要・代表挨拶ページ</h2>
+  <p class="lead">「どんな人が家に来るのか」を事前に見せることで、心理的抵抗を取り除く。</p>
+
+  <h3>掲載要素</h3>
+  <ul>
+    <li>代表（大濵健太郎）のプロフィール写真（作業着姿が望ましい。信頼感＋親近感）</li>
+    <li>代表挨拶（200〜300字。「なぜこの仕事をしているか」のストーリー）</li>
+    <li>会社情報（社名・所在地・電話・設立年・許可番号・資本金）</li>
+    <li>長崎県知事許可 第012410号の表示（内装仕上工事業の信頼性を証明）</li>
+    <li>アクセスマップ（長崎駅前徒歩4分を強調）</li>
+  </ul>
+
+  <div class="info-card blue">
+    <strong>差別化ポイント：</strong>「有限会社」であること（個人事業主が多い業界で法人格は信頼の証）、「長崎県知事許可」を持つ内装仕上工事のプロであること。これらは競合のほとんどが持たない客観的な信頼性指標。
+  </div>
+</div>
+
+<!-- ═══ Section 9 ═══ -->
+<div class="section" id="s9">
+  <div class="section-num">Section 09</div>
+  <h2>お問い合わせページ</h2>
+  <p class="lead">行動しない壁の最終突破。摩擦ゼロの3導線。</p>
+
+  <h3>3つの連絡手段を並列表示</h3>
+  <table>
+    <tr><th>手段</th><th>ターゲット</th><th>表示の優先度</th></tr>
+    <tr>
+      <td>LINE</td>
+      <td>30〜50代。電話が苦手。まず相場だけ知りたい層</td>
+      <td><span class="priority priority-must">最優先</span> LINEが最大のCV導線。友だち追加QRコード大きく表示</td>
+    </tr>
+    <tr>
+      <td>電話</td>
+      <td>60代以上。すぐに話したい層</td>
+      <td><span class="priority priority-should">第2</span> タップで発信。営業時間を明記</td>
+    </tr>
+    <tr>
+      <td>フォーム</td>
+      <td>夜間・営業時間外に問い合わせたい層</td>
+      <td><span class="priority priority-nice">第3</span> 入力項目は最小限（名前・連絡先・ご相談内容のみ）</td>
+    </tr>
+  </table>
+
+  <div class="info-card green">
+    <strong>フォーム設計の鉄則：</strong>入力項目は本当に必要なものだけ。住所・部屋数・畳数は見積もり時にヒアリングすればよい。フォームの段階で聞きすぎると離脱率が急上昇する（カート離脱率70%の調査データより）。
+  </div>
+</div>
+
+<!-- ═══ Section 10 ═══ -->
+<div class="section" id="s10">
+  <div class="section-num">Section 10</div>
+  <h2>コラム（ブログ）ページ</h2>
+  <p class="lead">ニッチSEOの入口。「畳 張り替え 時期」「畳 カビ 対策」等の検索クエリからの流入を狙う。</p>
+
+  <h3>初期公開記事（5本）</h3>
+  <table>
+    <tr><th>記事タイトル</th><th>狙うキーワード</th><th>痛みTOP5との対応</th></tr>
+    <tr><td>畳替えの費用相場は？料金の仕組みを畳屋が解説</td><td>畳 張り替え 費用 / 畳 表替え 相場</td><td>第1位：価格不安</td></tr>
+    <tr><td>畳の表替えと裏返し、どっちがいい？</td><td>畳 表替え 裏返し 違い</td><td>第5位：替え時不明</td></tr>
+    <tr><td>畳にカビが生えたらどうする？原因と対策</td><td>畳 カビ 対策 / 畳 カビ 除去</td><td>第3位：衛生不安</td></tr>
+    <tr><td>縁なし畳が人気の理由と費用</td><td>縁なし畳 費用 / 琉球畳</td><td>デザイン関心層</td></tr>
+    <tr><td>畳の替え時サインは？チェックリスト5項目</td><td>畳 替え時 / 畳 張り替え いつ</td><td>第5位：替え時不明</td></tr>
+  </table>
+  <p>各記事の末尾に必ずCTA（LINE見積もり＋電話）を配置。記事で教育→CTAで刈り取りの導線。</p>
+</div>
+
+<!-- ═══ Section 11 ═══ -->
+<div class="section" id="s11">
+  <div class="section-num">Section 11</div>
+  <h2>デザインガイドライン</h2>
+  <p class="lead">現行HTMLのデザインシステムを踏襲しつつ、改善すべきポイントを明示。</p>
+
+  <h3>カラーパレット（現行を維持）</h3>
+  <table>
+    <tr><th>変数名</th><th>値</th><th>用途</th></tr>
+    <tr><td>--main</td><td>#556B2F</td><td>メインカラー。ヘッダー・見出し・ボタン</td></tr>
+    <tr><td>--main-light</td><td>#6B8A3E</td><td>ホバー状態・グラデーション</td></tr>
+    <tr><td>--accent</td><td>#C9A84C</td><td>アクセント。おすすめバッジ・強調</td></tr>
+    <tr><td>--bg-base</td><td>#FAF8F5</td><td>ページ背景</td></tr>
+    <tr><td>--bg-alt</td><td>#F0EDE6</td><td>交互セクション背景</td></tr>
+    <tr><td>--line-green</td><td>#06C755</td><td>LINEボタン専用</td></tr>
+  </table>
+
+  <h3>タイポグラフィ（現行を維持）</h3>
+  <ul>
+    <li>本文：Noto Sans JP 400/500</li>
+    <li>見出し：Noto Serif JP 700</li>
+    <li>本文サイズ：16px / 行間1.8</li>
+  </ul>
+
+  <h3>改善すべきデザイン要素</h3>
+  <table>
+    <tr><th>項目</th><th>現状</th><th>改善案</th></tr>
+    <tr>
+      <td>FV高さ</td>
+      <td>75vh（デスクトップ）</td>
+      <td>60〜65vhに縮小し、FV直下の悩み共感セクションが画面内に見切れるようにする。「続きがある」ことを視覚的に示し、スクロールを促す</td>
+    </tr>
+    <tr>
+      <td>セクション間隔</td>
+      <td>padding: 80px 0</td>
+      <td>維持。ただしモバイルでは60pxに縮小</td>
+    </tr>
+    <tr>
+      <td>CTAの色</td>
+      <td>LINE緑 / メイン緑</td>
+      <td>メインCTA（LINE）を最も目立つ位置に。電話CTAは控えめに。2つの緑が近すぎるので、電話CTAはvar(--main)、LINEはvar(--line-green)で視覚的に区別</td>
+    </tr>
+    <tr>
+      <td>モバイル追従バナー</td>
+      <td>LINE＋電話の2ボタン</td>
+      <td>現状維持で良い。ただし「お見積もり無料」のテキストを追加し、タップの動機づけを強化</td>
+    </tr>
+    <tr>
+      <td>画像</td>
+      <td>プレースホルダー状態</td>
+      <td>実写写真のみ使用。AI生成画像は使用禁止。写真が揃うまではテキスト主体のレイアウトに変更</td>
+    </tr>
+  </table>
+</div>
+
+<!-- ═══ Section 12 ═══ -->
+<div class="section" id="s12">
+  <div class="section-num">Section 12</div>
+  <h2>実装優先度とロードマップ</h2>
+  <p class="lead">全部を同時にやろうとしない。「最も効果が大きいものから」順に。</p>
+
+  <h3>フェーズ1：最小公開セット <span class="tag tag-red">最優先</span></h3>
+  <p>これがないと始まらない。公開の最低条件。</p>
+  <ul>
+    <li>トップページ（FV改善 + 悩み共感 + 選ばれる理由 + 料金概要 + 流れ + CTA）</li>
+    <li>料金・メニューページ（シミュレーター含む）</li>
+    <li>お問い合わせページ（LINE / 電話 / フォーム）</li>
+    <li>Googleビジネスプロフィールの最適化</li>
+  </ul>
+
+  <h3>フェーズ2：信頼構築の山を積む <span class="tag tag-amber">1〜2ヶ月以内</span></h3>
+  <p>施工が進むたびにコンテンツが増える仕組みをフェーズ1と同時に設計しておく。</p>
+  <ul>
+    <li>施工事例ページ（最低5件のB/A写真が揃った時点で公開）</li>
+    <li>お客様の声ページ（最低3件が揃った時点で公開）</li>
+    <li>会社概要・代表挨拶ページ</li>
+  </ul>
+
+  <h3>フェーズ3：SEO・教育コンテンツ <span class="tag tag-green">3ヶ月以降</span></h3>
+  <ul>
+    <li>コラム記事5本の公開</li>
+    <li>い草グッズページ</li>
+    <li>畳替えの流れページ（独立版＋FAQ15問）</li>
+  </ul>
+
+  <div class="info-card purple">
+    <strong>最も重要なこと：</strong>フェーズ1の公開時点で「施工事例の写真撮影ルーティン」と「お客様の声の収集フロー」を必ず稼働させておくこと。HPは公開がゴールではなく、「証拠の山」を積み上げ続けることが成果を生む。
+  </div>
+</div>
+
+<!-- ═══ Section 13 ═══ -->
+<div class="section" id="s13">
+  <div class="section-num">Section 13</div>
+  <h2>現行HTMLからの改修ポイント</h2>
+  <p class="lead">既存のindex.html / sub.html / blog.htmlに対する具体的な改修指示。</p>
+
+  <h3>index.html（トップページ）</h3>
+  <table>
+    <tr><th>改修箇所</th><th>現状</th><th>改修内容</th><th>優先度</th></tr>
+    <tr>
+      <td>L1624: h1キャッチコピー</td>
+      <td>「畳のことなら、大浜畳商店。」</td>
+      <td>現行維持（信頼感のあるトーンを活かす）</td>
+      <td><span class="priority priority-nice">維持</span></td>
+    </tr>
+    <tr>
+      <td>L1625: サブコピー</td>
+      <td>「朝お預かり、夕方にはお届けします。」</td>
+      <td>「朝お預かり、夕方にはお届けします。家具の移動も、お見積もりも無料です。」に拡張</td>
+      <td><span class="priority priority-must">MUST</span></td>
+    </tr>
+    <tr>
+      <td>L1617: hero-badge</td>
+      <td>「長崎県内全域対応」1つのみ</td>
+      <td>差別化バッジ3つに変更（家具移動無料 / LINEでお見積もり / 長崎駅前すぐ）</td>
+      <td><span class="priority priority-must">MUST</span></td>
+    </tr>
+    <tr>
+      <td>L1636: 悩み共感の見出し</td>
+      <td>「こんなお悩み、ありませんか？」</td>
+      <td>Section 03のキャッチコピー候補A/B/Cから選択。ここが感情トリガーの配置場所</td>
+      <td><span class="priority priority-must">MUST</span></td>
+    </tr>
+    <tr>
+      <td>L1638-1655: 悩み共感の項目</td>
+      <td>4項目（症状の列挙）</td>
+      <td>Section 03の改善案6項目に変更</td>
+      <td><span class="priority priority-must">MUST</span></td>
+    </tr>
+    <tr>
+      <td>L1686: 選ばれる理由02</td>
+      <td>「見積もりから納品まで、同じ職人が担当」</td>
+      <td>本文に「大手では営業と職人が別」の対比を追加</td>
+      <td><span class="priority priority-should">SHOULD</span></td>
+    </tr>
+    <tr>
+      <td>L1772-1815: 施工事例</td>
+      <td>全体がコメントアウト</td>
+      <td>写真が揃い次第コメントを外す。ダミー画像での公開はNG</td>
+      <td><span class="priority priority-should">SHOULD</span></td>
+    </tr>
+    <tr>
+      <td>新規: お客様の声セクション</td>
+      <td>存在しない</td>
+      <td>施工事例の下に新規追加。2〜3件のピックアップ</td>
+      <td><span class="priority priority-must">MUST</span></td>
+    </tr>
+    <tr>
+      <td>L1978-2005: CTAセクション</td>
+      <td>「畳のこと、お気軽にご相談ください」</td>
+      <td>Section 03のCTAコピー案に変更。「お断りも歓迎」の一文追加</td>
+      <td><span class="priority priority-should">SHOULD</span></td>
+    </tr>
+    <tr>
+      <td>hero高さ</td>
+      <td>75vh</td>
+      <td>60〜65vhに縮小（次セクションの見切れ表示）</td>
+      <td><span class="priority priority-nice">NICE</span></td>
+    </tr>
+  </table>
+
+  <h3>sub.html → 分割</h3>
+  <table>
+    <tr><th>現在のページ</th><th>分割先</th><th>改修内容</th></tr>
+    <tr><td>料金・メニュー（PAGE 1）</td><td>price.html</td><td>「コミコミ宣言」セクション追加</td></tr>
+    <tr><td>畳替えの流れ（PAGE 2）</td><td>flow.html</td><td>FAQ15問に拡充</td></tr>
+    <tr><td>い草グッズ（PAGE 2.5）</td><td>goods.html</td><td>フェーズ3。現状維持でOK</td></tr>
+    <tr><td>お問い合わせ（PAGE 3）</td><td>contact.html</td><td>フォーム入力項目を最小限に</td></tr>
+  </table>
+
+  <h3>新規作成ページ</h3>
+  <table>
+    <tr><th>ページ</th><th>ファイル名</th><th>タイミング</th></tr>
+    <tr><td>施工事例</td><td>works.html</td><td>B/A写真5件が揃い次第</td></tr>
+    <tr><td>お客様の声</td><td>voice.html</td><td>お客様の声3件が揃い次第</td></tr>
+    <tr><td>会社概要</td><td>about.html</td><td>代表写真撮影後</td></tr>
+  </table>
+
+  <div class="info-card amber">
+    <strong>ナビゲーション更新：</strong>ページ分割に伴い、ヘッダーのナビゲーションとドロップダウンメニューのリンク先を全ページ統一で更新する。現行のモバイルナビ・デスクトップナビの構造は良いので、リンク先のみ変更。
+  </div>
+</div>
+
+<div class="footer">
+  <p>大浜畳商店 Webサイト設計書 v1.1<br>
+  根拠資料：市場の痛み調査（Claude/Gemini）/ SNSの声（Claude）/ 間接競合分析（Claude/Gemini）/ 直接競合分析（Claude/Gemini）/ 「勝てるHPの作り方」（内田雅彦 著）<br>
+  作成日：2026年3月31日｜v1.1更新：FVを信頼感ベースに修正、感情トリガーを悩み共感セクションに移設</p>
+</div>
+
+</body>
+</html>

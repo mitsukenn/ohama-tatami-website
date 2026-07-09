@@ -1,0 +1,47 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+*.swp
+*.swo
+
+# Claude
+.claude/
+
+# Old/unused images
+src/images/old/
+
+# Office temp/lock files
+~$*
+
+# 横内さん撮影のカメラ原本（RAW＋大容量JPEG、計約27GB）はローカル保管のみ
+data/大浜さん提供データ/101MSDCF/
+data/大浜さん提供データ/101MSDCF.zip
+
+# ローカル作業用バックアップ・zipアーカイブ（git管理しない）
+data/_backup_*/
+data/*.zip
+
+# 未使用の開発残骸（ヘッダーモックアップPNG・デザイン参考スクショ）はローカル保管のみ
+images/old/ohama_*_header_*
+images/old/畳小物_ヘッダー画像.*
+data/デザインブラッシュアップ参考例/
+_design_mockup/
+
+# 競合デザインリサーチの生スクショ（docxに圧縮埋込済み・再取得可能）はローカル保管のみ
+data/デザインリサーチ_スクショ/
+
+# ───── 2026-07-09 追記（GitHubに上げない）─────
+# 依存パッケージ（再生成可）
+node_modules/
+# FTP認証情報が平文で入っているデプロイスクリプト（絶対にコミットしない）
+data/_ftp_deploy.py
+# 作業用スクリプト・ログ（本番リポジトリに含めない → 90_作業ツールへ）
+_work/
+data/_*.py
+data/_*.txt
+
+# data/ は作業コンテンツ（サイト非参照）→ 05/06/07へ外出し。リポジトリ管理外
+data/

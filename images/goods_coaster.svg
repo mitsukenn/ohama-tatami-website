@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <defs>
+    <pattern id="tatami" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+      <rect width="20" height="20" fill="#8CB87A"/>
+      <line x1="0" y1="10" x2="20" y2="10" stroke="#6B9A58" stroke-width="1" opacity="0.5"/>
+      <line x1="10" y1="0" x2="10" y2="20" stroke="#6B9A58" stroke-width="1" opacity="0.3"/>
+    </pattern>
+  </defs>
+  <!-- Background -->
+  <rect width="400" height="300" fill="#FAF8F5"/>
+  <!-- Table surface -->
+  <ellipse cx="200" cy="220" rx="140" ry="30" fill="#D4B896" opacity="0.4"/>
+  <!-- Coaster -->
+  <ellipse cx="200" cy="180" rx="70" ry="12" fill="#8B7E66" opacity="0.3"/>
+  <rect x="130" y="100" width="140" height="80" rx="8" fill="url(#tatami)" stroke="#556B2F" stroke-width="2"/>
+  <!-- Coaster weave detail -->
+  <rect x="130" y="100" width="140" height="80" rx="8" fill="none" stroke="#556B2F" stroke-width="2"/>
+  <!-- Border decoration -->
+  <rect x="130" y="100" width="140" height="10" rx="4" fill="#C9A84C" opacity="0.7"/>
+  <rect x="130" y="170" width="140" height="10" rx="4" fill="#C9A84C" opacity="0.7"/>
+  <!-- Cup outline -->
+  <path d="M176 92 L180 50 L220 50 L224 92" fill="none" stroke="#B8A080" stroke-width="2" stroke-linecap="round"/>
+  <ellipse cx="200" cy="50" rx="20" ry="6" fill="#E8D5B0" stroke="#B8A080" stroke-width="2"/>
+  <!-- Label -->
+  <rect x="100" y="248" width="200" height="36" rx="6" fill="#556B2F" opacity="0.9"/>
+  <text x="200" y="270" text-anchor="middle" font-family="'Hiragino Sans', 'MS Gothic', sans-serif" font-size="15" fill="white" font-weight="bold">い草コースター</text>
+</svg>

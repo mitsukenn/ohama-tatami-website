@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>大浜畳商店 コンテンツ準備シート v1.1</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--m:#556B2F;--ml:#6B8A3E;--bg:#FAFAF8;--c:#FFF;--tx:#2C2C2A;--txl:#6B6B68;--b:#E5E3DC;--r:#C53030;--rb:#FFF5F5;--bl:#2B6CB0;--blb:#EBF4FF;--gb:#F0FFF4;--ab:#FFFBEB;--a:#B7791F;--pb:#FAF5FF;--p:#6B46C1}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Noto Sans JP',sans-serif;color:var(--tx);background:var(--bg);line-height:1.8;-webkit-font-smoothing:antialiased}
+.hd{background:linear-gradient(135deg,var(--m),#3D5222);color:#fff;padding:40px 24px 36px;text-align:center}
+.hd h1{font-family:'Noto Serif JP',serif;font-size:1.4rem;font-weight:700;letter-spacing:.08em;margin-bottom:6px}
+.hd .v{font-size:.78rem;opacity:.7;margin-bottom:12px}
+.hd .mt{font-size:.72rem;opacity:.55}
+.s{background:var(--c);border:1px solid var(--b);border-radius:12px;padding:32px 28px;margin:20px auto;max-width:880px}
+.sn{font-size:.7rem;font-weight:700;color:var(--m);letter-spacing:.1em;margin-bottom:4px}
+.s h2{font-family:'Noto Serif JP',serif;font-size:1.2rem;font-weight:700;margin-bottom:6px}
+.s h3{font-size:.95rem;font-weight:700;margin:24px 0 10px;padding-bottom:6px;border-bottom:2px solid var(--m);display:inline-block}
+.s h4{font-size:.88rem;font-weight:700;margin:16px 0 6px;color:var(--m)}
+.s p,.s li{font-size:.85rem}
+.s ul,.s ol{padding-left:20px;margin:6px 0 14px}
+.s li{margin-bottom:5px}
+.ld{color:var(--txl);font-size:.85rem;margin-bottom:20px}
+.ic{border-radius:8px;padding:14px 18px;margin:14px 0;font-size:.82rem}
+.ic.r{background:var(--rb);border-left:4px solid var(--r)}
+.ic.b{background:var(--blb);border-left:4px solid var(--bl)}
+.ic.g{background:var(--gb);border-left:4px solid var(--m)}
+.ic.a{background:var(--ab);border-left:4px solid var(--a)}
+.ic.p{background:var(--pb);border-left:4px solid var(--p)}
+table{width:100%;border-collapse:collapse;margin:14px 0;font-size:.8rem}
+th{background:var(--m);color:#fff;padding:9px 10px;text-align:left;font-weight:500;font-size:.75rem}
+td{padding:9px 10px;border-bottom:1px solid var(--b);vertical-align:top}
+tr:nth-child(even) td{background:#FAFAF8}
+.tag{display:inline-block;padding:2px 7px;border-radius:4px;font-size:.68rem;font-weight:700}
+.tg{background:#FED7D7;color:var(--r)}
+.tb{background:#BEE3F8;color:var(--bl)}
+.tgr{background:#C6F6D5;color:#276749}
+.ta{background:#FEFCBF;color:var(--a)}
+.copy{background:#F7F7F4;border:1px solid var(--b);border-radius:8px;padding:14px 18px;margin:10px 0;font-size:.85rem}
+.copy .lb{font-size:.7rem;font-weight:700;color:var(--m);margin-bottom:3px}
+.faq{margin:10px 0}
+.faq-item{border:1px solid var(--b);border-radius:8px;margin:8px 0;overflow:hidden}
+.faq-q{padding:12px 16px;font-weight:700;font-size:.85rem;background:#F7F7F4;color:var(--tx)}
+.faq-q::before{content:"Q. ";color:var(--m);font-weight:700}
+.faq-a{padding:12px 16px;font-size:.82rem;color:var(--txl);border-top:1px solid var(--b)}
+.faq-a::before{content:"A. ";color:var(--bl);font-weight:700}
+.photo-card{border:1px solid var(--b);border-radius:8px;padding:14px 16px;margin:8px 0}
+.photo-card .ph-title{font-weight:700;font-size:.85rem;margin-bottom:4px}
+.photo-card .ph-where{font-size:.75rem;color:var(--m);font-weight:700;margin-bottom:6px}
+.photo-card .ph-desc{font-size:.8rem;color:var(--txl)}
+.check{display:inline-block;width:16px;height:16px;border:2px solid var(--b);border-radius:3px;margin-right:6px;vertical-align:middle}
+.ft{text-align:center;padding:36px 20px;font-size:.72rem;color:var(--txl)}
+@media(max-width:640px){.s{padding:20px 14px}table{font-size:.73rem}th,td{padding:7px}}
+</style>
+</head>
+<body>
+
+<div class="hd">
+  <h1>コンテンツ準備シート</h1>
+  <div class="v">Version 1.1</div>
+  <div class="mt">設計書 v1.1の補足資料｜作成日：2026年3月31日<br>
+  v1.1変更：写真を宣材写真購入に変更。代表写真は載せない方針に修正。<br>
+  ※大浜さんとの打ち合わせで確認・修正した上で本番コンテンツ化する</div>
+</div>
+
+<!-- ═══ Part 1: FAQ ═══ -->
+<div class="s">
+  <div class="sn">Part 01</div>
+  <h2>よくある質問（FAQ）15問 ─ 下書き</h2>
+  <p class="ld">市場の痛み調査・SNSの声・間接競合分析から抽出した「消費者の先入観・迷い・疑い」を先回りで解消する。大浜さんに事実確認の上、文言を最終調整する。</p>
+
+  <h3>価格・費用（痛みTOP1位）</h3>
+  <div class="faq">
+    <div class="faq-item">
+      <div class="faq-q">見積もり後に追加料金はかかりませんか？</div>
+      <div class="faq-a">お見積もりでご提示した金額が最終金額です。畳表代（畳床代）・施工費・家具の移動・配送費など、必要な費用を明示してお見積もりします。あとから追加料金が発生することはありません。（横付けできない場所・対応エリア外は別途諸経費をいただく場合があります。古い畳の処分は新畳の場合のみ別途・有料です）</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">家具の移動に別途費用はかかりますか？</div>
+      <div class="faq-a">無料です。タンスやベッドなどの大きな家具も、私たちが移動して施工後に元の位置にお戻しします。お客様に事前の片付けをお願いすることもありません。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">見積もりだけお願いしても大丈夫ですか？</div>
+      <div class="faq-a">もちろんです。お見積もりは無料です。金額をご確認いただいた上で、ご家族でゆっくりご検討ください。お断りいただいても全く問題ありません。</div>
+    </div>
+  </div>
+
+  <h3>品質・素材（痛みTOP3位関連）</h3>
+  <div class="faq">
+    <div class="faq-item">
+      <div class="faq-q">国産と中国産の違いは何ですか？</div>
+      <div class="faq-a">耐久性と経年変化が大きく異なります。国産（主に熊本県産）のい草は、きめが細かく均一で、使うほどに美しい飴色に変わります。中国産は安価ですが、変色やささくれが早く出る傾向があります。当店では、ご予算に合わせて率直にご説明しますので、お気軽にご相談ください。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">グレードの違いがよくわかりません。選び方を教えてください。</div>
+      <div class="faq-a">普段使いのお部屋なら「おすすめグレード」、来客用の和室や仏間なら「上級品」が適しています。お子様のお部屋や使用頻度が少ないお部屋は「お手頃グレード」でも十分きれいになります。お見積もり時に実際の畳表サンプルをお持ちしますので、手触りと見た目で比べていただけます。</div>
+    </div>
+  </div>
+
+  <h3>タイミング・判断（痛みTOP5位）</h3>
+  <div class="faq">
+    <div class="faq-item">
+      <div class="faq-q">畳は何年くらいで替えるべきですか？</div>
+      <div class="faq-a">使い方にもよりますが、裏返しは3〜5年、表替えは7〜10年、新畳は15〜20年が目安です。ただ年数よりも、色あせ・ささくれ・異臭・へこみなどの症状が出ていれば、それが替え時のサインです。判断に迷われたら、お気軽にご相談ください。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">裏返し・表替え・新畳の違いがわかりません。</div>
+      <div class="faq-a">裏返しは、今の畳表を裏面にひっくり返す作業で、最も安価です。表替えは、畳表だけを新品に交換します。新畳は、畳床（中身の部分）ごとすべて新品にする作業です。お客様の畳の状態に最適な方法をご提案しますのでご安心ください。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">畳替えに適した季節はありますか？</div>
+      <div class="faq-a">一年中対応しておりますが、湿度の低い春（4〜5月）や秋（9〜11月）は新しい畳が馴染みやすい時期です。梅雨時期でも施工は可能ですので、ご希望の時期に合わせてお申し付けください。</div>
+    </div>
+  </div>
+
+  <h3>衛生・健康（痛みTOP3位）</h3>
+  <div class="faq">
+    <div class="faq-item">
+      <div class="faq-q">カビやダニが心配です。対策はできますか？</div>
+      <div class="faq-a">はい。当店では防虫・防カビシートの施工が可能です。また、ダニが発生しにくい和紙製や樹脂製の畳表もご用意しております。お子様やアレルギーが気になる方には、素材選びからご相談に乗りますのでお申し付けください。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">赤ちゃんがいるのですが、新しい畳は安全ですか？</div>
+      <div class="faq-a">安全です。当店で使用する国産い草は農薬の残留検査基準を満たしたものを使用しています。気になる方には、い草を一切使わない和紙畳や樹脂畳もご案内できます。赤ちゃんが寝転んでも安心な畳をお届けします。</div>
+    </div>
+  </div>
+
+  <h3>施工・対応</h3>
+  <div class="faq">
+    <div class="faq-item">
+      <div class="faq-q">畳替えには何日かかりますか？</div>
+      <div class="faq-a">2部屋程度（12畳まで）であれば、朝お預かりして夕方にはお届けする当日仕上げが基本です。部屋数が多い場合は2〜3日に分けて施工することもあります。スケジュールはお気軽にご相談ください。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">マンションでも対応できますか？</div>
+      <div class="faq-a">もちろん対応しております。マンション特有の搬入経路や床の構造にも慣れておりますのでご安心ください。管理組合への事前連絡が必要な場合は、その旨お伝えいただければ対応いたします。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">長崎市外でも来てもらえますか？</div>
+      <div class="faq-a">はい、長崎県内全域に対応しております。出張費は無料です。お気軽にお問い合わせください。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">畳以外に襖や障子もお願いできますか？</div>
+      <div class="faq-a">はい、襖・障子の張り替えもお任せください。畳と一緒にご依頼いただければ、お部屋全体を一度にきれいにできます。</div>
+    </div>
+  </div>
+
+  <div class="ic a">
+    <strong>大浜さん確認ポイント：</strong><br>
+    ・各回答の事実関係（対応エリア、当日仕上げの条件、防虫シート対応の可否など）<br>
+    ・「大浜さんの言葉」で言い換えた方がいい箇所があればフィードバック<br>
+    ・追加したいQ&Aがあれば随時追加可能
+  </div>
+</div>
+
+<!-- ═══ Part 2: 代表挨拶 ═══ -->
+<div class="s">
+  <div class="sn">Part 02</div>
+  <h2>代表挨拶 ─ 下書き</h2>
+  <p class="ld">「どんな人が家に来るのか」を事前に見せて心理的抵抗を取り除く。200〜300字程度で、人柄が伝わるトーンを目指す。</p>
+
+  <div class="ic r">
+    <strong>注意：</strong>以下は調査データから推測して書いた「たたき台」です。大浜さんご自身の言葉で書き直すことが前提。大浜さんに「なぜこの仕事をしているんですか？」と聞いて、その答えをベースに仕上げるのが最善。
+  </div>
+
+  <div class="copy">
+    <div class="lb">代表挨拶 下書き（案A：実直・信頼型）</div>
+    <p style="font-size:.9rem;line-height:2;">
+      大浜畳商店の大濵 健太郎です。<br><br>
+      当店は、長崎駅前で畳・襖・障子の張り替えを行っている小さな畳屋です。<br><br>
+      お見積もりから採寸、製作、納品まで、私が一貫して担当します。<br>
+      「営業の人に話したことが、職人に伝わっていなかった」ということは、当店では起こりません。<br><br>
+      お客様がお出かけになる前に畳をお預かりし、夕方にはお届けする。<br>
+      家具の移動もすべて私たちが行いますので、お客様にご負担をおかけすることはありません。<br><br>
+      畳のことで気になることがあれば、お気軽にお電話やLINEでご相談ください。<br>
+      「まだ替え時かわからない」という段階でも、お力になれると思います。
+    </p>
+  </div>
+
+  <div class="copy">
+    <div class="lb">代表挨拶 下書き（案B：ストーリー型）</div>
+    <p style="font-size:.9rem;line-height:2;">
+      大浜畳商店の大濵 健太郎です。<br><br>
+      「新しい畳を入れたら、子どもたちが嬉しくて寝転がって離れなかったんです」──<br>
+      お客様からこういう言葉をいただくと、この仕事をやっていてよかったと心から思います。<br><br>
+      畳替えは、多くの方にとって人生で数回しかない経験です。<br>
+      だからこそ「頼んでよかった」と思っていただけるよう、一枚一枚、お部屋に合わせて丁寧に仕上げています。<br><br>
+      料金のこと、替え時のこと、何でもお気軽にご相談ください。<br>
+      長崎駅前の小さな畳屋ですが、誠実にお応えします。
+    </p>
+  </div>
+
+  <div class="ic b">
+    <strong>大浜さんへのヒアリング質問案：</strong><br>
+    ① なぜ畳の仕事をされているんですか？（きっかけ・想い）<br>
+    ② お客様から言われて一番嬉しかった言葉は？<br>
+    ③ 仕事で一番大切にしていることは？<br>
+    ④ 長崎の畳屋として、地域への思いはありますか？<br>
+    → これらの回答をベースに最終版を作成する
+  </div>
+</div>
+
+<!-- ═══ Part 3: 会社概要テキスト ═══ -->
+<div class="s">
+  <div class="sn">Part 03</div>
+  <h2>会社概要 ─ 掲載情報</h2>
+  <p class="ld">事実情報を整理。大浜さんに確認の上、正確な内容で掲載する。</p>
+
+  <table>
+    <tr><th>項目</th><th>内容</th><th>確認状況</th></tr>
+    <tr><td>社名</td><td>有限会社 大浜畳商店</td><td><span class="check"></span>要確認</td></tr>
+    <tr><td>代表者</td><td>大濵 健太郎</td><td><span class="check"></span>要確認</td></tr>
+    <tr><td>所在地</td><td>〒850-0052 長崎県長崎市筑後町4-3</td><td><span class="check"></span>要確認</td></tr>
+    <tr><td>電話番号</td><td>095-823-1905</td><td><span class="check"></span>要確認</td></tr>
+    <tr><td>営業時間</td><td>8:30〜17:00（月〜金）</td><td><span class="check"></span>要確認（土曜対応は？）</td></tr>
+    <tr><td>定休日</td><td>日曜・祝日</td><td><span class="check"></span>要確認</td></tr>
+    <tr><td>設立年</td><td>要確認</td><td><span class="check"></span>要確認</td></tr>
+    <tr><td>資本金</td><td>3,000千円</td><td><span class="check"></span>要確認</td></tr>
+    <tr><td>許可番号</td><td>長崎県知事許可 第012410号（内装仕上工事業）</td><td><span class="check"></span>要確認</td></tr>
+    <tr><td>事業内容</td><td>畳の製造・販売・施工 / 襖・障子の張り替え / 内装仕上工事全般</td><td><span class="check"></span>要確認</td></tr>
+    <tr><td>対応エリア</td><td>長崎県内全域</td><td><span class="check"></span>要確認</td></tr>
+    <tr><td>決済方法</td><td>現金 / 銀行振込 / PayPay</td><td><span class="check"></span>要確認（他の決済は？）</td></tr>
+    <tr><td>アクセス</td><td>長崎駅前 徒歩約4分</td><td><span class="check"></span>要確認</td></tr>
+    <tr><td>保有資格</td><td>要確認（一級技能士等があれば記載）</td><td><span class="check"></span>要確認</td></tr>
+  </table>
+</div>
+
+<!-- ═══ Part 4: 写真・素材リスト ═══ -->
+<div class="s">
+  <div class="sn">Part 04</div>
+  <h2>写真・素材の準備リスト</h2>
+  <p class="ld">フェーズ1公開時は宣材写真（ストックフォト）を購入して対応。代表写真は載せない。実写素材が揃い次第、順次差し替えていく方針。AI生成画像は使用しない。</p>
+
+  <div class="ic b">
+    <strong>方針：</strong>宣材写真で「まず公開」→ 実写が撮れたら順次差し替え。写真が揃うのを待って公開が遅れるのが最大のリスク。宣材写真でも、適切に選べばプロフェッショナルな印象は十分に作れる。
+  </div>
+
+  <h3>宣材写真 購入リスト（フェーズ1公開用）</h3>
+  <p>PIXTA・Adobe Stock・Shutterstock等で購入。検索キーワードを併記。</p>
+
+  <table>
+    <tr><th>用途</th><th>イメージ</th><th>検索キーワード</th><th>枚数</th><th>注意点</th></tr>
+    <tr>
+      <td>FV背景画像</td>
+      <td>美しい和室の全景。光が入る明るい空間。新しい畳の青々しさが伝わるもの</td>
+      <td>「和室 畳 美しい」「tatami room bright」「新しい畳 部屋」「和室 モダン 畳」</td>
+      <td>1〜3枚</td>
+      <td>横長（16:9）。1920px以上。人物なしが使いやすい。縁なし畳のモダンな空間も候補</td>
+    </tr>
+    <tr>
+      <td>選ばれる理由①<br>朝預かり夕方届け</td>
+      <td>畳を運ぶ職人 / トラックに積む / 玄関先での受け渡し</td>
+      <td>「畳 職人 運ぶ」「tatami delivery」「畳 配達」「和室 リフォーム 施工」</td>
+      <td>1枚</td>
+      <td>職人の作業着姿が映っているもの。清潔感があるもの</td>
+    </tr>
+    <tr>
+      <td>選ばれる理由②<br>同じ職人が担当</td>
+      <td>畳を縫う・加工する職人のクローズアップ</td>
+      <td>「畳 職人 手作業」「畳 製造 工場」「tatami craftsman」「畳 縫う」</td>
+      <td>1枚</td>
+      <td>手元のアップか、畳に向かう職人の横顔。技術の丁寧さが伝わるもの</td>
+    </tr>
+    <tr>
+      <td>選ばれる理由③<br>お部屋に合わせて</td>
+      <td>採寸する職人 / 畳を敷き込む場面</td>
+      <td>「畳 敷き込み」「畳 採寸」「tatami fitting」「和室 施工」</td>
+      <td>1枚</td>
+      <td>部屋の中で作業している臨場感のあるもの</td>
+    </tr>
+    <tr>
+      <td>料金ページ<br>品質の違い解説</td>
+      <td>い草のアップ / 畳表の表面テクスチャ</td>
+      <td>「い草 アップ」「畳表 テクスチャ」「igusa close up」「tatami texture」</td>
+      <td>1〜2枚</td>
+      <td>い草の繊維が見えるマクロ撮影。品質の良さが伝わるもの</td>
+    </tr>
+    <tr>
+      <td>畳替えの流れ<br>ステップ図解用</td>
+      <td>訪問・採寸・加工・納品の各工程イメージ</td>
+      <td>「畳 工程」「畳 製造」「和室 リフォーム before after」</td>
+      <td>2〜4枚</td>
+      <td>流れの各ステップに1枚ずつ配置。統一感のある写真トーンで揃える</td>
+    </tr>
+    <tr>
+      <td>コラム記事<br>アイキャッチ</td>
+      <td>和室全景 / カビ対策イメージ / 縁なし畳</td>
+      <td>「畳 カビ」「縁なし畳 モダン」「琉球畳 部屋」「和室 掃除」</td>
+      <td>5枚</td>
+      <td>記事5本分。記事テーマに合ったイメージ写真</td>
+    </tr>
+    <tr>
+      <td>OGP画像</td>
+      <td>畳の美しい空間＋ロゴ重ねのベース素材</td>
+      <td>FV背景と兼用可</td>
+      <td>1枚</td>
+      <td>1200×630px。SNSシェア時に使用</td>
+    </tr>
+  </table>
+
+  <div class="ic a">
+    <strong>購入時の注意点：</strong><br>
+    ・ライセンスは「商用利用可」を必ず確認<br>
+    ・できるだけ同じフォトグラファーの作品で揃えると、サイト全体のトーンが統一される<br>
+    ・「いかにも素材写真」な白背景・モデル笑顔ポーズは避ける。自然な作業風景を優先<br>
+    ・日本の和室が映っている写真を選ぶ（海外ストックフォトの「tatami」は雰囲気が違うことがある）<br>
+    ・予算目安：PIXTA単品購入で1枚600〜3,000円程度。合計10〜15枚で1〜2万円
+  </div>
+
+  <h3>代表写真なしの代替策</h3>
+  <div class="ic g">
+    <strong>フェーズ1では代表写真を載せない。以下で信頼感を補う：</strong><br><br>
+    ① 代表挨拶はテキストのみで掲載（写真枠は設けず、テキスト中心のレイアウトにする）<br>
+    ② 会社概要に客観的な信頼情報を厚く記載（法人格・許可番号・所在地・設立年）<br>
+    ③ 「選ばれる理由」セクションの文章力で誠実な人柄を伝える<br>
+    ④ 写真が撮影できた段階で、代表挨拶に写真を追加＋Googleビジネスプロフィールにも反映<br><br>
+    ※写真差し替えを前提にHTMLを設計しておく（imgタグの差し替えだけで済む構造にする）
+  </div>
+
+  <h3>将来：実写に差し替えるもの（撮影できた時点で順次）</h3>
+  <table>
+    <tr><th>差し替え対象</th><th>差し替え元</th><th>タイミング</th><th>効果</th></tr>
+    <tr>
+      <td>代表プロフィール写真</td>
+      <td>なし → 追加</td>
+      <td>撮影できた時点</td>
+      <td>「どんな人が来るか」の不安解消。信頼感が大幅向上</td>
+    </tr>
+    <tr>
+      <td>施工事例B/A写真</td>
+      <td>なし → 追加</td>
+      <td>施工のたびに蓄積</td>
+      <td>最強の社会的証明。宣材写真では代替できない領域</td>
+    </tr>
+    <tr>
+      <td>お客様の声（顔写真）</td>
+      <td>なし → 追加</td>
+      <td>お客様の了承を得た時点</td>
+      <td>競合12社中ゼロのブルーオーシャン</td>
+    </tr>
+    <tr>
+      <td>FV背景・選ばれる理由</td>
+      <td>宣材写真 → 実写</td>
+      <td>余裕ができた時点</td>
+      <td>「本物感」が格段に上がる。急がなくてOK</td>
+    </tr>
+    <tr>
+      <td>工場・店舗外観</td>
+      <td>なし → 追加</td>
+      <td>撮影できた時点</td>
+      <td>MEO（Googleマップ）の強化にも直結</td>
+    </tr>
+  </table>
+</div>
+
+<!-- ═══ Part 5: 撮影ルーティン ═══ -->
+<div class="s">
+  <div class="sn">Part 05</div>
+  <h2>施工完了時の撮影・収集ルーティン</h2>
+  <p class="ld">HPの「証拠の山」を自動的に積み上げるための仕組み。施工完了のたびにこの4ステップを実行する。</p>
+
+  <table>
+    <tr><th>Step</th><th>やること</th><th>所要時間</th><th>準備物</th></tr>
+    <tr>
+      <td>1</td>
+      <td>ビフォーアフター写真の撮影<br>（施工前は引取り時に撮影しておく）</td>
+      <td>2分</td>
+      <td>スマホ（なるべく同じ端末で統一）</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>お客様にHP掲載の了承を口頭で確認<br>「よろしければ、新しい畳の前でお写真を1枚いかがですか？」</td>
+      <td>1分</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>手書きアンケート用紙を渡す<br>（2問：①ご依頼のきっかけ ②仕上がりへの感想）</td>
+      <td>1分</td>
+      <td>アンケート用紙（A5サイズ・記入しやすく）</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>Googleクチコミ投稿依頼カードを手渡し<br>「もしよろしければ、口コミを書いていただけると励みになります」</td>
+      <td>30秒</td>
+      <td>QRコード付き名刺サイズカード</td>
+    </tr>
+  </table>
+
+  <div class="ic g">
+    <strong>この4ステップを習慣化するだけで、半年後には：</strong><br>
+    ・施工事例10件以上（B/A写真付き）<br>
+    ・お客様の声5件以上（手書きアンケート＋写真）<br>
+    ・Googleクチコミ5〜10件<br>
+    が自然に蓄積される。競合12社中、この仕組みを持っている業者はゼロ。
+  </div>
+</div>
+
+<!-- ═══ Part 6: 必要な印刷物 ═══ -->
+<div class="s">
+  <div class="sn">Part 06</div>
+  <h2>制作が必要な印刷物</h2>
+  <p class="ld">HP運用と連動して使う紙の販促物。</p>
+
+  <table>
+    <tr><th>印刷物</th><th>用途</th><th>仕様</th><th>優先度</th></tr>
+    <tr>
+      <td>Googleクチコミ投稿カード</td>
+      <td>施工完了時に手渡し</td>
+      <td>名刺サイズ / 表：お礼文＋QRコード / 裏：投稿の手順3ステップ</td>
+      <td><span class="tag tg">MUST</span></td>
+    </tr>
+    <tr>
+      <td>お客様アンケート用紙</td>
+      <td>お客様の声の収集</td>
+      <td>A5サイズ / 2問のみ（きっかけ＋感想）/ 手書き欄を大きく / HP掲載同意チェック欄</td>
+      <td><span class="tag tg">MUST</span></td>
+    </tr>
+    <tr>
+      <td>LINE友だち追加カード</td>
+      <td>既存顧客のリピート / 紹介促進</td>
+      <td>名刺サイズ / LINE QRコード＋「お見積もり無料」の一言</td>
+      <td><span class="tag ta">SHOULD</span></td>
+    </tr>
+  </table>
+</div>
+
+<div class="ft">
+  <p>大浜畳商店 コンテンツ準備シート v1.1<br>
+  設計書 v1.1の補足資料<br>
+  作成日：2026年3月31日</p>
+</div>
+
+</body>
+</html>

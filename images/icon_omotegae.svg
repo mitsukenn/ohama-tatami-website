@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="120" height="120">
+  <rect width="120" height="120" fill="#F0EDE6" rx="12"/>
+  <!-- Old tatami (bottom) -->
+  <rect x="18" y="56" width="84" height="44" rx="6" fill="#B5A882" stroke="#8B7E66" stroke-width="1.5" opacity="0.7"/>
+  <line x1="18" y1="68" x2="102" y2="68" stroke="#9A8E6A" stroke-width="1" opacity="0.5"/>
+  <line x1="18" y1="80" x2="102" y2="80" stroke="#9A8E6A" stroke-width="1" opacity="0.5"/>
+  <!-- New tatami (top) being placed -->
+  <rect x="18" y="30" width="84" height="40" rx="6" fill="#7AB868" stroke="#556B2F" stroke-width="2"/>
+  <!-- Weave lines -->
+  <line x1="18" y1="42" x2="102" y2="42" stroke="#5E9A4E" stroke-width="1" opacity="0.6"/>
+  <line x1="18" y1="54" x2="102" y2="54" stroke="#5E9A4E" stroke-width="1" opacity="0.6"/>
+  <!-- Border -->
+  <rect x="18" y="30" width="84" height="7" rx="3" fill="#C9A84C" opacity="0.75"/>
+  <rect x="18" y="63" width="84" height="7" rx="3" fill="#C9A84C" opacity="0.75"/>
+  <!-- Down arrow -->
+  <polygon points="60,74 54,65 66,65" fill="#556B2F"/>
+  <!-- Label -->
+  <text x="60" y="110" text-anchor="middle" font-family="serif" font-size="12" fill="#556B2F" font-weight="bold">表替え</text>
+</svg>

@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400" viewBox="0 0 600 400">
+  <defs>
+    <linearGradient id="bg13" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#F3E5F5"/>
+      <stop offset="100%" style="stop-color:#E1BEE7"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="400" fill="url(#bg13)"/>
+  <rect x="0" y="350" width="600" height="50" fill="#6A1B9A" opacity="0.06"/>
+  <line x1="0" y1="350" x2="600" y2="350" stroke="#6A1B9A" stroke-width="1" opacity="0.15"/>
+  <!-- Comparison: Tatami vs Flooring -->
+  <g transform="translate(160, 50)">
+    <!-- Tatami swatch -->
+    <rect x="0" y="0" width="100" height="70" rx="8" fill="#556B2F" opacity="0.12" stroke="#556B2F" stroke-width="1.5"/>
+    <line x1="5" y1="20" x2="95" y2="20" stroke="#556B2F" stroke-width="0.7" opacity="0.2"/>
+    <line x1="5" y1="40" x2="95" y2="40" stroke="#556B2F" stroke-width="0.7" opacity="0.2"/>
+    <line x1="5" y1="60" x2="95" y2="60" stroke="#556B2F" stroke-width="0.7" opacity="0.2"/>
+    <text x="50" y="90" font-family="'Noto Sans JP', sans-serif" font-size="12" fill="#556B2F" text-anchor="middle" font-weight="700">畳</text>
+    <!-- VS -->
+    <text x="140" y="45" font-family="'Noto Sans JP', sans-serif" font-size="20" fill="#6A1B9A" text-anchor="middle" font-weight="700" opacity="0.4">VS</text>
+    <!-- Flooring swatch -->
+    <rect x="180" y="0" width="100" height="70" rx="8" fill="#8D6E63" opacity="0.15" stroke="#8D6E63" stroke-width="1.5"/>
+    <line x1="180" y1="0" x2="280" y2="70" stroke="#8D6E63" stroke-width="0.5" opacity="0.15"/>
+    <line x1="210" y1="0" x2="280" y2="47" stroke="#8D6E63" stroke-width="0.5" opacity="0.15"/>
+    <line x1="180" y1="23" x2="250" y2="70" stroke="#8D6E63" stroke-width="0.5" opacity="0.15"/>
+    <text x="230" y="90" font-family="'Noto Sans JP', sans-serif" font-size="12" fill="#8D6E63" text-anchor="middle" font-weight="700">フローリング</text>
+  </g>
+  <!-- Tag badge -->
+  <rect x="250" y="200" width="100" height="30" rx="15" fill="#6A1B9A"/>
+  <text x="300" y="220" font-family="'Noto Sans JP', sans-serif" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="middle">比較</text>
+  <!-- Title -->
+  <text x="300" y="268" font-family="'Noto Serif JP', 'Yu Mincho', serif" font-size="26" font-weight="700" fill="#4A148C" text-anchor="middle" letter-spacing="1">
+    畳とフローリング
+  </text>
+  <text x="300" y="303" font-family="'Noto Serif JP', 'Yu Mincho', serif" font-size="26" font-weight="700" fill="#4A148C" text-anchor="middle" letter-spacing="1">
+    どっちがいい？
+  </text>
+  <!-- Subtitle -->
+  <text x="300" y="342" font-family="'Noto Sans JP', sans-serif" font-size="13" fill="#6A1B9A" text-anchor="middle">
+    暮らしに合った床選び
+  </text>
+  <rect x="0" y="390" width="600" height="10" fill="#556B2F" opacity="0.15"/>
+</svg>

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <!-- Tatami leaf / igusa motif favicon -->
+  <rect width="32" height="32" rx="6" fill="#556B2F"/>
+  <!-- Simplified tatami mat top view -->
+  <rect x="5" y="6" width="22" height="20" rx="2" fill="#6B8A3E" opacity="0.6"/>
+  <!-- Vertical grain lines (igusa texture) -->
+  <line x1="10" y1="7" x2="10" y2="25" stroke="#FAF8F5" stroke-width="0.8" opacity="0.5"/>
+  <line x1="14" y1="7" x2="14" y2="25" stroke="#FAF8F5" stroke-width="0.8" opacity="0.5"/>
+  <line x1="18" y1="7" x2="18" y2="25" stroke="#FAF8F5" stroke-width="0.8" opacity="0.5"/>
+  <line x1="22" y1="7" x2="22" y2="25" stroke="#FAF8F5" stroke-width="0.8" opacity="0.5"/>
+  <!-- Center horizontal line (tatami border) -->
+  <line x1="5" y1="16" x2="27" y2="16" stroke="#C9A84C" stroke-width="1.5" opacity="0.8"/>
+  <!-- 大 character hint -->
+  <text x="16" y="20" font-family="serif" font-size="12" font-weight="700" fill="#FFFFFF" text-anchor="middle" opacity="0.9">大</text>
+</svg>

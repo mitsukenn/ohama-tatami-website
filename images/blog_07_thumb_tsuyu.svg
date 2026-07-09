@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="400" viewBox="0 0 600 400">
+  <defs>
+    <linearGradient id="bg7" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#E3F2FD"/>
+      <stop offset="100%" style="stop-color:#BBDEFB"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="400" fill="url(#bg7)"/>
+  <rect x="0" y="350" width="600" height="50" fill="#1976D2" opacity="0.08"/>
+  <line x1="0" y1="350" x2="600" y2="350" stroke="#1976D2" stroke-width="1" opacity="0.2"/>
+  <!-- Rain drops icon -->
+  <g transform="translate(240, 55)">
+    <!-- Cloud -->
+    <path d="M30 60 Q10 60 10 45 Q10 30 30 30 Q30 15 50 15 Q70 15 75 30 Q95 28 95 45 Q95 60 75 60 Z" fill="#1976D2" opacity="0.15" stroke="#1976D2" stroke-width="1.5"/>
+    <!-- Drops -->
+    <path d="M35 72 Q35 82 40 82 Q45 82 45 72 L40 62 Z" fill="#1976D2" opacity="0.3"/>
+    <path d="M55 78 Q55 88 60 88 Q65 88 65 78 L60 68 Z" fill="#1976D2" opacity="0.3"/>
+    <path d="M75 72 Q75 82 80 82 Q85 82 85 72 L80 62 Z" fill="#1976D2" opacity="0.3"/>
+  </g>
+  <!-- Tatami line -->
+  <g transform="translate(250, 120)">
+    <rect x="0" y="0" width="100" height="20" rx="3" fill="none" stroke="#1976D2" stroke-width="1.5" opacity="0.3"/>
+    <line x1="0" y1="7" x2="100" y2="7" stroke="#1976D2" stroke-width="0.5" opacity="0.2"/>
+    <line x1="0" y1="14" x2="100" y2="14" stroke="#1976D2" stroke-width="0.5" opacity="0.2"/>
+  </g>
+  <!-- Tag badge -->
+  <rect x="235" y="200" width="130" height="30" rx="15" fill="#1976D2"/>
+  <text x="300" y="220" font-family="'Noto Sans JP', sans-serif" font-size="13" font-weight="700" fill="#FFFFFF" text-anchor="middle">お手入れ</text>
+  <!-- Title -->
+  <text x="300" y="275" font-family="'Noto Serif JP', 'Yu Mincho', serif" font-size="28" font-weight="700" fill="#1565C0" text-anchor="middle" letter-spacing="2">
+    梅雨の畳の湿気対策
+  </text>
+  <!-- Subtitle -->
+  <text x="300" y="315" font-family="'Noto Sans JP', sans-serif" font-size="13" fill="#1976D2" text-anchor="middle">
+    ジメジメ季節の正しいケア
+  </text>
+  <rect x="0" y="390" width="600" height="10" fill="#556B2F" opacity="0.15"/>
+</svg>

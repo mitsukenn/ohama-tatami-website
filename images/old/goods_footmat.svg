@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <defs>
+    <pattern id="tatami4" x="0" y="0" width="14" height="14" patternUnits="userSpaceOnUse">
+      <rect width="14" height="14" fill="#7EBF6B"/>
+      <line x1="0" y1="7" x2="14" y2="7" stroke="#5E9A50" stroke-width="0.8" opacity="0.5"/>
+      <line x1="7" y1="0" x2="7" y2="14" stroke="#5E9A50" stroke-width="0.5" opacity="0.3"/>
+    </pattern>
+  </defs>
+  <!-- Background -->
+  <rect width="400" height="300" fill="#FAF8F5"/>
+  <!-- Floor hint -->
+  <rect x="0" y="210" width="400" height="90" fill="#E8DCC8" opacity="0.4"/>
+  <!-- Shadow -->
+  <ellipse cx="200" cy="224" rx="140" ry="16" fill="#00000012"/>
+  <!-- Foot mat - oval/rounded rectangle -->
+  <rect x="50" y="140" width="300" height="80" rx="40" fill="url(#tatami4)" stroke="#556B2F" stroke-width="3"/>
+  <!-- Border band top/bottom of mat -->
+  <rect x="50" y="140" width="300" height="12" rx="6" fill="#C9A84C" opacity="0.75"/>
+  <rect x="50" y="208" width="300" height="12" rx="6" fill="#C9A84C" opacity="0.75"/>
+  <!-- Feet suggestion -->
+  <ellipse cx="155" cy="136" rx="22" ry="12" fill="#F5DEB3" stroke="#D4A574" stroke-width="1.5" opacity="0.8"/>
+  <ellipse cx="245" cy="136" rx="22" ry="12" fill="#F5DEB3" stroke="#D4A574" stroke-width="1.5" opacity="0.8"/>
+  <!-- Toe details -->
+  <ellipse cx="143" cy="128" rx="5" ry="4" fill="#F5DEB3" stroke="#D4A574" stroke-width="1" opacity="0.8"/>
+  <ellipse cx="155" cy="126" rx="5" ry="4" fill="#F5DEB3" stroke="#D4A574" stroke-width="1" opacity="0.8"/>
+  <ellipse cx="167" cy="128" rx="5" ry="4" fill="#F5DEB3" stroke="#D4A574" stroke-width="1" opacity="0.8"/>
+  <ellipse cx="233" cy="128" rx="5" ry="4" fill="#F5DEB3" stroke="#D4A574" stroke-width="1" opacity="0.8"/>
+  <ellipse cx="245" cy="126" rx="5" ry="4" fill="#F5DEB3" stroke="#D4A574" stroke-width="1" opacity="0.8"/>
+  <ellipse cx="257" cy="128" rx="5" ry="4" fill="#F5DEB3" stroke="#D4A574" stroke-width="1" opacity="0.8"/>
+  <!-- Label -->
+  <rect x="100" y="252" width="200" height="36" rx="6" fill="#556B2F" opacity="0.9"/>
+  <text x="200" y="274" text-anchor="middle" font-family="'Hiragino Sans', 'MS Gothic', sans-serif" font-size="14" fill="white" font-weight="bold">足置きマット</text>
+</svg>

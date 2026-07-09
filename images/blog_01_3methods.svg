@@ -1,0 +1,128 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+  <defs>
+    <linearGradient id="headerBg" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#556B2F"/>
+      <stop offset="100%" style="stop-color:#6B8A3E"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="500" fill="#FAF8F5"/>
+
+  <!-- Title bar -->
+  <rect x="0" y="0" width="800" height="70" fill="url(#headerBg)"/>
+  <text x="400" y="45" font-family="'Noto Serif JP', 'Yu Mincho', serif" font-size="26" font-weight="700" fill="#FFFFFF" text-anchor="middle" letter-spacing="3">
+    畳替え 3つの方法
+  </text>
+
+  <!-- Card 1: 裏返し -->
+  <rect x="30" y="95" width="230" height="370" rx="12" fill="#FFFFFF" stroke="#E0E0E0" stroke-width="1"/>
+  <!-- Icon area -->
+  <rect x="30" y="95" width="230" height="80" rx="12" fill="#556B2F" opacity="0.08"/>
+  <rect x="30" y="163" width="230" height="2" fill="none"/>
+  <!-- Arrow icon (flip) -->
+  <g transform="translate(115, 115)">
+    <path d="M20 5 L20 15 L30 10 Z" fill="#556B2F" opacity="0.7"/>
+    <path d="M40 25 L40 15 L30 20 Z" fill="#556B2F" opacity="0.7"/>
+    <rect x="10" y="8" width="12" height="6" rx="1" fill="none" stroke="#556B2F" stroke-width="1.5" opacity="0.7"/>
+    <rect x="38" y="16" width="12" height="6" rx="1" fill="none" stroke="#556B2F" stroke-width="1.5" opacity="0.7"/>
+  </g>
+  <text x="145" y="165" font-family="'Noto Serif JP', serif" font-size="22" font-weight="700" fill="#556B2F" text-anchor="middle">裏返し</text>
+  <text x="145" y="188" font-family="'Noto Sans JP', sans-serif" font-size="12" fill="#8B7E66" text-anchor="middle">うらがえし</text>
+
+  <!-- Price -->
+  <text x="145" y="225" font-family="'Noto Sans JP', sans-serif" font-size="28" font-weight="700" fill="#556B2F" text-anchor="middle">5,000<tspan font-size="14" fill="#666">円〜/畳</tspan></text>
+
+  <!-- Divider -->
+  <line x1="60" y1="242" x2="230" y2="242" stroke="#E0E0E0" stroke-width="1"/>
+
+  <!-- Details -->
+  <text x="145" y="270" font-family="'Noto Sans JP', sans-serif" font-size="13" fill="#666" text-anchor="middle">畳表を裏返して再利用</text>
+  <text x="145" y="300" font-family="'Noto Sans JP', sans-serif" font-size="13" fill="#666" text-anchor="middle">目安：3〜5年</text>
+  <text x="145" y="330" font-family="'Noto Sans JP', sans-serif" font-size="13" fill="#666" text-anchor="middle">最もお手頃</text>
+
+  <!-- Merit box -->
+  <rect x="50" y="355" width="190" height="45" rx="8" fill="#556B2F" opacity="0.06"/>
+  <text x="145" y="375" font-family="'Noto Sans JP', sans-serif" font-size="11" fill="#556B2F" text-anchor="middle" font-weight="500">まだ畳が新しい方に</text>
+  <text x="145" y="392" font-family="'Noto Sans JP', sans-serif" font-size="11" fill="#556B2F" text-anchor="middle" font-weight="500">おすすめ</text>
+
+  <!-- Stamp: コスパ◎ -->
+  <rect x="55" y="415" width="80" height="28" rx="14" fill="#556B2F" opacity="0.1"/>
+  <text x="95" y="434" font-family="'Noto Sans JP', sans-serif" font-size="12" fill="#556B2F" text-anchor="middle" font-weight="700">コスパ◎</text>
+
+  <!-- Card 2: 表替え (Popular) -->
+  <rect x="285" y="88" width="230" height="377" rx="12" fill="#FFFFFF" stroke="#C9A84C" stroke-width="2.5"/>
+  <!-- Popular badge -->
+  <rect x="345" y="75" width="110" height="26" rx="13" fill="#C9A84C"/>
+  <text x="400" y="93" font-family="'Noto Sans JP', sans-serif" font-size="12" font-weight="700" fill="#FFFFFF" text-anchor="middle">人気 No.1</text>
+  <!-- Icon area -->
+  <rect x="285" y="88" width="230" height="80" rx="12" fill="#C9A84C" opacity="0.08"/>
+  <!-- Layers icon (surface replace) -->
+  <g transform="translate(370, 108)">
+    <rect x="0" y="0" width="40" height="8" rx="2" fill="#C9A84C" opacity="0.5"/>
+    <rect x="5" y="12" width="40" height="8" rx="2" fill="#C9A84C" opacity="0.7"/>
+    <path d="M50 8 L58 16 L50 24" fill="none" stroke="#C9A84C" stroke-width="2" opacity="0.6"/>
+    <rect x="5" y="30" width="40" height="8" rx="2" fill="#556B2F" opacity="0.8"/>
+  </g>
+  <text x="400" y="165" font-family="'Noto Serif JP', serif" font-size="22" font-weight="700" fill="#556B2F" text-anchor="middle">表替え</text>
+  <text x="400" y="188" font-family="'Noto Sans JP', sans-serif" font-size="12" fill="#8B7E66" text-anchor="middle">おもてがえ</text>
+
+  <!-- Price -->
+  <text x="400" y="225" font-family="'Noto Sans JP', sans-serif" font-size="28" font-weight="700" fill="#556B2F" text-anchor="middle">9,000<tspan font-size="14" fill="#666">円〜/畳</tspan></text>
+
+  <!-- Divider -->
+  <line x1="315" y1="242" x2="485" y2="242" stroke="#E0E0E0" stroke-width="1"/>
+
+  <!-- Details -->
+  <text x="400" y="270" font-family="'Noto Sans JP', sans-serif" font-size="13" fill="#666" text-anchor="middle">畳表だけ新品に交換</text>
+  <text x="400" y="300" font-family="'Noto Sans JP', sans-serif" font-size="13" fill="#666" text-anchor="middle">目安：7〜10年</text>
+  <text x="400" y="330" font-family="'Noto Sans JP', sans-serif" font-size="13" fill="#666" text-anchor="middle">見た目が確実に変わる</text>
+
+  <!-- Merit box -->
+  <rect x="305" y="355" width="190" height="45" rx="8" fill="#C9A84C" opacity="0.08"/>
+  <text x="400" y="375" font-family="'Noto Sans JP', sans-serif" font-size="11" fill="#556B2F" text-anchor="middle" font-weight="500">確実にきれいにしたい方に</text>
+  <text x="400" y="392" font-family="'Noto Sans JP', sans-serif" font-size="11" fill="#556B2F" text-anchor="middle" font-weight="500">一番人気</text>
+
+  <!-- Stamp -->
+  <rect x="315" y="415" width="80" height="28" rx="14" fill="#C9A84C" opacity="0.15"/>
+  <text x="355" y="434" font-family="'Noto Sans JP', sans-serif" font-size="12" fill="#C9A84C" text-anchor="middle" font-weight="700">おすすめ</text>
+
+  <!-- Card 3: 新畳 -->
+  <rect x="540" y="95" width="230" height="370" rx="12" fill="#FFFFFF" stroke="#E0E0E0" stroke-width="1"/>
+  <!-- Icon area -->
+  <rect x="540" y="95" width="230" height="80" rx="12" fill="#556B2F" opacity="0.08"/>
+  <!-- New tatami icon (full mat) -->
+  <g transform="translate(625, 108)">
+    <rect x="0" y="0" width="45" height="35" rx="3" fill="none" stroke="#556B2F" stroke-width="2" opacity="0.6"/>
+    <line x1="0" y1="12" x2="45" y2="12" stroke="#556B2F" stroke-width="1" opacity="0.4"/>
+    <line x1="0" y1="24" x2="45" y2="24" stroke="#556B2F" stroke-width="1" opacity="0.4"/>
+    <text x="52" y="22" font-family="sans-serif" font-size="18" fill="#556B2F" opacity="0.5">NEW</text>
+  </g>
+  <text x="655" y="165" font-family="'Noto Serif JP', serif" font-size="22" font-weight="700" fill="#556B2F" text-anchor="middle">新畳</text>
+  <text x="655" y="188" font-family="'Noto Sans JP', sans-serif" font-size="12" fill="#8B7E66" text-anchor="middle">しんたたみ</text>
+
+  <!-- Price -->
+  <text x="655" y="225" font-family="'Noto Sans JP', sans-serif" font-size="28" font-weight="700" fill="#556B2F" text-anchor="middle">16,000<tspan font-size="14" fill="#666">円〜/畳</tspan></text>
+
+  <!-- Divider -->
+  <line x1="570" y1="242" x2="740" y2="242" stroke="#E0E0E0" stroke-width="1"/>
+
+  <!-- Details -->
+  <text x="655" y="270" font-family="'Noto Sans JP', sans-serif" font-size="13" fill="#666" text-anchor="middle">畳床ごとすべて新品に</text>
+  <text x="655" y="300" font-family="'Noto Sans JP', sans-serif" font-size="13" fill="#666" text-anchor="middle">目安：15〜20年</text>
+  <text x="655" y="330" font-family="'Noto Sans JP', sans-serif" font-size="13" fill="#666" text-anchor="middle">踏み心地から変わる</text>
+
+  <!-- Merit box -->
+  <rect x="560" y="355" width="190" height="45" rx="8" fill="#556B2F" opacity="0.06"/>
+  <text x="655" y="375" font-family="'Noto Sans JP', sans-serif" font-size="11" fill="#556B2F" text-anchor="middle" font-weight="500">畳ごと新しくしたい方に</text>
+  <text x="655" y="392" font-family="'Noto Sans JP', sans-serif" font-size="11" fill="#556B2F" text-anchor="middle" font-weight="500">おすすめ</text>
+
+  <!-- Stamp -->
+  <rect x="565" y="415" width="80" height="28" rx="14" fill="#556B2F" opacity="0.1"/>
+  <text x="605" y="434" font-family="'Noto Sans JP', sans-serif" font-size="12" fill="#556B2F" text-anchor="middle" font-weight="700">長持ち◎</text>
+
+  <!-- Bottom note -->
+  <text x="400" y="487" font-family="'Noto Sans JP', sans-serif" font-size="12" fill="#8B7E66" text-anchor="middle">
+    ※すべて税込価格です。お部屋の状態に合わせて最適な方法をご提案します。
+  </text>
+</svg>

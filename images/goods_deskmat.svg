@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300" width="400" height="300">
+  <defs>
+    <pattern id="tatami3" x="0" y="0" width="12" height="12" patternUnits="userSpaceOnUse">
+      <rect width="12" height="12" fill="#8CB87A"/>
+      <line x1="0" y1="6" x2="12" y2="6" stroke="#6B9A58" stroke-width="0.8" opacity="0.5"/>
+      <line x1="6" y1="0" x2="6" y2="12" stroke="#6B9A58" stroke-width="0.5" opacity="0.3"/>
+    </pattern>
+  </defs>
+  <!-- Background -->
+  <rect width="400" height="300" fill="#FAF8F5"/>
+  <!-- Desk surface hint -->
+  <rect x="0" y="200" width="400" height="100" fill="#E8DCC8" opacity="0.5"/>
+  <!-- Keyboard outline -->
+  <rect x="70" y="160" width="140" height="60" rx="5" fill="#D0C8B8" stroke="#B0A898" stroke-width="1.5"/>
+  <rect x="78" y="168" width="124" height="44" rx="3" fill="#C8C0B0"/>
+  <!-- Mat -->
+  <rect x="60" y="155" width="280" height="80" rx="8" fill="url(#tatami3)" stroke="#556B2F" stroke-width="2" opacity="0.95"/>
+  <!-- Mat border -->
+  <rect x="60" y="155" width="280" height="8" rx="4" fill="#C9A84C" opacity="0.75"/>
+  <rect x="60" y="227" width="280" height="8" rx="4" fill="#C9A84C" opacity="0.75"/>
+  <!-- Aroma lines -->
+  <path d="M310 140 Q315 130 310 120 Q305 110 310 100" fill="none" stroke="#8CB87A" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+  <path d="M330 135 Q335 123 330 112 Q325 101 330 90" fill="none" stroke="#8CB87A" stroke-width="2" stroke-linecap="round" opacity="0.4"/>
+  <!-- Label -->
+  <rect x="100" y="252" width="200" height="36" rx="6" fill="#556B2F" opacity="0.9"/>
+  <text x="200" y="274" text-anchor="middle" font-family="'Hiragino Sans', 'MS Gothic', sans-serif" font-size="14" fill="white" font-weight="bold">い草デスクマット</text>
+</svg>

@@ -1,0 +1,27 @@
+# HTTPSリダイレクト
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+# www → non-www リダイレクト
+RewriteCond %{HTTP_HOST} ^www\.ohama-tatami\.co\.jp
+RewriteRule ^(.*)$ https://ohama-tatami.co.jp/$1 [R=301,L]
+
+# エラーページ
+ErrorDocument 404 /404.html
+
+# キャッシュ設定
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/jpeg "access plus 1 month"
+  ExpiresByType image/png "access plus 1 month"
+  ExpiresByType image/svg+xml "access plus 1 month"
+  ExpiresByType text/css "access plus 1 week"
+  ExpiresByType application/javascript "access plus 1 week"
+  ExpiresByType text/html "access plus 1 hour"
+</IfModule>
+
+# Gzip圧縮
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript text/xml application/xml image/svg+xml
+</IfModule>

@@ -1,0 +1,797 @@
+/* ══ 大浜畳商店 共通スタイル ══ */
+/* Generated: 2026-04-12 */
+
+:root {
+      --main: #556B2F;
+      --main-light: #6B8A3E;
+      --sub: #8B7E66;
+      --accent: #C9A84C;
+      --bg-base: #FAF8F5;
+      --bg-alt: #F0EDE6;
+      --text: #333333;
+      --text-light: #666666;
+      --white: #FFFFFF;
+      --line-green: #06C755;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      color: var(--text);
+      background-color: var(--bg-base);
+      /* 和紙テクスチャ（楮繊維風 + 微細グレインの2層） */
+      background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='wf'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.015 0.14' numOctaves='4' seed='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23wf)' opacity='0.05'/%3E%3C/svg%3E"),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='wg'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' seed='9' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23wg)' opacity='0.03'/%3E%3C/svg%3E");
+      line-height: 1.8;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Header ── */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.97);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+      padding: 0 40px;
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .header-logo { line-height: 1.2;
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--main);
+      letter-spacing: 0.08em;
+      text-shadow: 0 1px 0 rgba(85, 107, 47, 0.08);
+    }
+
+    .header-logo small {
+      display: block;
+      font-size: 0.7rem;
+      font-weight: 500;
+      color: var(--text-light);
+      letter-spacing: 0.06em;
+      font-family: 'Noto Sans JP', sans-serif;
+      word-break: keep-all;
+      margin-top: 5px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--text);
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      position: relative;
+      transition: color 0.3s;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--main);
+      transition: width 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--main);
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    /* Dropdown */
+    .nav-dropdown {
+      position: relative;
+    }
+
+    .nav-dropdown>a::after {
+      display: none;
+    }
+
+    .nav-dropdown>a {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      cursor: pointer;
+    }
+
+    .nav-dropdown>a .dd-arrow {
+      width: 10px;
+      height: 10px;
+      transition: transform 0.2s;
+    }
+
+    .nav-dropdown:hover>a .dd-arrow {
+      transform: rotate(180deg);
+    }
+
+    .nav-dropdown-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--white);
+      border-radius: 10px;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+      min-width: 200px;
+      padding: 20px 0 8px;
+      z-index: 100;
+    }
+
+    .nav-dropdown-menu::before {
+      content: '';
+      position: absolute;
+      top: 4px;
+      left: 50%;
+      transform: translateX(-50%);
+      border: 8px solid transparent;
+      border-top: none;
+      border-bottom: 8px solid var(--white);
+    }
+
+    .nav-dropdown:hover .nav-dropdown-menu {
+      display: block;
+      animation: fadeIn 0.15s ease;
+    }
+
+    .nav-dropdown-menu a {
+      display: block;
+      padding: 10px 20px;
+      font-size: 0.84rem;
+      color: var(--text);
+      white-space: nowrap;
+    }
+
+    .nav-dropdown-menu a::after {
+      display: none;
+    }
+
+    .nav-dropdown-menu a:hover {
+      background: var(--bg-alt);
+      color: var(--main);
+    }
+
+    /* Mobile nav sections */
+    .mobile-nav-section {
+      padding: 8px 0 4px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--sub);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .mobile-nav-section:first-child {
+      padding-top: 0;
+    }
+
+    .header-cta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-left: 20px;
+    }
+
+    .header-phone {
+      font-size: 0.85rem;
+      color: var(--main);
+      font-weight: 700;
+      text-decoration: none;
+      letter-spacing: 0.02em;
+    }
+
+    .header-phone span {
+      font-size: 0.7rem;
+      font-weight: 500;
+      color: var(--text-light);
+      display: block;
+    }
+
+    .btn-line-sm {
+      background: var(--line-green);
+      color: var(--white);
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: opacity 0.3s;
+    }
+
+    .btn-line-sm:hover {
+      opacity: 0.85;
+    }
+
+    /* ── Section base ── */
+    section {
+      padding: 80px 0;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    h2 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1.75rem;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 12px;
+      color: var(--text);
+      letter-spacing: 0.06em;
+    }
+
+    .section-sub {
+      text-align: center;
+      color: var(--text-light);
+      font-size: 0.9rem;
+      margin-bottom: 48px;
+    }
+
+    .section-line {
+      width: 40px;
+      height: 3px;
+      background: var(--main);
+      margin: 16px auto 40px;
+      border-radius: 2px;
+    }
+
+/* ── Footer ── */
+    footer {
+      background: #2A2A2A;
+      color: rgba(255, 255, 255, 0.7);
+      padding: 60px 24px 32px;
+      font-size: 0.85rem;
+      line-height: 2;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+
+    .footer-info h3 {
+      font-family: 'Noto Serif JP', serif;
+      color: var(--white);
+      font-size: 1.1rem;
+      margin-bottom: 16px;
+    }
+
+    .footer-inner > div:last-child {
+      display: flex;
+      align-items: center;
+    }
+
+    .footer-nav {
+      display: grid;
+      grid-template-columns: repeat(2, max-content);
+      gap: 14px 48px;
+    }
+
+    .footer-nav a {
+      color: rgba(255, 255, 255, 0.7);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .footer-nav a:hover {
+      color: var(--white);
+    }
+
+    .footer-area {
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .footer-area span {
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 0.8rem;
+    }
+
+    .footer-info p a,
+    .footer-info p a:visited,
+    .footer-info a[href^="tel"] {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .footer-bottom {
+      max-width: 1100px;
+      margin: 32px auto 0;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      text-align: center;
+      font-size: 0.78rem;
+      color: rgba(255, 255, 255, 0.4);
+    }
+
+    /* ── Mobile fixed bar ── */
+    .mobile-bar {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      background: var(--white);
+      box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.1);
+      padding: 10px 16px;
+    }
+
+    .mobile-bar-inner {
+      display: flex;
+      gap: 8px;
+    }
+
+    .mobile-bar a {
+      text-align: center;
+      border-radius: 8px;
+      font-weight: 700;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+    }
+
+    .mobile-bar .bar-phone {
+      flex: 0 0 auto;
+      padding: 14px 16px;
+      background: var(--white);
+      color: var(--main);
+      border: 2px solid var(--main);
+      font-size: 0.8rem;
+    }
+
+    .mobile-bar .bar-line {
+      flex: 1;
+      padding: 14px;
+      background: var(--line-green);
+      color: var(--white);
+      font-size: 0.95rem;
+      box-shadow: 0 2px 8px rgba(6, 199, 85, 0.3);
+    }
+
+    /* ── Hamburger Menu ── */
+    .hamburger {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      width: 44px;
+      height: 44px;
+      padding: 8px;
+      position: relative;
+      z-index: 110;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--text);
+      margin: 6px auto;
+      transition: all 0.3s;
+      border-radius: 1px;
+    }
+
+    .hamburger.active span:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 6px);
+    }
+
+    .hamburger.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -6px);
+    }
+
+    .mobile-nav {
+      display: none;
+      position: fixed;
+      top: 72px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(12px);
+      z-index: 99;
+      padding: 32px 24px;
+      overflow-y: auto;
+    }
+
+    .mobile-nav.open {
+      display: block;
+      animation: fadeIn 0.2s ease;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    .mobile-nav a {
+      display: block;
+      padding: 16px 0;
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--text);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+      transition: color 0.3s;
+    }
+
+    .mobile-nav a:hover {
+      color: var(--main);
+    }
+
+    .mobile-nav .mobile-nav-cta {
+      margin-top: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .mobile-nav .mobile-nav-cta a {
+      text-align: center;
+      padding: 14px;
+      border-radius: 8px;
+      font-weight: 700;
+      border-bottom: none;
+    }
+
+    .mobile-nav .nav-phone {
+      background: var(--main);
+      color: var(--white);
+    }
+
+    .mobile-nav .nav-line {
+      background: var(--line-green);
+      color: var(--white);
+    }
+
+    /* ── Utility ── */
+    .sp-br {
+      display: none;
+    }
+
+    .pc-br {
+      display: inline;
+    }
+
+    /* 強調ワード用マーカー（蛍光ペン風・アクセント色） */
+    .hl {
+      font-weight: 700;
+      background: linear-gradient(transparent 58%, rgba(201, 168, 76, 0.38) 58%);
+      padding: 0 2px;
+      border-radius: 2px;
+    }
+
+    .back-to-top {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 90;
+      width: 48px;
+      height: 48px;
+      background: var(--main);
+      color: var(--white);
+      border: none;
+      border-radius: 50%;
+      font-size: 1.2rem;
+      cursor: pointer;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .back-to-top.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .back-to-top:hover {
+      background: var(--main-light);
+      transform: translateY(-2px);
+    }
+
+
+    /* ── Responsive (Common) ── */
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+      }
+
+      .header-cta {
+        display: none;
+      }
+
+      .hamburger {
+        display: block;
+      }
+
+      .footer-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .mobile-bar {
+        display: block;
+      }
+
+      footer {
+        padding-bottom: 100px;
+      }
+
+      section {
+        padding: 56px 0;
+      }
+
+      h2 {
+        font-size: 1.4rem;
+      }
+
+      .back-to-top {
+        bottom: 80px;
+        right: 16px;
+        width: 42px;
+        height: 42px;
+        font-size: 1rem;
+      }
+
+      .sp-br {
+        display: inline;
+      }
+
+      .pc-br {
+        display: none;
+      }
+
+      .footer-info p {
+        font-size: 0.8rem;
+        line-height: 2;
+      }
+
+      .footer-nav {
+        gap: 8px 16px;
+        font-size: 0.82rem;
+      }
+    }
+
+    /* ── モバイル改行・表示の微調整（2026-06-09 追加） ── */
+    /* 見出し末尾の1文字孤立を軽減（対応ブラウザのみ・レイアウトは崩れない） */
+    h1, h2, h3 { text-wrap: balance; }
+
+    /* 強調マーカー（.hl）の語が行末で割れない（黄色マーカーの分断防止） */
+    .hl { word-break: keep-all; }
+
+    /* コラム記事の表：モバイルで横スクロール化（4カラム表の縦1文字折り返しを解消） */
+    /* body を付けてインライン .article-body table { overflow:hidden } を詳細度で上書き */
+    @media (max-width: 768px) {
+      body .article-body table {
+        display: block;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+      body .article-body table th,
+      body .article-body table td {
+        white-space: nowrap;
+      }
+
+      /* 概算シミュレーター：価格・ラベルを1行に収める（数値と単位/語の分離を解消） */
+      /* simulator のランタイム注入CSSより後勝ちにするため !important */
+      .sim-chip-label { white-space: nowrap !important; font-size: 0.75rem !important; }
+      .sim-grade-price { white-space: nowrap !important; font-size: 0.75rem !important; }
+      .sim-grade-price small { font-size: 0.6rem !important; }
+    }
+
+    /* ── ⑪ 強調マーカー(.hl)の軽い動き ── */
+    /* 既定はフル表示（従来通り）。初期表示域より下のマーカーが表示領域に入った時だけ .hl-draw-in を付与し1回"線を引く"。
+       JS/IntersectionObserver非対応・reduce設定でもフルマーカー表示のまま＝マーカーが消えるリスク無し（制御: tracking.js） */
+    .hl { background-repeat: no-repeat; }
+    @keyframes hl-draw { from { background-size: 0% 100%; } to { background-size: 100% 100%; } }
+    .hl.hl-draw-in { animation: hl-draw 0.55s ease-out; }
+    @media (prefers-reduced-motion: reduce) { .hl.hl-draw-in { animation: none; } }
+
+    /* ── ④ お役立ちコラムのランキング番号バッジ ── */
+    .blog-card .blog-thumb { position: relative; }
+    .blog-rank {
+      flex-shrink: 0; align-self: center;
+      min-width: 26px; height: 26px; padding: 0 6px;
+      border-radius: 13px;
+      background: var(--accent); color: #fff;
+      font-family: 'Noto Serif JP', serif; font-weight: 700; font-size: 0.9rem; line-height: 1;
+      display: inline-flex; align-items: center; justify-content: center;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.28);
+    }
+
+    /* ── 固定ページのヘッダーバナー（文字入り画像・2026-06-10） ── */
+    /* モバイル＝16:9フル表示（cropなし）／PC＝帯状(高さclamp)で上下のみ軽くトリミング（文字は左・縦中央なので残る） */
+    .page-banner {
+      width: 100%;
+      margin: 0 auto;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      line-height: 0;
+      background: var(--bg-base);
+    }
+    .page-banner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
+    @media (min-width: 768px) {
+      .page-banner {
+        aspect-ratio: auto;
+        height: clamp(220px, 24vw, 320px);
+        max-width: 1400px;
+      }
+    }
+    /* SEO・読み上げ用に残す視覚的非表示の見出し（h1） */
+    .visually-hidden {
+      position: absolute !important;
+      width: 1px; height: 1px;
+      padding: 0; margin: -1px;
+      overflow: hidden; clip: rect(0, 0, 0, 0);
+      white-space: nowrap; border: 0;
+    }
+
+    /* ── 2026-06-11 スマホUX改善（Step72） ── */
+    /* セクションへのアンカー遷移時、固定ヘッダー(72px)で見出しが切れるのを防止 */
+    section[id] { scroll-margin-top: 84px; }
+
+    /* 360px帯（Android廉価帯）：FVの差別化バッジを横3列に詰めて収める */
+    @media (max-width: 380px) {
+      .hero-badges { gap: 4px !important; margin-bottom: 18px !important; flex-wrap: nowrap !important; }
+      .hero-badge { font-size: 0.62rem !important; padding: 3px 8px !important; letter-spacing: 0 !important; white-space: nowrap !important; }
+    }
+
+    /* 360px帯：price.htmlの「概算見積りシミュレーション」ボタン折返し対策 */
+    @media (max-width: 380px) {
+      .btn-main { white-space: nowrap; font-size: 0.85rem !important; padding: 12px 18px !important; letter-spacing: 0.02em; }
+    }
+
+    /* ══ ゆるキャラ活用：著者ボックス＆職人のひとこと（2026-06-23）══ */
+    /* 著者ボックス（コラム記事末尾・CTA直前に挿入） */
+    .author-box {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      background: var(--white);
+      border: 1px solid rgba(85,107,47,0.18);
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin: 40px 0 8px;
+    }
+    .author-box .author-avatar {
+      flex-shrink: 0;
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: var(--bg-alt);
+      border: 2px solid var(--accent);
+      object-fit: cover;
+    }
+    .author-box .author-label {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--accent-dark, #B8860B);
+      letter-spacing: 0.04em;
+      margin-bottom: 3px;
+    }
+    .author-box .author-name {
+      display: block;
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1.02rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+    .author-box .author-desc {
+      font-size: 0.8rem;
+      line-height: 1.7;
+      color: var(--text-light);
+      margin: 0;
+    }
+
+    /* 職人のひとこと（吹き出しパーツ・記事本文中に挿入） */
+    .craftsman-tip {
+      display: flex;
+      align-items: flex-end;
+      gap: 4px;
+      margin: 28px 0;
+    }
+    .craftsman-tip .tip-char {
+      flex-shrink: 0;
+      width: 84px;
+      height: auto;
+      align-self: flex-end;
+    }
+    .craftsman-tip .tip-bubble {
+      position: relative;
+      flex: 1;
+      background: var(--bg-alt);
+      border: 1px solid rgba(85,107,47,0.15);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin-bottom: 8px;
+    }
+    .craftsman-tip .tip-bubble::before {
+      content: "";
+      position: absolute;
+      left: -9px;
+      bottom: 18px;
+      width: 16px;
+      height: 16px;
+      background: var(--bg-alt);
+      border-left: 1px solid rgba(85,107,47,0.15);
+      border-bottom: 1px solid rgba(85,107,47,0.15);
+      transform: rotate(45deg);
+    }
+    .craftsman-tip .tip-label {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--white);
+      background: var(--main);
+      padding: 2px 10px;
+      border-radius: 100px;
+      margin-bottom: 8px;
+    }
+    .craftsman-tip .tip-bubble p {
+      font-size: 0.86rem;
+      line-height: 1.85;
+      color: var(--text);
+      margin: 0;
+    }
+    @media (max-width: 768px) {
+      .author-box { gap: 14px; padding: 16px 18px; }
+      .author-box .author-avatar { width: 60px; height: 60px; }
+      .craftsman-tip .tip-char { width: 64px; }
+      .craftsman-tip .tip-bubble { padding: 14px 16px; }
+      .craftsman-tip .tip-bubble p { font-size: 0.82rem; }
+    }
