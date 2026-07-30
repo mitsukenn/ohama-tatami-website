@@ -70,8 +70,8 @@
   </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@700&display=swap"></noscript>
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Klee+One:wght@400;600&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Klee+One:wght@400;600&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@700&display=swap"></noscript>
     <link rel="stylesheet" href="style.css">
 <style>
     /* Header */
@@ -188,47 +188,51 @@
       font-size: 0.9rem;
     }
 
-    /* Greeting section - letter style */
+    /* Greeting section - letter style（写真は左・文章は右） */
     .greeting-wrapper {
-      max-width: 800px;
+      max-width: 980px;
       margin: 0 auto;
       background: var(--white);
       border-radius: 16px;
       overflow: hidden;
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+      display: grid;
+      grid-template-columns: 340px 1fr;
+      gap: 32px;
+      align-items: start;
+      padding: 40px 36px;
     }
 
     .greeting-photo {
       width: 100%;
-      height: 300px;
-      overflow: hidden;
     }
 
     .greeting-photo img {
       width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center 30%;
+      height: auto;
+      display: block;
+      border-radius: 12px;
     }
 
     .greeting-card {
-      padding: 40px 36px;
+      padding: 0;
       position: relative;
     }
 
     .greeting-card h3 {
-      font-family: 'Noto Serif JP', serif;
-      font-size: 1.3rem;
-      font-weight: 700;
+      font-family: 'Klee One', 'Noto Serif JP', serif;
+      font-size: 1.35rem;
+      font-weight: 600;
       margin-bottom: 24px;
       color: var(--text);
-      line-height: 1.6;
+      line-height: 1.7;
     }
 
     .greeting-card p {
-      font-size: 0.92rem;
+      font-family: 'Klee One', 'Noto Serif JP', serif;
+      font-size: 1.02rem;
       color: var(--text-light);
-      line-height: 2.2;
+      line-height: 2.1;
       margin-bottom: 14px;
     }
 
@@ -271,9 +275,10 @@
 
     .greeting-sign-text strong {
       display: block;
-      font-size: 1rem;
+      font-family: 'Klee One', 'Noto Serif JP', serif;
+      font-size: 1.15rem;
       color: var(--text);
-      font-weight: 700;
+      font-weight: 600;
     }
 
     /* Company info table */
@@ -535,12 +540,19 @@
       section { padding: 48px 0; }
       h2 { font-size: 1.3rem; }
 
+      .greeting-wrapper {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 24px 20px;
+      }
+
       .greeting-photo {
-        height: 200px;
+        max-width: 320px;
+        margin: 0 auto;
       }
 
       .greeting-card {
-        padding: 28px 20px;
+        padding: 0;
       }
 
       .greeting-card h3 {
@@ -757,7 +769,7 @@
 
       <div class="greeting-wrapper">
         <div class="greeting-photo">
-          <picture><source srcset="images/syokunin02.webp" type="image/webp"><img src="images/syokunin02.jpg" alt="自社工場での畳製作風景" loading="lazy"></picture>
+          <picture><source srcset="images/daihyo_aisatsu.webp" type="image/webp"><img src="images/daihyo_aisatsu.jpg" alt="大浜畳商店 代表 大濵健太郎" loading="lazy"></picture>
         </div>
       <div class="greeting-card">
         <h3>畳のことなら、<br>何でもお気軽にご相談ください。</h3>
