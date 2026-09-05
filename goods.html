@@ -245,14 +245,14 @@
       align-items: stretch;
     }
     .goods-card.goods-featured .goods-img-placeholder {
-      width: 36%;
+      width: 42%;
       aspect-ratio: auto;
-      height: 420px;
-      background: #20211c;
+      height: 380px;
+      background: var(--white);
     }
     .goods-card.goods-featured .goods-img-placeholder img {
-      object-fit: contain;
-      padding: 16px;
+      object-fit: cover;
+      padding: 0;
     }
     .goods-card.goods-featured .goods-info {
       flex: 1;
@@ -263,7 +263,7 @@
     }
     @media (max-width: 768px) {
       .goods-card.goods-featured { flex-direction: column; }
-      .goods-card.goods-featured .goods-img-placeholder { width: 100%; aspect-ratio: 3 / 4; min-height: 0; height: auto; }
+      .goods-card.goods-featured .goods-img-placeholder { width: 100%; aspect-ratio: 3 / 2; min-height: 0; height: auto; }
       .goods-card.goods-featured .goods-info { padding: 24px 20px; }
     }
 
@@ -540,6 +540,10 @@
     }
 
 @media(max-width:768px) {
+      /* このページのインライン .sp-br{display:none} が style.css の
+         モバイル指定を打ち消していたため、ここで復帰させる */
+      .sp-br { display: inline; }
+
 
       nav { display: none; }
       .header-cta { display: none; }
@@ -819,7 +823,10 @@
   <!-- ══════════════════════════════════════ -->
   <div style="margin-top:72px;">
     <div class="page-banner">
-      <img src="images/banner_goods_text.webp" alt="畳の小物・い草グッズ">
+      <picture>
+        <source media="(max-width:767px)" srcset="images/banner_goods_sp.webp">
+        <img src="images/banner_goods_pc.webp" alt="い草グッズ">
+      </picture>
       <h1 class="visually-hidden">畳の小物・い草グッズ</h1>
     </div>
   </div>
@@ -835,9 +842,34 @@
       <div class="goods-grid">
 
         <div class="goods-card goods-featured" style="border:2px solid var(--accent); position:relative;">
+          <div class="goods-img-placeholder">
+            <picture><source srcset="images/goods/goods_card_fuda.webp" type="image/webp"><img loading="lazy" src="images/goods/goods_card_fuda.jpg" alt="名入れ畳札（命名札）"
+              onerror="this.style.display='none'; this.parentElement.classList.add('no-img');"></picture>
+          </div>
+          <div class="goods-info">
+            <h3>名入れ畳札（命名札）</h3>
+            <p>お子様のお名前と、兜・鯉のぼり・富士山などのデザインを畳表に印刷した記念の畳札。<br>節句やご出産のお祝いにもおすすめです。<br>木製スタンド付きで、大・中・小からお選びいただけます。</p>
+            <div class="goods-price">お見積もり（サイズ・デザインにより）</div>
+          </div>
+        </div>
+
+        <div class="goods-card">
+          <div class="goods-img-placeholder">
+            <picture><source srcset="images/goods/goods_card_footrest.webp" type="image/webp"><img loading="lazy" src="images/goods/goods_card_footrest.jpg" alt="畳フットレスト（い草の据え置きフットレスト）"
+              onerror="this.style.display='none'; this.parentElement.classList.add('no-img');"></picture>
+          </div>
+          <div class="goods-info">
+            <h3>畳フットレスト</h3>
+            <p>デスクワークの足元に、い草の心地よさを。靴を脱いで、足元から和のくつろぎ。オフィスのデスク下にも置きやすい高さです。</p>
+            <div class="goods-price">お見積もり（サイズ・仕様により）</div>
+            <button class="goods-detail-btn" type="button" data-gallery="footrest"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg> 詳しく見る</button>
+          </div>
+        </div>
+
+        <div class="goods-card" style="position:relative;">
           <div style="position:absolute; top:12px; right:12px; background:var(--accent); color:#fff; font-size:0.75rem; font-weight:700; padding:5px 12px; border-radius:4px; z-index:1;">NEW</div>
           <div class="goods-img-placeholder">
-            <picture><source srcset="images/uv_print_tatami.webp" type="image/webp"><img loading="lazy" src="images/uv_print_tatami.jpg" alt="オリジナルプリント畳（命名札・鑑賞用）"
+            <picture><source srcset="images/goods/goods_featured_uvprint.webp" type="image/webp"><img loading="lazy" src="images/goods/goods_featured_uvprint.jpg" alt="オリジナルプリント畳（命名札・鑑賞用）"
               onerror="this.style.display='none'; this.parentElement.classList.add('no-img');"></picture>
           </div>
           <div class="goods-info">
@@ -851,73 +883,39 @@
 
         <div class="goods-card">
           <div class="goods-img-placeholder">
-            <picture><source srcset="images/meishi_fuda.webp" type="image/webp"><img loading="lazy" src="images/meishi_fuda.jpg" alt="名入れ畳札（命名札）"
+            <picture><source srcset="images/goods/goods_card_minitatami.webp" type="image/webp"><img loading="lazy" src="images/goods/goods_card_minitatami.jpg" alt="ミニ畳（小畳）を居酒屋のカウンターでお酒のディスプレイに使った例"
               onerror="this.style.display='none'; this.parentElement.classList.add('no-img');"></picture>
-          </div>
-          <div class="goods-info">
-            <h3>名入れ畳札（命名札）</h3>
-            <p>お子様のお名前と、兜・鯉のぼり・富士山などのデザインを畳表に印刷した記念の畳札。節句やご出産のお祝いにもおすすめです。木製スタンド付きで、大・中・小からお選びいただけます。</p>
-            <div class="goods-price">お見積もり（サイズ・デザインにより）</div>
-          </div>
-        </div>
-
-        <div class="goods-card">
-          <div class="goods-img-placeholder">
-            <img loading="lazy" src="images/goods/igusa-coaster-01-green-tea.webp" alt="い草コースター（緑茶をのせた例）"
-              onerror="this.style.display='none'; this.parentElement.classList.add('no-img');">
-          </div>
-          <div class="goods-info">
-            <h3>い草コースター</h3>
-            <p>天然い草の香りを楽しめるコースター。来客用のおもてなしにも。</p>
-            <div class="goods-price">1,100円〜（税込）</div>
-            <button class="goods-detail-btn" type="button" data-gallery="coaster">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-              詳しく見る
-            </button>
-          </div>
-        </div>
-
-        <div class="goods-card">
-          <div class="goods-img-placeholder">
-            <img loading="lazy" src="images/goods/mini-tatami-03-engimono-cat.webp" alt="ミニ畳（小畳）に招き猫を飾った例"
-              onerror="this.style.display='none'; this.parentElement.classList.add('no-img');">
           </div>
           <div class="goods-info">
             <h3>ミニ畳（小畳）</h3>
             <p>飾り台・人形台に。縁付き・縁なしからお選びいただけます。</p>
             <div class="goods-price">3,500円〜（税込）</div>
-            <button class="goods-detail-btn" type="button" data-gallery="mini-tatami">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-              詳しく見る
-            </button>
+            <button class="goods-detail-btn" type="button" data-gallery="mini-tatami"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg> 詳しく見る</button>
           </div>
         </div>
 
         <div class="goods-card">
           <div class="goods-img-placeholder">
-            <picture><source srcset="images/goods_deskmat.webp" type="image/webp"><img loading="lazy" src="images/goods_deskmat.jpg" alt="い草デスクマット"
+            <picture><source srcset="images/goods/goods_card_coaster.webp" type="image/webp"><img loading="lazy" src="images/goods/goods_card_coaster.jpg" alt="い草コースター（緑茶をのせた例）"
+              onerror="this.style.display='none'; this.parentElement.classList.add('no-img');"></picture>
+          </div>
+          <div class="goods-info">
+            <h3>い草コースター</h3>
+            <p>天然い草の香りを楽しめるコースター。来客用のおもてなしにも。</p>
+            <div class="goods-price">1,100円〜（税込）</div>
+            <button class="goods-detail-btn" type="button" data-gallery="coaster"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg> 詳しく見る</button>
+          </div>
+        </div>
+
+        <div class="goods-card">
+          <div class="goods-img-placeholder">
+            <picture><source srcset="images/goods/goods_card_deskmat.webp" type="image/webp"><img loading="lazy" src="images/goods/goods_card_deskmat.jpg" alt="い草デスクマット"
               onerror="this.style.display='none'; this.parentElement.classList.add('no-img');"></picture>
           </div>
           <div class="goods-info">
             <h3>い草デスクマット</h3>
             <p>デスクワークに癒しの香りを。天然い草の調湿効果も。</p>
             <div class="goods-price">5,000円〜（税込）</div>
-          </div>
-        </div>
-
-        <div class="goods-card">
-          <div class="goods-img-placeholder">
-            <img loading="lazy" src="images/goods/tatami-footrest-05-hero-closeup.webp" alt="畳フットレスト（い草の据え置きフットレスト）"
-              onerror="this.style.display='none'; this.parentElement.classList.add('no-img');">
-          </div>
-          <div class="goods-info">
-            <h3>畳フットレスト</h3>
-            <p>デスクワークの足元に、い草の心地よさを。靴を脱いで、足元から和のくつろぎ。オフィスのデスク下にも置きやすい高さです。</p>
-            <div class="goods-price">お見積もり（サイズ・仕様により）</div>
-            <button class="goods-detail-btn" type="button" data-gallery="footrest">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-              詳しく見る
-            </button>
           </div>
         </div>
 
@@ -930,7 +928,7 @@
       <!-- CTA -->
       <div style="text-align:center; margin-top:32px;">
         <p style="font-size:0.92rem; font-weight:700; color:var(--text); margin-bottom:16px;">
-          商品について詳しく知りたい方はお気軽にどうぞ
+          商品について詳しく知りたい方は<br class="sp-br">お気軽にどうぞ
         </p>
         <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
           <a href="tel:095-823-1905" class="cta-btn tel" style="min-width:180px;"><svg
@@ -947,12 +945,11 @@
               <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
             </svg> LINEで相談する</a>
         </div>
-      </div>
     </div>
   </section>
 
   <!-- CTA (shared) -->
-  <section class="cta-section">
+  <section class="cta-section dp dp--corner-kei">
     <h2>まずはお気軽にご相談ください</h2>
     <p>畳のお悩み、「こんなこと聞いていいのかな」ということでも遠慮なくお問い合わせください。お見積もりは無料です。</p>
     <div class="cta-buttons">

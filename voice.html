@@ -454,6 +454,10 @@
     }
 
 @media(max-width:768px) {
+      /* このページのインライン .sp-br{display:none} が style.css の
+         モバイル指定を打ち消していたため、ここで復帰させる */
+      .sp-br { display: inline; }
+
 
       nav { display: none; }
       .header-cta { display: none; }
@@ -602,7 +606,10 @@
   <!-- Page Header -->
   <div style="margin-top:72px;">
     <div class="page-banner">
-      <img src="images/banner_voice_text.webp" alt="お客様の声">
+      <picture>
+        <source media="(max-width:767px)" srcset="images/banner_voice_sp.webp">
+        <img src="images/banner_voice_pc.webp" alt="お客様の声">
+      </picture>
       <h1 class="visually-hidden">お客様の声</h1>
     </div>
   </div>
@@ -656,7 +663,7 @@
   </section>
 
   <!-- CTA -->
-  <section class="cta-section">
+  <section class="cta-section dp dp--corner-kei">
     <h2>まずはお気軽にご相談ください</h2>
     <p>畳のお悩み、「こんなこと聞いていいのかな」ということでも遠慮なくお問い合わせください。お見積もりは無料です。</p>
     <div class="cta-buttons">

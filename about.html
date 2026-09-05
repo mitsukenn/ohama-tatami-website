@@ -531,6 +531,10 @@
     }
 
 @media(max-width:768px) {
+      /* このページのインライン .sp-br{display:none} が style.css の
+         モバイル指定を打ち消していたため、ここで復帰させる */
+      .sp-br { display: inline; }
+
 
       nav { display: none; }
       .header-cta { display: none; }
@@ -740,7 +744,10 @@
   <!-- Page Header -->
   <div style="margin-top:72px;">
     <div class="page-banner">
-      <img src="images/banner_about_text.webp" alt="会社概要">
+      <picture>
+        <source media="(max-width:767px)" srcset="images/banner_about_sp.webp">
+        <img src="images/banner_about_pc.webp" alt="当店について">
+      </picture>
       <h1 class="visually-hidden">会社概要</h1>
     </div>
   </div>
@@ -752,10 +759,10 @@
       <div class="section-line"></div>
       <div class="numbers-grid">
         <div class="number-card"><div class="number-value">75年</div><div class="number-unit">創業</div><p class="number-desc">長崎で三代続く、老舗の畳店です。</p></div>
-        <div class="number-card"><div class="number-value">三代</div><div class="number-unit">受け継ぐ技</div><p class="number-desc">祖父の代から、畳ひとすじに歩んできました。</p></div>
+        <div class="number-card"><div class="number-value">三代</div><div class="number-unit">受け継ぐ技</div><p class="number-desc">祖父の代から、<br class="sp-br">畳ひとすじに<br class="sp-br">歩んできました。</p></div>
         <div class="number-card"><div class="number-value">20年</div><div class="number-unit">職人歴</div><p class="number-desc">代表自らが一枚ずつ丁寧に仕上げます。</p></div>
         <div class="number-card"><div class="number-value">最大40枚</div><div class="number-unit">1日あたり</div><p class="number-desc">繁忙期でも対応できる生産力。<br><small>※年末の最盛期</small></p></div>
-        <div class="number-card"><div class="number-value">第012410号</div><div class="number-unit">長崎県知事許可</div><p class="number-desc">内装仕上工事業の許可を受けた専門店です。</p></div>
+        <div class="number-card"><div class="number-value">第012410号</div><div class="number-unit">長崎県知事許可</div><p class="number-desc">内装仕上工事業の<br class="sp-br">許可を受けた<br class="sp-br">専門店です。</p></div>
         <div class="number-card"><div class="number-value">長崎駅前</div><div class="number-unit">徒歩4分</div><p class="number-desc">長崎駅から徒歩約4分。お気軽にお越しください。</p></div>
       </div>
     </div>
@@ -772,11 +779,11 @@
           <picture><source srcset="images/daihyo_aisatsu.webp" type="image/webp"><img src="images/daihyo_aisatsu.jpg" alt="大浜畳商店 代表 大濵健太郎" loading="lazy"></picture>
         </div>
       <div class="greeting-card">
-        <h3>畳のことなら、<br>何でもお気軽にご相談ください。</h3>
-        <p>大浜畳商店の大濵 健太郎です。当店は、長崎駅前で畳・襖・障子の張り替えを行う、創業75年・三代続く畳屋です。私自身、職人としてこの道に入って20年になります。</p>
+        <h3>畳のことなら、<br>何でもお気軽に<br class="sp-br">ご相談ください。</h3>
+        <p>大浜畳商店の大濵 健太郎です。<br class="sp-br">当店は、長崎駅前で<br class="sp-br">畳・襖・障子の張り替えを行う、<br class="sp-br">創業75年・三代続く畳屋です。<br class="sp-br">私自身、職人としてこの道に<br class="sp-br">入って20年になります。</p>
         <p>畳は、毎日その上で過ごすものだからこそ、仕上がりが暮らしの心地よさを大きく左右します。当店では、お見積もりから畳のお預かり、仕上げ、納品まで、すべて私たち職人が直接うかがって対応しています。「営業の者に話したことが、職人に伝わっていなかった」というようなことは起こりません。お客様のご要望を、間に人を挟まず、そのまま形にできるのが、小さな畳屋の強みだと思っています。</p>
         <p>朝お預かりした畳を、夕方にはお届けする。タンスやベッドなどの家具の移動もすべて私たちが行いますので、前もってお片付けをお願いすることもありません。畳表の張り替え・仕上げは自社の作業場で一枚ずつ丁寧に行い、畳床（畳の土台）も、信頼できる材料を選んで仕入れています。</p>
-        <p>「そろそろ替え時かな」「うちの畳でも大丈夫かな」——そんな段階でも構いません。畳のことで気になることがあれば、どうぞお気軽にお声がけください。長崎の和室を、これからも一軒ずつ、丁寧に守っていきたいと思っています。</p>
+        <p>「そろそろ替え時かな」<br class="sp-br">「うちの畳でも大丈夫かな」——<br class="sp-br">そんな段階でも構いません。<br class="sp-br">畳のことで気になることが<br class="sp-br">あれば、どうぞお気軽に<br class="sp-br">お声がけください。<br class="sp-br">長崎の和室を、これからも<br class="sp-br">一軒ずつ、丁寧に<br class="sp-br">守っていきたいと思っています。</p>
         <div class="greeting-sign">
           <div class="greeting-sign-icon"><span>大</span></div>
           <div class="greeting-sign-text">
@@ -802,7 +809,7 @@
       <div class="promise-list">
         <div class="promise-item"><span class="promise-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><div><h4>職人が直接対応します</h4><p>お見積もりから納品まで、営業任せにしません。ご要望を、間に人を挟まず形にします。</p></div></div>
         <div class="promise-item"><span class="promise-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><div><h4>家具の移動も無料です</h4><p>タンスやベッドなどの移動もこちらで行います。前もってのお片付けは不要です。</p></div></div>
-        <div class="promise-item"><span class="promise-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><div><h4>朝お預かり、夕方お届け</h4><p>2部屋・12畳までが目安です。枚数が多い場合は、日数をご相談ください。</p></div></div>
+        <div class="promise-item"><span class="promise-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><div><h4>朝お預かり、夕方お届け</h4><p>2部屋・12畳までが目安です。<br class="sp-br">枚数が多い場合は、<br class="sp-br">日数をご相談ください。</p></div></div>
         <div class="promise-item"><span class="promise-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><div><h4>お見積もりは無料です</h4><p>金額をご確認のうえ、ご検討ください。お断りいただいてもかまいません。</p></div></div>
         <div class="promise-item"><span class="promise-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span><div><h4>追加料金のない明朗会計</h4><p>あとから追加料金が発生することはありません。<br><small>※横付けできない場所・対応エリア外は別途諸経費／古い畳の処分は新畳の場合のみ別途・有料</small></p></div></div>
       </div>
@@ -882,7 +889,7 @@
 
       <p class="access-text" style="margin-bottom:32px;">
         JR長崎駅より徒歩約4分。<br class="sp-br">駅前の大通り沿いにございます。<br>
-        お車でお越しの際は、<br class="sp-br">近隣のコインパーキングをご利用ください。
+        お車でお越しの際は、<br class="sp-br">近隣のコインパーキングを<br class="sp-br">ご利用ください。
       </p>
 
       <div class="map-section">
@@ -895,7 +902,7 @@
   </section>
 
   <!-- CTA -->
-  <section class="cta-section">
+  <section class="cta-section dp dp--corner-kei">
     <h2>まずはお気軽にご相談ください</h2>
     <p>畳のお悩み、「こんなこと聞いていいのかな」ということでも遠慮なくお問い合わせください。お見積もりは無料です。遠方にお住まいのご家族からの、ご実家の畳のご相談もお受けしています。</p>
     <div class="cta-buttons">

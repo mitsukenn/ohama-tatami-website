@@ -193,6 +193,11 @@
 
     /* Responsive */
     @media (max-width: 768px) {
+      /* 4カラム表がスマホで1文字ずつ縦に折り返す問題：横スクロール化 */
+      .article-body table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+      .article-body table th,
+      .article-body table td { white-space: nowrap; }
+
       header { padding: 0 16px; }
       nav, .header-cta { display: none; }
       .hamburger { display: block; }
@@ -292,7 +297,7 @@
   <section class="article-header">
     <div class="container">
       <span class="article-tag">暮らし</span>
-      <h1>新築に畳を入れるメリット<br>後悔しないための選び方と注意点</h1>
+      <h1>新築に畳を入れるメリット<br>後悔しないための<br class="sp-br">選び方と注意点</h1>
       <p class="blog-lead">「新築だけど、和室は必要？」「フローリングだけでいいかな？」——実は、新築こそ畳を取り入れる絶好のチャンスです。後から入れるより費用も手間も抑えられます。後悔しないための選び方をお伝えします。</p>
     </div>
   </section>

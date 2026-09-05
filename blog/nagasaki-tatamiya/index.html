@@ -198,6 +198,16 @@
 
     /* Responsive */
     @media (max-width: 768px) {
+      /* 4カラム表がスマホで1文字ずつ縦に折り返す問題：横スクロール化 */
+      .article-body table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+      .article-body table th,
+      .article-body table td { white-space: nowrap; }
+
+      /* スマホ：関連記事カードのサムネが大きくタイトル欄が10字/行しか残らないため縮小 */
+      .related-thumb { width: 96px; }
+      .related-card { gap: 10px; }
+      .related-body { padding: 10px 10px 10px 0; }
+
       header { padding: 0 16px; }
       nav, .header-cta { display: none; }
       .hamburger { display: block; }
@@ -316,7 +326,7 @@
         <h2>長崎市の畳替え、主な依頼先は3つ</h2>
         <p>長崎市で畳替えを依頼できる場所は、大きく分けて3つあります。それぞれに特徴があるので、まずは違いを知っておきましょう。</p>
 
-        <h3>1. 畳専門店（大浜畳商店のような個人店）</h3>
+        <h3>1. 畳専門店<br class="sp-br">（大浜畳商店のような個人店）</h3>
         <p>畳の張替え・施工を専門に行うお店です。自社工場で一枚ずつ仕上げるため、品質管理が行き届きます。見積もりから施工まで同じ職人が対応するのが一般的です。</p>
 
         <h3>2. ホームセンター</h3>

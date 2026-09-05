@@ -467,7 +467,8 @@
     }
 
     .quality-img {
-      aspect-ratio: 4 / 3;
+      /* 4ランクの比較部分だけを切り出した画像に合わせた比率 */
+      aspect-ratio: 900 / 1144;
       background: var(--white);
       border-radius: 12px;
       display: flex;
@@ -476,6 +477,13 @@
       color: var(--sub);
       box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
       overflow: hidden;
+    }
+
+    /* picture が高さを持たず画像が枠からはみ出すのを防ぐ */
+    .quality-img picture {
+      display: block;
+      width: 100%;
+      height: 100%;
     }
 
     /* External links */
@@ -748,6 +756,10 @@
     }
 
 @media(max-width:768px) {
+
+      /* このページのインライン .sp-br{display:none} が style.css の
+         モバイル指定を打ち消していたため、ここで復帰させる */
+      .sp-br { display: inline; }
 
       nav { display: none; }
       .header-cta { display: none; }
@@ -1405,7 +1417,10 @@ th,
   <!-- ══════════════════════════════════════ -->
   <div style="margin-top:72px;">
     <div class="page-banner">
-      <img src="images/banner_price_text.webp" alt="料金・メニュー">
+      <picture>
+        <source media="(max-width:767px)" srcset="images/banner_price_sp.webp">
+        <img src="images/banner_price_pc.webp" alt="料金のご案内">
+      </picture>
       <h1 class="visually-hidden">料金・メニュー</h1>
     </div>
   </div>
@@ -1438,7 +1453,7 @@ th,
           </div>
           <h3>裏返し</h3>
           <div class="price-highlight">5,500<small>円〜／1畳</small></div>
-          <p>今の畳表をひっくり返して再利用。費用を抑えたい方に。目安：5〜7年以内。</p>
+          <p>今の畳表をひっくり返して再利用。<br class="sp-br">費用を抑えたい方に。<br class="sp-br">目安：5〜7年以内。</p>
         </a>
         <a href="#price-omotegae" class="method-card popular" style="text-decoration:none; color:inherit;">
           <div class="method-icon"><picture><source srcset="images/icon_omotegae.webp" type="image/webp"><img src="images/icon_omotegae.png" alt="表替え" style="height:60px; width:auto;"></picture>
@@ -1512,7 +1527,7 @@ th,
             </tr>
           </tbody>
         </table>
-        <p class="price-notes">※半畳サイズは上記価格の70%となります。</p>
+        <p class="price-notes">※半畳サイズは<br class="sp-br">上記価格の70%となります。</p>
         <div
           style="margin-top:16px; background:var(--bg-alt); padding:16px 20px; border-radius:8px; border-left:4px solid var(--accent);">
           <div style="font-size:0.82rem; color:var(--text-light); margin-bottom:6px;"><svg
@@ -1719,9 +1734,9 @@ th,
         ※表示価格はすべて税込です<br>
         ※畳のサイズや素材により変動します<br>
         ※古畳の処分費：1枚あたり2,500円（別途）<br>
-        ※車が建物に隣接できない場合、別途運搬費がかかる場合があります<br>
-        ※新畳の価格は表替え価格＋7,700円（畳床交換含む）の構成です。半畳の縁なし畳は＋5,500円<br>
-        ※正確な金額は現地でのお見積もりにてご案内します
+        ※車が建物に隣接できない場合、<br class="sp-br">別途運搬費がかかる場合があります<br>
+        ※新畳の価格は表替え価格＋7,700円<br class="sp-br">（畳床交換含む）の構成です。<br class="sp-br">半畳の縁なし畳は＋5,500円<br>
+        ※正確な金額は現地での<br class="sp-br">お見積もりにてご案内します
       </p>
 
       <div style="text-align:center; margin-top:32px;">
@@ -1850,7 +1865,7 @@ th,
       <div class="quality-grid">
         <div class="quality-text">
           <h3>「安い畳」と「良い畳」、<br>何が違うの？</h3>
-          <p>畳表には、はっきりとした品質の差があります。</p>
+          <p>畳表には、<br class="sp-br">はっきりとした品質の差があります。</p>
           <p>「素人にはわからないのでは？」そうおっしゃる方も多いのですが、良い畳表は目の詰まり方から違います。耐久年数にも差が出るため、長い目で見たコストパフォーマンスも変わります。</p>
           <p>お見積もりの際に、素材ごとの特徴や違いを丁寧にご説明いたします。<br class="pc-br"><strong>最終的に価格と品質を決めるのは、お客様ご自身です。</strong></p>
         </div>
@@ -1863,7 +1878,7 @@ th,
   </section>
 
   <!-- CTA (shared) -->
-  <section class="cta-section">
+  <section class="cta-section dp dp--corner-kei">
     <h2>まずはお気軽にご相談ください</h2>
     <p>畳のお悩み、「こんなこと聞いていいのかな」ということでも遠慮なくお問い合わせください。お見積もりは無料です。</p>
     <div class="cta-buttons">

@@ -603,6 +603,10 @@
     }
 
 @media(max-width:768px) {
+      /* このページのインライン .sp-br{display:none} が style.css の
+         モバイル指定を打ち消していたため、ここで復帰させる */
+      .sp-br { display: inline; }
+
 
       nav { display: none; }
       .header-cta { display: none; }
@@ -768,7 +772,10 @@
   <!-- ══════════════════════════════════════ -->
   <div style="margin-top:72px;">
     <div class="page-banner">
-      <img src="images/banner_tatami_text.webp" alt="畳表について">
+      <picture>
+        <source media="(max-width:767px)" srcset="images/banner_tatami_sp.webp">
+        <img src="images/banner_tatami_pc.webp" alt="畳の種類">
+      </picture>
       <h1 class="visually-hidden">畳表について</h1>
     </div>
   </div>
@@ -961,7 +968,7 @@
   <!-- ══════════════════════════════════════ -->
   <!--  Section 6: CTA                        -->
   <!-- ══════════════════════════════════════ -->
-  <section class="cta-section">
+  <section class="cta-section dp dp--corner-kei">
     <h2>まずはLINEで写真を送るだけ。<br class="sp-br">60秒で無料お見積もり。</h2>
     <p>畳のお悩み、「こんなこと聞いていいのかな」ということでも遠慮なくお問い合わせください。お見積もりは無料です。</p>
     <div class="cta-buttons">

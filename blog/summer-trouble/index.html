@@ -184,6 +184,11 @@
 
     /* Responsive */
     @media (max-width: 768px) {
+      /* スマホ：関連記事カードのサムネが大きくタイトル欄が10字/行しか残らないため縮小 */
+      .related-thumb { width: 96px; }
+      .related-card { gap: 10px; }
+      .related-body { padding: 10px 10px 10px 0; }
+
       header { padding: 0 16px; }
       nav, .header-cta { display: none; }
       .hamburger { display: block; }
@@ -284,7 +289,7 @@
   <section class="article-header">
     <div class="container">
       <span class="article-tag">お手入れ</span>
-      <h1>夏の畳トラブル対策<br>梅雨〜真夏のカビ・臭い・ダニを防ぐ</h1>
+      <h1>夏の畳トラブル対策<br>梅雨〜真夏の<br class="sp-br">カビ・臭い・ダニを防ぐ</h1>
       <p class="blog-lead">「夏になると畳の臭いやベタつきが気になる…」——梅雨から真夏にかけては、畳トラブルが最も多い季節です。カビ・臭い・ダニの3大トラブルの原因と予防法を解説します。</p>
     </div>
   </section>

@@ -85,7 +85,7 @@
 
     /* Breadcrumb */
     .breadcrumb {
-      margin-top: 72px; padding: 14px 24px; background: var(--bg-alt);
+      margin-top: 0; padding: 14px 24px; background: var(--bg-alt);
       font-size: 0.78rem; color: var(--text-light);
     }
     .breadcrumb a { color: var(--text-light); text-decoration: none; }
@@ -416,15 +416,24 @@
 
   <main>
 
+  <div style="margin-top:72px;">
+    <div class="page-banner">
+      <picture>
+        <source media="(max-width:767px)" srcset="../images/banner_blog_sp.webp">
+        <img src="../images/banner_blog_pc.webp" alt="お役立ちコラム">
+      </picture>
+    </div>
+  </div>
+
   <div class="breadcrumb">
     <a href="../index.html">トップ</a> ＞ 畳のお役立ちコラム
   </div>
 
   <section style="padding-top:48px; padding-bottom:80px; background-color:var(--bg-base); background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Cpath d='M30 0L60 15L60 45L30 60L0 45L0 15Z' fill='none' stroke='%23C9A84C' stroke-width='0.3' opacity='0.06'/%3E%3C/svg%3E&quot;); background-size:60px 60px;">
     <div class="container">
-      <h1>畳のお役立ちコラム</h1>
+      <h1 class="visually-hidden">畳のお役立ちコラム</h1>
       <p style="text-align:center; color:var(--text-light); font-size:0.95rem; margin-bottom:48px; line-height:2;">
-        畳替えの費用やタイミング、お手入れ方法など、<br>長崎の畳職人がわかりやすくお伝えします。
+        畳替えの費用やタイミング、<br class="sp-br">お手入れ方法など、<br>長崎の畳職人が<br class="sp-br">わかりやすくお伝えします。
       </p>
       <div class="category-filter">
         <button class="category-btn active" data-filter="all">すべて</button>
@@ -439,6 +448,124 @@
       </div>
 
       <div class="blog-list-grid">
+        <!-- HIDDEN(vol0910-images-pending)
+        <a href="keirou-tatamigae/index.html" class="blog-list-card" data-category="暮らし">
+          <div class="blog-list-thumb"><picture><source srcset="../images/blog/blog_keirou-tatamigae_thumb.webp" type="image/webp"><img src="../images/blog/blog_keirou-tatamigae_thumb.jpg" alt="" loading="lazy" style="width:100%; height:100%; object-fit:cover;"></picture></div>
+          <div class="blog-list-body">
+            <span class="blog-list-tag">暮らし</span>
+            <h3>敬老の日に畳替えギフト</h3>
+            <p>離れて暮らす親への親孝行</p>
+          </div>
+        </a>
+        -->
+        <!-- HIDDEN(vol0910-images-pending)
+        <a href="koromogae-oshiire/index.html" class="blog-list-card" data-category="お手入れ">
+          <div class="blog-list-thumb"><picture><source srcset="../images/blog/blog_koromogae-oshiire_thumb.webp" type="image/webp"><img src="../images/blog/blog_koromogae-oshiire_thumb.jpg" alt="" loading="lazy" style="width:100%; height:100%; object-fit:cover;"></picture></div>
+          <div class="blog-list-body">
+            <span class="blog-list-tag">お手入れ</span>
+            <h3>衣替えついでの押入れ湿気対策</h3>
+            <p>布団・衣類のカビを防ぐ</p>
+          </div>
+        </a>
+        -->
+        <!-- HIDDEN(vol0910-images-pending)
+        <a href="tatami-suigai-hoken/index.html" class="blog-list-card" data-category="費用">
+          <div class="blog-list-thumb"><picture><source srcset="../images/blog/blog_tatami-suigai-hoken_thumb.webp" type="image/webp"><img src="../images/blog/blog_tatami-suigai-hoken_thumb.jpg" alt="" loading="lazy" style="width:100%; height:100%; object-fit:cover;"></picture></div>
+          <div class="blog-list-body">
+            <span class="blog-list-tag">費用</span>
+            <h3>台風で畳が水浸しに…保険は？</h3>
+            <p>火災保険の水災補償を確認</p>
+          </div>
+        </a>
+        -->
+        <!-- HIDDEN(vol0910-images-pending)
+        <a href="tatami-hiyake/index.html" class="blog-list-card" data-category="お手入れ">
+          <div class="blog-list-thumb"><picture><source srcset="../images/blog/blog_tatami-hiyake_thumb.webp" type="image/webp"><img src="../images/blog/blog_tatami-hiyake_thumb.jpg" alt="" loading="lazy" style="width:100%; height:100%; object-fit:cover;"></picture></div>
+          <div class="blog-list-body">
+            <span class="blog-list-tag">お手入れ</span>
+            <h3>畳の日焼け・色あせ対策</h3>
+            <p>直せる変色と直らない変色</p>
+          </div>
+        </a>
+        -->
+        <!-- HIDDEN(vol0910-images-pending)
+        <a href="tatami-kishimi/index.html" class="blog-list-card" data-category="お手入れ">
+          <div class="blog-list-thumb"><picture><source srcset="../images/blog/blog_tatami-kishimi_thumb.webp" type="image/webp"><img src="../images/blog/blog_tatami-kishimi_thumb.jpg" alt="" loading="lazy" style="width:100%; height:100%; object-fit:cover;"></picture></div>
+          <div class="blog-list-body">
+            <span class="blog-list-tag">お手入れ</span>
+            <h3>畳がきしむ・沈む音の原因</h3>
+            <p>床下からのSOSかも</p>
+          </div>
+        </a>
+        -->
+        <!-- HIDDEN(vol0910-images-pending)
+        <a href="aki-housedust/index.html" class="blog-list-card" data-category="お手入れ">
+          <div class="blog-list-thumb"><picture><source srcset="../images/blog/blog_aki-housedust_thumb.webp" type="image/webp"><img src="../images/blog/blog_aki-housedust_thumb.jpg" alt="" loading="lazy" style="width:100%; height:100%; object-fit:cover;"></picture></div>
+          <div class="blog-list-body">
+            <span class="blog-list-tag">お手入れ</span>
+            <h3>秋のハウスダスト対策</h3>
+            <p>ダニの死骸シーズンの畳ケア</p>
+          </div>
+        </a>
+        -->
+        <!-- HIDDEN(vol0910-images-pending)
+        <a href="shugijiki/index.html" class="blog-list-card" data-category="豆知識">
+          <div class="blog-list-thumb"><picture><source srcset="../images/blog/blog_shugijiki_thumb.webp" type="image/webp"><img src="../images/blog/blog_shugijiki_thumb.jpg" alt="" loading="lazy" style="width:100%; height:100%; object-fit:cover;"></picture></div>
+          <div class="blog-list-body">
+            <span class="blog-list-tag">豆知識</span>
+            <h3>祝儀敷きと不祝儀敷き</h3>
+            <p>畳の敷き方に込められた意味</p>
+          </div>
+        </a>
+        -->
+        <!-- HIDDEN(vol0910-images-pending)
+        <a href="houji-tatamigae/index.html" class="blog-list-card" data-category="タイミング">
+          <div class="blog-list-thumb"><picture><source srcset="../images/blog/blog_houji-tatamigae_thumb.webp" type="image/webp"><img src="../images/blog/blog_houji-tatamigae_thumb.jpg" alt="" loading="lazy" style="width:100%; height:100%; object-fit:cover;"></picture></div>
+          <div class="blog-list-body">
+            <span class="blog-list-tag">タイミング</span>
+            <h3>法事の前に畳を整える</h3>
+            <p>逆算スケジュールと段取り</p>
+          </div>
+        </a>
+        -->
+        <a href="tatami-yoga/index.html" class="blog-list-card" data-category="暮らし">
+          <div class="blog-list-thumb"><picture><source srcset="../images/blog/blog_tatami-yoga_thumb.webp" type="image/webp"><img src="../images/blog/blog_tatami-yoga_thumb.jpg" alt="" loading="lazy" style="width:100%; height:100%; object-fit:cover;"></picture></div>
+          <div class="blog-list-body">
+            <span class="blog-list-tag">暮らし</span>
+            <h3>和室でヨガ・ストレッチ</h3>
+            <p>畳が運動に向く3つの理由</p>
+          </div>
+        </a>
+        <!-- HIDDEN(vol0910-images-pending)
+        <a href="washitsu-dokusho/index.html" class="blog-list-card" data-category="暮らし">
+          <div class="blog-list-thumb"><picture><source srcset="../images/blog/blog_washitsu-dokusho_thumb.webp" type="image/webp"><img src="../images/blog/blog_washitsu-dokusho_thumb.jpg" alt="" loading="lazy" style="width:100%; height:100%; object-fit:cover;"></picture></div>
+          <div class="blog-list-body">
+            <span class="blog-list-tag">暮らし</span>
+            <h3>読書の秋は和室が最適</h3>
+            <p>目に優しい照明の選び方</p>
+          </div>
+        </a>
+        -->
+        <!-- HIDDEN(vol0910-images-pending)
+        <a href="tatamiberi-gara/index.html" class="blog-list-card" data-category="豆知識">
+          <div class="blog-list-thumb"><picture><source srcset="../images/blog/blog_tatamiberi-gara_thumb.webp" type="image/webp"><img src="../images/blog/blog_tatamiberi-gara_thumb.jpg" alt="" loading="lazy" style="width:100%; height:100%; object-fit:cover;"></picture></div>
+          <div class="blog-list-body">
+            <span class="blog-list-tag">豆知識</span>
+            <h3>畳の縁（へり）の柄の意味</h3>
+            <p>選び方と人気柄</p>
+          </div>
+        </a>
+        -->
+        <!-- HIDDEN(vol0910-images-pending)
+        <a href="shinshitsu-tatami/index.html" class="blog-list-card" data-category="暮らし">
+          <div class="blog-list-thumb"><picture><source srcset="../images/blog/blog_shinshitsu-tatami_thumb.webp" type="image/webp"><img src="../images/blog/blog_shinshitsu-tatami_thumb.jpg" alt="" loading="lazy" style="width:100%; height:100%; object-fit:cover;"></picture></div>
+          <div class="blog-list-body">
+            <span class="blog-list-tag">暮らし</span>
+            <h3>寝室に畳を選ぶ人が増加中</h3>
+            <p>布団派の寝室リフォーム</p>
+          </div>
+        </a>
+        -->
         <a href="6jou-cost/index.html" class="blog-list-card" data-category="費用">
           <div class="blog-list-thumb"><picture><source srcset="../images/blog/blog_6jou-cost_thumb.webp" type="image/webp"><img src="../images/blog/blog_6jou-cost_thumb.jpg" alt="" loading="lazy" style="width:100%; height:100%; object-fit:cover;"></picture></div>
           <div class="blog-list-body">
@@ -524,7 +651,7 @@
           <div class="blog-list-body">
             <span class="blog-list-tag">デザイン</span>
             <h3>畳の色選び人気ランキング</h3>
-            <p>グレー・ベージュ・グリーンの施工イメージ</p>
+            <p>グレー・ベージュ・グリーンの<br class="sp-br">施工イメージ</p>
           </div>
         </a>
         <a href="daiken-colors/index.html" class="blog-list-card" data-category="素材">
@@ -704,7 +831,7 @@
           </div>
         </a>
         <a href="cost/index.html" class="blog-list-card" data-category="費用">
-          <div class="blog-list-thumb" style="background:linear-gradient(135deg, rgba(85,107,47,0.15), rgba(85,107,47,0.05)); display:flex; align-items:center; justify-content:center;"><span style="font-size:1.1rem; color:var(--main); font-weight:700;">💰</span></div>
+          <div class="blog-list-thumb"><picture><source srcset="../images/blog/blog_cost_thumb.webp" type="image/webp"><img src="../images/blog/blog_cost_thumb.jpg" alt="" loading="lazy" style="width:100%; height:100%; object-fit:cover;"></picture></div>
           <div class="blog-list-body">
             <span class="blog-list-tag">費用</span>
             <h3>畳替えの費用相場は？</h3>
@@ -712,7 +839,7 @@
           </div>
         </a>
         <a href="oteire/index.html" class="blog-list-card" data-category="お手入れ">
-          <div class="blog-list-thumb" style="background:linear-gradient(135deg, rgba(85,107,47,0.15), rgba(85,107,47,0.05)); display:flex; align-items:center; justify-content:center;"><span style="font-size:1.1rem; color:var(--main); font-weight:700;">🧹</span></div>
+          <div class="blog-list-thumb"><picture><source srcset="../images/blog/blog_oteire_thumb.webp" type="image/webp"><img src="../images/blog/blog_oteire_thumb.jpg" alt="" loading="lazy" style="width:100%; height:100%; object-fit:cover;"></picture></div>
           <div class="blog-list-body">
             <span class="blog-list-tag">お手入れ</span>
             <h3>畳の正しいお手入れ方法</h3>
@@ -720,7 +847,7 @@
           </div>
         </a>
         <a href="senmonten/index.html" class="blog-list-card" data-category="基本知識">
-          <div class="blog-list-thumb" style="background:linear-gradient(135deg, rgba(85,107,47,0.15), rgba(85,107,47,0.05)); display:flex; align-items:center; justify-content:center;"><span style="font-size:1.1rem; color:var(--main); font-weight:700;">📖</span></div>
+          <div class="blog-list-thumb"><picture><source srcset="../images/blog/blog_senmonten_thumb.webp" type="image/webp"><img src="../images/blog/blog_senmonten_thumb.jpg" alt="" loading="lazy" style="width:100%; height:100%; object-fit:cover;"></picture></div>
           <div class="blog-list-body">
             <span class="blog-list-tag">比較</span>
             <h3>なぜ畳専門店を選ぶ？</h3>
@@ -728,7 +855,7 @@
           </div>
         </a>
         <a href="igusa/index.html" class="blog-list-card" data-category="素材">
-          <div class="blog-list-thumb" style="background:linear-gradient(135deg, rgba(85,107,47,0.15), rgba(85,107,47,0.05)); display:flex; align-items:center; justify-content:center;"><span style="font-size:1.1rem; color:var(--main); font-weight:700;">🌾</span></div>
+          <div class="blog-list-thumb"><picture><source srcset="../images/blog/blog_igusa_thumb.webp" type="image/webp"><img src="../images/blog/blog_igusa_thumb.jpg" alt="" loading="lazy" style="width:100%; height:100%; object-fit:cover;"></picture></div>
           <div class="blog-list-body">
             <span class="blog-list-tag">素材</span>
             <h3>い草の畳の魅力</h3>
@@ -736,16 +863,13 @@
           </div>
         </a>
         <a href="sasakure/index.html" class="blog-list-card" data-category="お手入れ">
-          <div class="blog-list-thumb" style="background:linear-gradient(135deg, rgba(85,107,47,0.15), rgba(85,107,47,0.05)); display:flex; align-items:center; justify-content:center;"><span style="font-size:1.1rem; color:var(--main); font-weight:700;">🔍</span></div>
+          <div class="blog-list-thumb"><picture><source srcset="../images/blog/blog_sasakure_thumb.webp" type="image/webp"><img src="../images/blog/blog_sasakure_thumb.jpg" alt="" loading="lazy" style="width:100%; height:100%; object-fit:cover;"></picture></div>
           <div class="blog-list-body">
             <span class="blog-list-tag">症状診断</span>
             <h3>畳のささくれは替え時のサイン</h3>
             <p>放置するとどうなる？</p>
           </div>
         </a>
-      </div>
-
-      
         <a href="baby/index.html" class="blog-list-card" data-category="暮らし">
           <div class="blog-list-thumb"><picture><source srcset="../images/blog/blog_baby_thumb.webp" type="image/webp"><img src="../images/blog/blog_baby_thumb.jpg" alt="" loading="lazy" style="width:100%; height:100%; object-fit:cover;"></picture></div>
           <div class="blog-list-body">
@@ -780,7 +904,7 @@
         </a>
         <!-- ★★★ 以下は非表示記事カード（大浜さん確認完了後にコメント解除）★★★
         <a href="cost/index.html" class="blog-list-card" data-category="費用">
-          <div class="blog-list-thumb" style="background:linear-gradient(135deg, rgba(85,107,47,0.15), rgba(85,107,47,0.05)); display:flex; align-items:center; justify-content:center;"><span style="font-size:1.1rem; color:var(--main); font-weight:700;">💰</span></div>
+          <div class="blog-list-thumb"><picture><source srcset="../images/blog/blog_cost_thumb.webp" type="image/webp"><img src="../images/blog/blog_cost_thumb.jpg" alt="" loading="lazy" style="width:100%; height:100%; object-fit:cover;"></picture></div>
           <div class="blog-list-body">
             <span class="blog-list-tag">費用</span>
             <h3>畳替えの費用相場は？</h3>
@@ -788,7 +912,7 @@
           </div>
         </a>
         <a href="omote-vs-ura/index.html" class="blog-list-card" data-category="基本知識">
-          <div class="blog-list-thumb" style="background:linear-gradient(135deg, rgba(85,107,47,0.15), rgba(85,107,47,0.05)); display:flex; align-items:center; justify-content:center;"><span style="font-size:1.1rem; color:var(--main); font-weight:700;">📖</span></div>
+          <div class="blog-list-thumb"><picture><source srcset="../images/blog/blog_omote-vs-ura_thumb.webp" type="image/webp"><img src="../images/blog/blog_omote-vs-ura_thumb.jpg" alt="" loading="lazy" style="width:100%; height:100%; object-fit:cover;"></picture></div>
           <div class="blog-list-body">
             <span class="blog-list-tag">基本知識</span>
             <h3>畳の表替えと裏返し、どっちがいい？</h3>
@@ -796,7 +920,7 @@
           </div>
         </a>
         <a href="kabi/index.html" class="blog-list-card" data-category="お手入れ">
-          <div class="blog-list-thumb" style="background:linear-gradient(135deg, rgba(85,107,47,0.15), rgba(85,107,47,0.05)); display:flex; align-items:center; justify-content:center;"><span style="font-size:1.1rem; color:var(--main); font-weight:700;">🦠</span></div>
+          <div class="blog-list-thumb"><picture><source srcset="../images/blog/blog_kabi_thumb.webp" type="image/webp"><img src="../images/blog/blog_kabi_thumb.jpg" alt="" loading="lazy" style="width:100%; height:100%; object-fit:cover;"></picture></div>
           <div class="blog-list-body">
             <span class="blog-list-tag">お手入れ</span>
             <h3>畳にカビが生えたら？</h3>
@@ -804,7 +928,7 @@
           </div>
         </a>
         <a href="herinashi/index.html" class="blog-list-card" data-category="素材">
-          <div class="blog-list-thumb" style="background:linear-gradient(135deg, rgba(85,107,47,0.15), rgba(85,107,47,0.05)); display:flex; align-items:center; justify-content:center;"><span style="font-size:1.1rem; color:var(--main); font-weight:700;">🎨</span></div>
+          <div class="blog-list-thumb"><picture><source srcset="../images/blog/blog_herinashi_thumb.webp" type="image/webp"><img src="../images/blog/blog_herinashi_thumb.jpg" alt="" loading="lazy" style="width:100%; height:100%; object-fit:cover;"></picture></div>
           <div class="blog-list-body">
             <span class="blog-list-tag">デザイン</span>
             <h3>縁なし畳が人気の理由</h3>
@@ -812,7 +936,7 @@
           </div>
         </a>
         <a href="timing/index.html" class="blog-list-card" data-category="タイミング">
-          <div class="blog-list-thumb" style="background:linear-gradient(135deg, rgba(85,107,47,0.15), rgba(85,107,47,0.05)); display:flex; align-items:center; justify-content:center;"><span style="font-size:1.1rem; color:var(--main); font-weight:700;">🗓</span></div>
+          <div class="blog-list-thumb"><picture><source srcset="../images/blog/blog_timing_thumb.webp" type="image/webp"><img src="../images/blog/blog_timing_thumb.jpg" alt="" loading="lazy" style="width:100%; height:100%; object-fit:cover;"></picture></div>
           <div class="blog-list-body">
             <span class="blog-list-tag">タイミング</span>
             <h3>畳替えって何年ごと？</h3>
@@ -820,7 +944,7 @@
           </div>
         </a>
         <a href="tsuyu/index.html" class="blog-list-card" data-category="お手入れ">
-          <div class="blog-list-thumb" style="background:linear-gradient(135deg, rgba(85,107,47,0.15), rgba(85,107,47,0.05)); display:flex; align-items:center; justify-content:center;"><span style="font-size:1.1rem; color:var(--main); font-weight:700;">☔</span></div>
+          <div class="blog-list-thumb"><picture><source srcset="../images/blog/blog_tsuyu_thumb.webp" type="image/webp"><img src="../images/blog/blog_tsuyu_thumb.jpg" alt="" loading="lazy" style="width:100%; height:100%; object-fit:cover;"></picture></div>
           <div class="blog-list-body">
             <span class="blog-list-tag">お手入れ</span>
             <h3>梅雨時の畳カビ対策</h3>
@@ -828,7 +952,7 @@
           </div>
         </a>
         <a href="pet/index.html" class="blog-list-card" data-category="暮らし">
-          <div class="blog-list-thumb" style="background:linear-gradient(135deg, rgba(85,107,47,0.15), rgba(85,107,47,0.05)); display:flex; align-items:center; justify-content:center;"><span style="font-size:1.1rem; color:var(--main); font-weight:700;">🐾</span></div>
+          <div class="blog-list-thumb"><picture><source srcset="../images/blog/blog_pet_thumb.webp" type="image/webp"><img src="../images/blog/blog_pet_thumb.jpg" alt="" loading="lazy" style="width:100%; height:100%; object-fit:cover;"></picture></div>
           <div class="blog-list-body">
             <span class="blog-list-tag">暮らし</span>
             <h3>ペットと暮らす畳の選び方</h3>
@@ -836,7 +960,7 @@
           </div>
         </a>
         <a href="sozai/index.html" class="blog-list-card" data-category="素材">
-          <div class="blog-list-thumb" style="background:linear-gradient(135deg, rgba(85,107,47,0.15), rgba(85,107,47,0.05)); display:flex; align-items:center; justify-content:center;"><span style="font-size:1.1rem; color:var(--main); font-weight:700;">🎨</span></div>
+          <div class="blog-list-thumb"><picture><source srcset="../images/blog/blog_sozai_thumb.webp" type="image/webp"><img src="../images/blog/blog_sozai_thumb.jpg" alt="" loading="lazy" style="width:100%; height:100%; object-fit:cover;"></picture></div>
           <div class="blog-list-body">
             <span class="blog-list-tag">素材</span>
             <h3>畳の素材3種類を比較</h3>
@@ -844,7 +968,7 @@
           </div>
         </a>
         <a href="oteire/index.html" class="blog-list-card" data-category="お手入れ">
-          <div class="blog-list-thumb" style="background:linear-gradient(135deg, rgba(85,107,47,0.15), rgba(85,107,47,0.05)); display:flex; align-items:center; justify-content:center;"><span style="font-size:1.1rem; color:var(--main); font-weight:700;">🧹</span></div>
+          <div class="blog-list-thumb"><picture><source srcset="../images/blog/blog_oteire_thumb.webp" type="image/webp"><img src="../images/blog/blog_oteire_thumb.jpg" alt="" loading="lazy" style="width:100%; height:100%; object-fit:cover;"></picture></div>
           <div class="blog-list-body">
             <span class="blog-list-tag">お手入れ</span>
             <h3>畳の正しいお手入れ方法</h3>
@@ -852,7 +976,7 @@
           </div>
         </a>
         <a href="diy/index.html" class="blog-list-card" data-category="基本知識">
-          <div class="blog-list-thumb" style="background:linear-gradient(135deg, rgba(85,107,47,0.15), rgba(85,107,47,0.05)); display:flex; align-items:center; justify-content:center;"><span style="font-size:1.1rem; color:var(--main); font-weight:700;">🔨</span></div>
+          <div class="blog-list-thumb"><picture><source srcset="../images/blog/blog_diy_thumb.webp" type="image/webp"><img src="../images/blog/blog_diy_thumb.jpg" alt="" loading="lazy" style="width:100%; height:100%; object-fit:cover;"></picture></div>
           <div class="blog-list-body">
             <span class="blog-list-tag">比較</span>
             <h3>畳の張り替えはDIYできる？</h3>
@@ -860,7 +984,7 @@
           </div>
         </a>
         <a href="flooring/index.html" class="blog-list-card" data-category="基本知識">
-          <div class="blog-list-thumb" style="background:linear-gradient(135deg, rgba(85,107,47,0.15), rgba(85,107,47,0.05)); display:flex; align-items:center; justify-content:center;"><span style="font-size:1.1rem; color:var(--main); font-weight:700;">📖</span></div>
+          <div class="blog-list-thumb"><picture><source srcset="../images/blog/blog_flooring_thumb.webp" type="image/webp"><img src="../images/blog/blog_flooring_thumb.jpg" alt="" loading="lazy" style="width:100%; height:100%; object-fit:cover;"></picture></div>
           <div class="blog-list-body">
             <span class="blog-list-tag">比較</span>
             <h3>畳とフローリングどっちがいい？</h3>
@@ -868,7 +992,7 @@
           </div>
         </a>
         <a href="senmonten/index.html" class="blog-list-card" data-category="基本知識">
-          <div class="blog-list-thumb" style="background:linear-gradient(135deg, rgba(85,107,47,0.15), rgba(85,107,47,0.05)); display:flex; align-items:center; justify-content:center;"><span style="font-size:1.1rem; color:var(--main); font-weight:700;">📖</span></div>
+          <div class="blog-list-thumb"><picture><source srcset="../images/blog/blog_senmonten_thumb.webp" type="image/webp"><img src="../images/blog/blog_senmonten_thumb.jpg" alt="" loading="lazy" style="width:100%; height:100%; object-fit:cover;"></picture></div>
           <div class="blog-list-body">
             <span class="blog-list-tag">比較</span>
             <h3>なぜ畳専門店を選ぶ？</h3>
@@ -876,7 +1000,7 @@
           </div>
         </a>
         <a href="kagu/index.html" class="blog-list-card" data-category="サービス">
-          <div class="blog-list-thumb" style="background:linear-gradient(135deg, rgba(85,107,47,0.15), rgba(85,107,47,0.05)); display:flex; align-items:center; justify-content:center;"><span style="font-size:1.1rem; color:var(--main); font-weight:700;">🪑</span></div>
+          <div class="blog-list-thumb"><picture><source srcset="../images/blog/blog_kagu_thumb.webp" type="image/webp"><img src="../images/blog/blog_kagu_thumb.jpg" alt="" loading="lazy" style="width:100%; height:100%; object-fit:cover;"></picture></div>
           <div class="blog-list-body">
             <span class="blog-list-tag">当店の強み</span>
             <h3>家具の移動は全部うち</h3>
@@ -884,7 +1008,7 @@
           </div>
         </a>
         <a href="sokuji/index.html" class="blog-list-card" data-category="サービス">
-          <div class="blog-list-thumb" style="background:linear-gradient(135deg, rgba(85,107,47,0.15), rgba(85,107,47,0.05)); display:flex; align-items:center; justify-content:center;"><span style="font-size:1.1rem; color:var(--main); font-weight:700;">⚡</span></div>
+          <div class="blog-list-thumb"><picture><source srcset="../images/blog/blog_sokuji_thumb.webp" type="image/webp"><img src="../images/blog/blog_sokuji_thumb.jpg" alt="" loading="lazy" style="width:100%; height:100%; object-fit:cover;"></picture></div>
           <div class="blog-list-body">
             <span class="blog-list-tag">当店の強み</span>
             <h3>即日対応の仕組み</h3>
@@ -892,7 +1016,7 @@
           </div>
         </a>
         <a href="shokunin/index.html" class="blog-list-card" data-category="サービス">
-          <div class="blog-list-thumb" style="background:linear-gradient(135deg, rgba(85,107,47,0.15), rgba(85,107,47,0.05)); display:flex; align-items:center; justify-content:center;"><span style="font-size:1.1rem; color:var(--main); font-weight:700;">👷</span></div>
+          <div class="blog-list-thumb"><picture><source srcset="../images/blog/blog_shokunin_thumb.webp" type="image/webp"><img src="../images/blog/blog_shokunin_thumb.jpg" alt="" loading="lazy" style="width:100%; height:100%; object-fit:cover;"></picture></div>
           <div class="blog-list-body">
             <span class="blog-list-tag">当店の強み</span>
             <h3>見積もりから納品まで同じ職人が担当</h3>
@@ -900,7 +1024,7 @@
           </div>
         </a>
         <a href="igusa/index.html" class="blog-list-card" data-category="素材">
-          <div class="blog-list-thumb" style="background:linear-gradient(135deg, rgba(85,107,47,0.15), rgba(85,107,47,0.05)); display:flex; align-items:center; justify-content:center;"><span style="font-size:1.1rem; color:var(--main); font-weight:700;">🌾</span></div>
+          <div class="blog-list-thumb"><picture><source srcset="../images/blog/blog_igusa_thumb.webp" type="image/webp"><img src="../images/blog/blog_igusa_thumb.jpg" alt="" loading="lazy" style="width:100%; height:100%; object-fit:cover;"></picture></div>
           <div class="blog-list-body">
             <span class="blog-list-tag">素材</span>
             <h3>い草の畳の魅力</h3>
@@ -908,7 +1032,7 @@
           </div>
         </a>
         <a href="kodomo/index.html" class="blog-list-card" data-category="暮らし">
-          <div class="blog-list-thumb" style="background:linear-gradient(135deg, rgba(85,107,47,0.15), rgba(85,107,47,0.05)); display:flex; align-items:center; justify-content:center;"><span style="font-size:1.1rem; color:var(--main); font-weight:700;">👶</span></div>
+          <div class="blog-list-thumb"><picture><source srcset="../images/blog/blog_kodomo_thumb.webp" type="image/webp"><img src="../images/blog/blog_kodomo_thumb.jpg" alt="" loading="lazy" style="width:100%; height:100%; object-fit:cover;"></picture></div>
           <div class="blog-list-body">
             <span class="blog-list-tag">暮らし</span>
             <h3>子どもがいる家庭の畳選び</h3>
@@ -916,7 +1040,7 @@
           </div>
         </a>
         <a href="komikomi/index.html" class="blog-list-card" data-category="費用">
-          <div class="blog-list-thumb" style="background:linear-gradient(135deg, rgba(85,107,47,0.15), rgba(85,107,47,0.05)); display:flex; align-items:center; justify-content:center;"><span style="font-size:1.1rem; color:var(--main); font-weight:700;">💰</span></div>
+          <div class="blog-list-thumb"><picture><source srcset="../images/blog/blog_komikomi_thumb.webp" type="image/webp"><img src="../images/blog/blog_komikomi_thumb.jpg" alt="" loading="lazy" style="width:100%; height:100%; object-fit:cover;"></picture></div>
           <div class="blog-list-body">
             <span class="blog-list-tag">費用</span>
             <h3>畳替えの料金は丁寧にお見積もり</h3>
@@ -924,7 +1048,7 @@
           </div>
         </a>
         <a href="sasakure/index.html" class="blog-list-card" data-category="お手入れ">
-          <div class="blog-list-thumb" style="background:linear-gradient(135deg, rgba(85,107,47,0.15), rgba(85,107,47,0.05)); display:flex; align-items:center; justify-content:center;"><span style="font-size:1.1rem; color:var(--main); font-weight:700;">🔍</span></div>
+          <div class="blog-list-thumb"><picture><source srcset="../images/blog/blog_sasakure_thumb.webp" type="image/webp"><img src="../images/blog/blog_sasakure_thumb.jpg" alt="" loading="lazy" style="width:100%; height:100%; object-fit:cover;"></picture></div>
           <div class="blog-list-body">
             <span class="blog-list-tag">症状診断</span>
             <h3>畳のささくれは替え時のサイン</h3>
@@ -932,7 +1056,7 @@
           </div>
         </a>
         <a href="shiroari/index.html" class="blog-list-card" data-category="畳と住まい">
-          <div class="blog-list-thumb" style="background:linear-gradient(135deg, rgba(85,107,47,0.15), rgba(85,107,47,0.05)); display:flex; align-items:center; justify-content:center;"><span style="font-size:1.1rem; color:var(--main); font-weight:700;">🐛</span></div>
+          <div class="blog-list-thumb"><picture><source srcset="../images/blog/blog_shiroari_thumb.webp" type="image/webp"><img src="../images/blog/blog_shiroari_thumb.jpg" alt="" loading="lazy" style="width:100%; height:100%; object-fit:cover;"></picture></div>
           <div class="blog-list-body">
             <span class="blog-list-tag">豆知識</span>
             <h3>シロアリと畳の関係</h3>
@@ -940,10 +1064,11 @@
           </div>
         </a>
       ★★★ 非表示記事カード ここまで ★★★ -->
+      </div>
     </div>
   </section>
 
-  <section class="cta-section">
+  <section class="cta-section dp dp--corner-kei">
     <h2>まずはお気軽にご相談ください</h2>
     <p>畳のお悩み、「こんなこと聞いていいのかな」ということでも遠慮なくお問い合わせください。お見積もりは無料です。</p>
     <div class="cta-buttons">

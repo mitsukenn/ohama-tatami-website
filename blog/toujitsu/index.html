@@ -178,6 +178,11 @@
 
     /* Responsive */
     @media (max-width: 768px) {
+      /* スマホ：関連記事カードのサムネが大きくタイトル欄が10字/行しか残らないため縮小 */
+      .related-thumb { width: 96px; }
+      .related-card { gap: 10px; }
+      .related-body { padding: 10px 10px 10px 0; }
+
       header { padding: 0 16px; }
       nav, .header-cta { display: none; }
       .hamburger { display: block; }
@@ -278,7 +283,7 @@
   <section class="article-header">
     <div class="container">
       <span class="article-tag">初めての方へ</span>
-      <h1>畳替え当日の過ごし方<br>留守でもOK？家具はどうする？</h1>
+      <h1>畳替え当日の過ごし方<br>留守でもOK？<br class="sp-br">家具はどうする？</h1>
       <p class="blog-lead">「畳替えの当日って、何を準備すればいいの？家にいないとダメ？」——初めての畳替えは不安がつきものです。当日の流れと、事前に準備しておくことを具体的にお伝えします。</p>
     </div>
   </section>

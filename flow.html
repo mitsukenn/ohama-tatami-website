@@ -709,6 +709,15 @@
     }
 
 @media(max-width:768px) {
+      /* スマホ：本文が10字/行しか入らず語中で切れるため、番号と余白を詰めて14字/行を確保 */
+      .timeline-item { gap: 12px; }
+      .timeline-num { width: 48px; height: 48px; font-size: 0.72rem; }
+      .timeline-content { padding: 20px 16px; }
+
+      /* このページのインライン .sp-br{display:none} が style.css の
+         モバイル指定を打ち消していたため、ここで復帰させる */
+      .sp-br { display: inline; }
+
 
       nav { display: none; }
       .header-cta { display: none; }
@@ -858,7 +867,10 @@
   <!-- Page Divider -->
   <div style="margin-top:72px;">
     <div class="page-banner">
-      <img src="images/banner_flow_text.webp" alt="畳替えの流れ">
+      <picture>
+        <source media="(max-width:767px)" srcset="images/banner_flow_sp.webp">
+        <img src="images/banner_flow_pc.webp" alt="畳替えの流れ">
+      </picture>
       <h1 class="visually-hidden">畳替えの流れ</h1>
     </div>
   </div>
@@ -881,7 +893,7 @@
             <h3>お問い合わせ</h3>
             <p>
               まずはお電話（095-823-1905）またはLINEでご連絡ください。</p>
-            <p>「畳がそろそろ気になる」「まだ替えるかわからないけど相談したい」そんな段階でも大丈夫です。</p>
+            <p>「畳がそろそろ気になる」<br class="sp-br">「まだ替えるか<br class="sp-br">わからないけど相談したい」<br class="sp-br">そんな段階でも大丈夫です。</p>
             <p>ご都合のよい日時をお伺いし、訪問日を調整します。
             </p>
           </div>
@@ -906,7 +918,7 @@
             <p>
               現地の状態をもとに、正確なお見積もりをご提示します。</p>
             <p>ご納得いただいてからのご注文ですので、「思っていたより高い」と感じられた場合は、グレードの調整などもご相談いただけます。</p>
-            <p>お見積もりだけでも大丈夫です。
+            <p>お見積もりだけでも<br class="sp-br">大丈夫です。
             </p>
           </div>
         </div>
@@ -915,7 +927,7 @@
           <div class="timeline-num">STEP<span>4</span></div>
           <div class="timeline-content">
             <h3>施工・納品</h3>
-            <p>ご注文後、施工日を調整します。</p>
+            <p>ご注文後、<br class="sp-br">施工日を調整します。</p>
             <p>表替えの場合、2部屋程度までなら朝お預かり → 夕方にはお届けが可能です。家具の移動も対応いたします。</p>
             <div class="timeline-note">※ 地域・枚数により納品日は前後します</div>
           </div>
@@ -1029,7 +1041,7 @@
   </section>
 
   <!-- CTA -->
-  <section class="cta-section">
+  <section class="cta-section dp dp--corner-kei">
     <h2>まずはLINEで写真を送るだけ</h2>
     <p>60秒で無料お見積もり。<br>お見積もり後のお断りも歓迎します。</p>
     <div class="cta-buttons">

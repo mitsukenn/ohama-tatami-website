@@ -426,6 +426,10 @@
     }
 
 @media(max-width:768px) {
+      /* このページのインライン .sp-br{display:none} が style.css の
+         モバイル指定を打ち消していたため、ここで復帰させる */
+      .sp-br { display: inline; }
+
 
       nav { display: none; }
       .header-cta { display: none; }
@@ -583,7 +587,10 @@
   <!-- ══════════════════════════════════════ -->
   <div style="margin-top:72px;">
     <div class="page-banner">
-      <img src="images/banner_works_text.webp" alt="施工事例">
+      <picture>
+        <source media="(max-width:767px)" srcset="images/banner_works_sp.webp">
+        <img src="images/banner_works_pc.webp" alt="施工事例">
+      </picture>
       <h1 class="visually-hidden">施工事例</h1>
     </div>
   </div>
@@ -627,7 +634,7 @@
           </div>
           <div style="padding:28px 24px; display:flex; flex-direction:column; justify-content:center;">
             <p style="font-size:0.75rem; color:var(--main); font-weight:700; margin-bottom:8px;">CASE 02</p>
-            <h3 style="font-size:1.1rem; font-weight:700; margin-bottom:12px; line-height:1.5;">時津町 M様邸<br>8畳 新畳（セキスイ美草 ピンク×リーフグリーン）</h3>
+            <h3 style="font-size:1.1rem; font-weight:700; margin-bottom:12px; line-height:1.5;">時津町 M様邸<br>8畳 新畳<br class="sp-br">（セキスイ美草<br class="sp-br">ピンク×リーフグリーン）</h3>
             <p style="font-size:0.85rem; color:var(--text-light); line-height:1.9; margin-bottom:16px;">お子さんのいるご家庭で、汚れに強いセキスイ美草をご選択。市松模様でモダンな印象に仕上がりました。</p>
             <div style="display:flex; gap:16px; font-size:0.78rem; color:var(--text-light);">
               <span>📍 時津町</span>
@@ -646,7 +653,7 @@
           </div>
           <div style="padding:28px 24px; display:flex; flex-direction:column; justify-content:center;">
             <p style="font-size:0.75rem; color:var(--main); font-weight:700; margin-bottom:8px;">CASE 03</p>
-            <h3 style="font-size:1.1rem; font-weight:700; margin-bottom:12px; line-height:1.5;">長与町 S様邸<br>6畳 新畳（セキスイ目積 ブラック×ディープグリーン）</h3>
+            <h3 style="font-size:1.1rem; font-weight:700; margin-bottom:12px; line-height:1.5;">長与町 S様邸<br>6畳 新畳<br class="sp-br">（セキスイ目積<br class="sp-br">ブラック×ディープグリーン）</h3>
             <p style="font-size:0.85rem; color:var(--text-light); line-height:1.9; margin-bottom:16px;">洋室に隣接する和室をモダンに一新。ブラック×ディープグリーンの組み合わせで、落ち着いた大人の空間に。</p>
             <div style="display:flex; gap:16px; font-size:0.78rem; color:var(--text-light);">
               <span>📍 長与町</span>
@@ -665,7 +672,7 @@
           </div>
           <div style="padding:28px 24px; display:flex; flex-direction:column; justify-content:center;">
             <p style="font-size:0.75rem; color:var(--main); font-weight:700; margin-bottom:8px;">CASE 04</p>
-            <h3 style="font-size:1.1rem; font-weight:700; margin-bottom:12px; line-height:1.5;">長崎市大浦町 K様邸<br>4.5畳 表替え（ダイケン清流 栗色）</h3>
+            <h3 style="font-size:1.1rem; font-weight:700; margin-bottom:12px; line-height:1.5;">長崎市大浦町 K様邸<br>4.5畳 表替え<br class="sp-br">（ダイケン清流 栗色）</h3>
             <p style="font-size:0.85rem; color:var(--text-light); line-height:1.9; margin-bottom:16px;">書斎の和室を落ち着いた雰囲気にしたいとのご要望。ダイケン清流の栗色で高級感のある仕上がりに。</p>
             <div style="display:flex; gap:16px; font-size:0.78rem; color:var(--text-light);">
               <span>📍 長崎市大浦町</span>
@@ -684,7 +691,7 @@
           </div>
           <div style="padding:28px 24px; display:flex; flex-direction:column; justify-content:center;">
             <p style="font-size:0.75rem; color:var(--main); font-weight:700; margin-bottom:8px;">CASE 05</p>
-            <h3 style="font-size:1.1rem; font-weight:700; margin-bottom:12px; line-height:1.5;">諫早市 A様邸<br>8畳×2部屋 表替え（国産い草）</h3>
+            <h3 style="font-size:1.1rem; font-weight:700; margin-bottom:12px; line-height:1.5;">諫早市 A様邸<br>8畳×2部屋 表替え<br class="sp-br">（国産い草）</h3>
             <p style="font-size:0.85rem; color:var(--text-light); line-height:1.9; margin-bottom:16px;">2部屋まとめてのご依頼。朝お預かり→夕方お届けの1日仕上げ。「家具移動もしてもらえて助かった」とのお言葉。</p>
             <div style="display:flex; gap:16px; font-size:0.78rem; color:var(--text-light);">
               <span>📍 諫早市</span>
@@ -703,8 +710,8 @@
           </div>
           <div style="padding:28px 24px; display:flex; flex-direction:column; justify-content:center;">
             <p style="font-size:0.75rem; color:var(--main); font-weight:700; margin-bottom:8px;">CASE 06</p>
-            <h3 style="font-size:1.1rem; font-weight:700; margin-bottom:12px; line-height:1.5;">長崎市住吉町 N様邸<br>6畳 新畳（セキスイ目積 アイボリー）</h3>
-            <p style="font-size:0.85rem; color:var(--text-light); line-height:1.9; margin-bottom:16px;">マンションの和室をヘリなし畳で一新。アイボリーの明るい色合いで、お部屋が広く感じられるようになりました。</p>
+            <h3 style="font-size:1.1rem; font-weight:700; margin-bottom:12px; line-height:1.5;">長崎市住吉町 N様邸<br>6畳 新畳<br class="sp-br">（セキスイ目積 アイボリー）</h3>
+            <p style="font-size:0.85rem; color:var(--text-light); line-height:1.9; margin-bottom:16px;">マンションの和室を<br class="sp-br">ヘリなし畳で一新。<br class="sp-br">アイボリーの明るい色合いで、<br class="sp-br">お部屋が広く感じられるように<br class="sp-br">なりました。</p>
             <div style="display:flex; gap:16px; font-size:0.78rem; color:var(--text-light);">
               <span>📍 長崎市住吉町</span>
               <span>🕐 2日仕上げ</span>
@@ -732,7 +739,7 @@
   </section>
 
   <!-- CTA (shared) -->
-  <section class="cta-section">
+  <section class="cta-section dp dp--corner-kei">
     <h2>まずはお気軽にご相談ください</h2>
     <p>畳のお悩み、「こんなこと聞いていいのかな」ということでも遠慮なくお問い合わせください。お見積もりは無料です。</p>
     <div class="cta-buttons">

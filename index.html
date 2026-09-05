@@ -288,50 +288,44 @@
     /* ── 2. Concerns ── */
     .concerns {
       background-color: var(--bg-alt);
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='60'%3E%3Cpath d='M20 2L38 30L20 58L2 30Z' fill='none' stroke='%23C9A84C' stroke-width='0.5' opacity='0.16'/%3E%3Cpath d='M20 10L32 30L20 50L8 30Z' fill='none' stroke='%23C9A84C' stroke-width='0.3' opacity='0.10'/%3E%3Cpath d='M20 2L20 58' stroke='%23C9A84C' stroke-width='0.3' opacity='0.08'/%3E%3Cpath d='M2 30L38 30' stroke='%23C9A84C' stroke-width='0.3' opacity='0.08'/%3E%3C/svg%3E");
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='60'%3E%3Cpath d='M20 2L38 30L20 58L2 30Z' fill='none' stroke='%23C9A84C' stroke-width='0.5' opacity='0.21'/%3E%3Cpath d='M20 10L32 30L20 50L8 30Z' fill='none' stroke='%23C9A84C' stroke-width='0.3' opacity='0.13'/%3E%3Cpath d='M20 2L20 58' stroke='%23C9A84C' stroke-width='0.3' opacity='0.11'/%3E%3Cpath d='M2 30L38 30' stroke='%23C9A84C' stroke-width='0.3' opacity='0.11'/%3E%3C/svg%3E");
       background-size: 40px 60px;
     }
 
-    .check-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-      max-width: 640px;
-      margin: 0 auto 40px;
+    .concerns .section-line {
+      background: var(--accent);
+      width: 56px;
+      height: 2px;
+      border-radius: 0;
     }
 
-    .check-item {
+    /* お悩み6項目 */
+    .worry-grid {
+      display: grid;
+      /* カード幅は本文（13.5em）で決める＝カードが広がりすぎて
+         文字とイラストの間だけ空くのを防ぐ */
+      grid-template-columns: repeat(2, max-content);
+      justify-content: center;
+      gap: 16px 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .worry-item {
       display: flex;
       align-items: center;
-      gap: 18px;
+      gap: 16px;
       background: var(--white);
-      padding: 20px 28px;
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
-      transition: all 0.25s;
-      position: relative;
-      overflow: hidden;
+      border: 1px solid rgba(0, 0, 0, 0.04);
+      border-radius: 14px;
+      /* 左を厚めに＝数字を内側へ寄せる */
+      padding: 16px 14px 16px 24px;
     }
 
-    .check-item::before {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 0;
-      bottom: 0;
-      width: 4px;
-      background: linear-gradient(180deg, var(--main), var(--accent));
-    }
-
-    .check-item:hover {
-      transform: translateX(4px);
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
-    }
-
-    .check-icon {
+    .worry-num {
       flex-shrink: 0;
-      width: 36px;
-      height: 36px;
+      width: 38px;
+      height: 38px;
       background: var(--main);
       color: var(--white);
       border-radius: 50%;
@@ -339,25 +333,84 @@
       align-items: center;
       justify-content: center;
       font-family: 'Noto Serif JP', serif;
-      font-size: 0.85rem;
+      font-size: 0.9rem;
       font-weight: 700;
     }
 
-    .check-item p {
+    .worry-item p {
+      /* 本文は最長行（13字）に合わせて固定幅。文中央寄せにして
+         「数字↔文字」と「文字↔イラスト」のアキを左右そろえる */
+      flex: none;
+      width: 13.5em;
+      text-align: center;
       font-size: 0.95rem;
-      line-height: 1.6;
+      line-height: 1.75;
     }
 
-    .concerns-message {
+    .worry-icon {
+      flex-shrink: 0;
+      width: 70px;
+      height: 70px;
+    }
+
+    .worry-icon img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    /* 受け止めの締め */
+    .concerns-close {
+      max-width: 800px;
+      margin: 44px auto 0;
+      /* 生成り地 ＋ 麻の葉風の薄い和柄 */
+      background-color: #FCFAF5;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='104'%3E%3Cg fill='none' stroke='%23C9A84C' stroke-width='0.6' opacity='0.16'%3E%3Cpath d='M30 0L60 17.3V52L30 69.3L0 52V17.3Z'/%3E%3Cpath d='M30 0V69.3M0 17.3L60 52M60 17.3L0 52'/%3E%3C/g%3E%3C/svg%3E");
+      background-size: 60px 104px;
+      border: 1px solid rgba(201, 168, 76, 0.5);
+      border-radius: 16px;
+      padding: 32px 40px;
+      display: grid;
+      grid-template-columns: 96px 1fr;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .concerns-close .face img {
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .concerns-close .face p {
+      font-size: 0.7rem;
+      color: var(--text-light);
       text-align: center;
-      font-size: 1rem;
+      margin-top: 8px;
+      letter-spacing: 0.04em;
+      line-height: 1.5;
+    }
+
+    .concerns-close .a {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--main);
+      line-height: 1.7;
+      letter-spacing: 0.04em;
+      margin-bottom: 10px;
+    }
+
+    .concerns-close .t {
+      font-size: 0.92rem;
       line-height: 2;
       color: var(--text-light);
-      max-width: 520px;
-      margin: 0 auto;
     }
 
-    .concerns-message strong {
+    .concerns-close .t strong {
       color: var(--main);
       font-weight: 700;
     }
@@ -455,7 +508,7 @@
     /* ── 4. Price ── */
     .price-section {
       background-color: var(--bg-alt);
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='48'%3E%3Cpath d='M28 2L54 14L54 36L28 46L2 36L2 14Z' fill='none' stroke='%23C9A84C' stroke-width='0.5' opacity='0.14'/%3E%3C/svg%3E");
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='48'%3E%3Cpath d='M28 2L54 14L54 36L28 46L2 36L2 14Z' fill='none' stroke='%23C9A84C' stroke-width='0.5' opacity='0.21'/%3E%3C/svg%3E");
       background-size: 56px 48px;
     }
 
@@ -510,6 +563,7 @@
     }
 
     .price-amount {
+      white-space: nowrap;
       font-size: 1.3rem;
       font-weight: 700;
       color: var(--main);
@@ -624,8 +678,8 @@
     .flow-section {
       background-color: var(--bg-alt);
       background-image:
-        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='84' height='72'%3E%3Cpath d='M42 0L84 21L84 57L42 72L0 57L0 21Z' fill='none' stroke='%23C9A84C' stroke-width='0.45' opacity='0.11'/%3E%3Cpath d='M42 0L42 72' fill='none' stroke='%23C9A84C' stroke-width='0.3' opacity='0.07'/%3E%3Cpath d='M0 36L84 36' fill='none' stroke='%23C9A84C' stroke-width='0.3' opacity='0.07'/%3E%3Cpath d='M0 21L42 36L0 57' fill='none' stroke='%23C9A84C' stroke-width='0.25' opacity='0.06'/%3E%3Cpath d='M84 21L42 36L84 57' fill='none' stroke='%23C9A84C' stroke-width='0.25' opacity='0.06'/%3E%3Cpath d='M42 0L42 36L0 21' fill='none' stroke='%23C9A84C' stroke-width='0.25' opacity='0.06'/%3E%3Cpath d='M42 0L42 36L84 21' fill='none' stroke='%23C9A84C' stroke-width='0.25' opacity='0.06'/%3E%3Cpath d='M42 72L42 36L0 57' fill='none' stroke='%23C9A84C' stroke-width='0.25' opacity='0.06'/%3E%3Cpath d='M42 72L42 36L84 57' fill='none' stroke='%23C9A84C' stroke-width='0.25' opacity='0.06'/%3E%3C/svg%3E"),
-        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='6' height='3'%3E%3Crect x='0' y='0' width='6' height='0.8' fill='%23556B2F' opacity='0.03'/%3E%3C/svg%3E");
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='84' height='72'%3E%3Cpath d='M42 0L84 21L84 57L42 72L0 57L0 21Z' fill='none' stroke='%23C9A84C' stroke-width='0.45' opacity='0.21'/%3E%3Cpath d='M42 0L42 72' fill='none' stroke='%23C9A84C' stroke-width='0.3' opacity='0.14'/%3E%3Cpath d='M0 36L84 36' fill='none' stroke='%23C9A84C' stroke-width='0.3' opacity='0.14'/%3E%3Cpath d='M0 21L42 36L0 57' fill='none' stroke='%23C9A84C' stroke-width='0.25' opacity='0.11'/%3E%3Cpath d='M84 21L42 36L84 57' fill='none' stroke='%23C9A84C' stroke-width='0.25' opacity='0.11'/%3E%3Cpath d='M42 0L42 36L0 21' fill='none' stroke='%23C9A84C' stroke-width='0.25' opacity='0.11'/%3E%3Cpath d='M42 0L42 36L84 21' fill='none' stroke='%23C9A84C' stroke-width='0.25' opacity='0.11'/%3E%3Cpath d='M42 72L42 36L0 57' fill='none' stroke='%23C9A84C' stroke-width='0.25' opacity='0.11'/%3E%3Cpath d='M42 72L42 36L84 57' fill='none' stroke='%23C9A84C' stroke-width='0.25' opacity='0.11'/%3E%3C/svg%3E"),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='6' height='3'%3E%3Crect x='0' y='0' width='6' height='0.8' fill='%23556B2F' opacity='0.05'/%3E%3C/svg%3E");
       background-size: 84px 72px, 6px 3px;
     }
 
@@ -1023,7 +1077,7 @@
     /* ── Quality ── */
     .quality-section {
       background-color: var(--bg-alt);
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='60'%3E%3Cpath d='M20 2L38 30L20 58L2 30Z' fill='none' stroke='%23C9A84C' stroke-width='0.5' opacity='0.12'/%3E%3C/svg%3E");
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='60'%3E%3Cpath d='M20 2L38 30L20 58L2 30Z' fill='none' stroke='%23C9A84C' stroke-width='0.5' opacity='0.21'/%3E%3C/svg%3E");
       background-size: 40px 60px;
     }
 
@@ -1202,7 +1256,9 @@
     /* ── Responsive ── */
     @media (max-width: 768px) {
 .hero h1 {
-        font-size: 1.75rem;
+        /* 360px で「家族が集まる部屋を、」10字が1行に収まるサイズ＋字間 */
+        font-size: 1.6rem;
+        letter-spacing: 0.04em;
       }
 
       .hero p {
@@ -1237,6 +1293,77 @@
 
       .flow-step {
         gap: 16px;
+      }
+
+      /* コラムカード：360px でタイトル欄が74pxしか残らず5字ずつ折返す問題の解消 */
+      .blog-card {
+        gap: 10px;
+        padding: 10px;
+      }
+
+      .blog-thumb {
+        width: 96px;
+      }
+
+      .worry-grid {
+        /* スマホは1列。カード幅は画面に追従させる（固定幅だと360px端末で溢れる） */
+        grid-template-columns: 1fr;
+        gap: 12px;
+        /* 本文が13字なのにカードだけ広がると文字とアイコンの間が空くため、
+           スマホの幅で頭打ちにする。324px＝最長行13字（187px）が1行に収まる下限
+           ＋余裕5px。これ以上狭めると4番のカードが3行に折り返す */
+        max-width: 324px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      /* 375px以上（iPhone SE3〜/一般的なAndroid） */
+      .worry-item {
+        gap: 10px;
+        /* 左パディングを厚くして数字を内側へ寄せる */
+        padding: 14px 10px 14px 22px;
+      }
+
+      .worry-num {
+        width: 28px;
+        height: 28px;
+        font-size: 0.78rem;
+      }
+
+      .worry-item p {
+        /* 幅は画面に追従（固定13.5emだと360px端末で溢れる）。
+           中央寄せは効いたままなので左右のアキはそろう */
+        flex: 1;
+        width: auto;
+        font-size: 0.9rem;
+      }
+
+      .worry-icon {
+        width: 50px;
+        height: 50px;
+      }
+
+      .concerns-close {
+        grid-template-columns: 1fr;
+        gap: 18px;
+        padding: 24px 14px;
+        text-align: center;
+        /* お悩みカードと同じ幅で揃える */
+        max-width: 340px;
+      }
+
+      .concerns-close .face {
+        justify-self: center;
+      }
+
+      .concerns-close .a {
+        /* 360px で「ちょうどいいタイミングです。」14字が1行に収まるサイズ */
+        font-size: 1rem;
+      }
+
+      .concerns-close .t {
+        text-align: left;
+        font-size: 0.88rem;
       }
 
       .numbers-grid {
@@ -1807,7 +1934,46 @@
       animation: simFadeUp 0.25s ease;
     }
 
-</style>
+
+    /* 極小幅（旧iPhone SE等 360px以下）＝フォントを一段下げて14字/行を確保する */
+    @media (max-width: 374px) {
+      .worry-item {
+        gap: 8px;
+        padding: 14px 8px 14px 18px;
+      }
+
+      .worry-num {
+        width: 26px;
+        height: 26px;
+        font-size: 0.75rem;
+      }
+
+      .worry-item p {
+        font-size: 0.8rem;
+      }
+
+      .worry-icon {
+        width: 46px;
+        height: 46px;
+      }
+    }
+  
+    /* 背景あしらい：墨のかすれた罫（AI生成・トップのみ）
+       画面端まで伸ばすと区切り線に見えるため、本文幅に収めて内側に余白を取る */
+    .dp--sumi-kei::before {
+      background-image: url('images/deco_sumi_kei.webp');
+      background-size: min(1240px, 92%) calc(100% - 56px);
+      background-position: center;
+    }
+
+    .reasons.dp { --dp-opacity: 0.38; }
+
+    @media (max-width: 768px) {
+      /* スマホでは選ばれる理由が1900px近い縦長になり、16:9の額縁を
+         引き伸ばしても意味をなさないので出さない（CTAの隅罫は残す） */
+      .reasons.dp::before { display: none; }
+    }
+  </style>
 </head>
 
 <body>
@@ -1928,7 +2094,7 @@
         ※AI生成画像は使用しない。実際の施工写真のみ。
       -->
       <h1>家族が集まる部屋を、<br>いちばん心地よく。</h1>
-      <p>団らんも、来客も、法事も。家族が過ごす和室を、あたらしく。<br class="sp-br"><br class="pc-br">畳の写真を送るだけで、お見積もり。家具の移動も無料です。</p>
+      <p>団らんも、来客も、法事も。<br class="sp-br">家族が過ごす和室を、あたらしく。<br class="sp-br"><br class="pc-br">畳の写真を送るだけで、お見積もり。<br class="sp-br">家具の移動も無料です。</p>
       <div class="hero-buttons">
         <a href="contact.html" class="btn btn-primary">無料でお見積もり</a>
         <a href="#price" class="btn btn-outline">料金を見る</a>
@@ -1941,43 +2107,57 @@
     <div class="container">
       <h2>こんなお悩み、ありませんか？</h2>
       <div class="section-line"></div>
-      <div class="check-grid">
-        <div class="check-item" style="cursor:default;">
-          <div class="check-icon">1</div>
-          <p>畳がボロボロで、来客のたびに恥ずかしい</p>
+      <div class="worry-grid">
+        <div class="worry-item">
+          <div class="worry-num">1</div>
+          <p>畳がボロボロで、<br>来客のたびに恥ずかしい</p>
+          <div class="worry-icon"><picture><source srcset="images/cicon_tatami.webp" type="image/webp"><img src="images/cicon_tatami.png" alt="" width="200" height="200" loading="lazy"></picture></div>
         </div>
-        <div class="check-item" style="cursor:default;">
-          <div class="check-icon">2</div>
-          <p>服にい草のカスがつくようになった</p>
+        <div class="worry-item">
+          <div class="worry-num">2</div>
+          <p>服にい草のカスが<br>つくようになった</p>
+          <div class="worry-icon"><picture><source srcset="images/cicon_kasu.webp" type="image/webp"><img src="images/cicon_kasu.png" alt="" width="200" height="200" loading="lazy"></picture></div>
         </div>
-        <div class="check-item" style="cursor:default;">
-          <div class="check-icon">3</div>
-          <p>子どもが素足で歩くのに、ささくれが心配</p>
+        <div class="worry-item">
+          <div class="worry-num">3</div>
+          <p>子どもが素足で歩くのに、<br>ささくれが心配</p>
+          <div class="worry-icon"><picture><source srcset="images/cicon_hadashi.webp" type="image/webp"><img src="images/cicon_hadashi.png" alt="" width="200" height="200" loading="lazy"></picture></div>
         </div>
-        <div class="check-item" style="cursor:default;">
-          <div class="check-icon">4</div>
-          <p>カビやダニが気になるけど、どうすればいいかわからない</p>
+        <div class="worry-item">
+          <div class="worry-num">4</div>
+          <p>カビやダニが気になるけど、<br>どうすればいいかわからない</p>
+          <div class="worry-icon"><picture><source srcset="images/cicon_kabi.webp" type="image/webp"><img src="images/cicon_kabi.png" alt="" width="200" height="200" loading="lazy"></picture></div>
         </div>
-        <div class="check-item" style="cursor:default;">
-          <div class="check-icon">5</div>
-          <p>家具が重くて、畳替えを何年も先送りしている</p>
+        <div class="worry-item">
+          <div class="worry-num">5</div>
+          <p>家具が重くて、畳替えを<br>何年も先送りしている</p>
+          <div class="worry-icon"><picture><source srcset="images/cicon_kagu.webp" type="image/webp"><img src="images/cicon_kagu.png" alt="" width="200" height="200" loading="lazy"></picture></div>
         </div>
-        <div class="check-item" style="cursor:default;">
-          <div class="check-icon">6</div>
-          <p>いくらかかるのか見当もつかない</p>
+        <div class="worry-item">
+          <div class="worry-num">6</div>
+          <p>いくらかかるのか<br>見当もつかない</p>
+          <div class="worry-icon"><picture><source srcset="images/cicon_mitsumori.webp" type="image/webp"><img src="images/cicon_mitsumori.png" alt="" width="200" height="200" loading="lazy"></picture></div>
         </div>
       </div>
-      <p class="concerns-message">
-        「そろそろかな？」と思ったときが、<br>
-        <strong>ちょうどいいタイミングです。</strong><br>
-        家具の移動もお見積もりも無料。<br class="sp-br"><strong>お気軽にご相談ください。</strong>
-      </p>
+      <div class="concerns-close">
+        <div class="face">
+          <picture>
+            <source srcset="images/ohama_face.webp" type="image/webp">
+            <img src="images/ohama_face.jpg" alt="大浜畳商店 三代目 大濵健太郎" width="240" height="240" loading="lazy">
+          </picture>
+          <p>三代目<br>大濵 健太郎</p>
+        </div>
+        <div>
+          <p class="a">「そろそろかな？」と<br class="sp-br">思ったときが、<br>ちょうどいいタイミングです。</p>
+          <p class="t">家具の移動もお見積もりも無料。<br class="sp-br"><strong>お気軽にご相談ください。</strong></p>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- ── 3. Reasons ── -->
 
-  <section class="reasons" id="reasons">
+  <section class="reasons dp dp--sumi-kei" id="reasons">
     <div class="container">
       <h2>大浜畳商店が選ばれる理由</h2>
       <div class="section-line"></div>
@@ -1995,13 +2175,13 @@
         </div>
         <div class="reason-card" style="cursor:default;">
           <div class="reason-img"
-            style="background-image: url('images/syokunin02.webp'); background-size: cover; background-position: center;">
+            style="background-image: url('images/reason_02_shokunin.webp'); background-size: cover; background-position: center;">
             <div class="reason-num">02</div>
           </div>
           <div class="reason-body">
-            <h3>見積もりから納品まで、同じ職人が担当。<br>「話が違う」は起こりません。</h3>
+            <h3>見積もりから納品まで、<br class="sp-br">同じ職人が担当。<br>「話が違う」は<br class="sp-br">起こりません。</h3>
             <p>
-              お見積もりで現地にお伺いするのも、自社工場で畳を加工するのも、仕上がった畳をお届けするのも、同じ職人です。
+              お見積もりで現地に<br class="sp-br">お伺いするのも、<br class="sp-br">自社工場で畳を加工するのも、<br class="sp-br">仕上がった畳をお届けするのも、<br class="sp-br">同じ職人です。
             </p>
             <p>
               大きな畳店では、営業・製作・配送がそれぞれ別の担当になることも。当店は最初から最後まで、同じ職人が責任を持って対応します。
@@ -2010,11 +2190,11 @@
         </div>
         <div class="reason-card" style="cursor:default;">
           <div class="reason-img"
-            style="background-image: url('images/sekou-golden-sunlight.webp'); background-size: cover; background-position: center;">
+            style="background-image: url('images/reason_03_teshigoto.webp'); background-size: cover; background-position: center;">
             <div class="reason-num">03</div>
           </div>
           <div class="reason-body">
-            <h3>あとから追加料金が発生することはありません。</h3>
+            <h3>あとから追加料金が<br class="sp-br">発生することは<br class="sp-br">ありません。</h3>
             <p>
               出張費・家具移動は無料。畳表代・施工費など必要な費用を<strong>丁寧にお見積もりさせていただきます。</strong>
             </p>
@@ -2036,32 +2216,32 @@
         <div class="number-card">
           <div class="number-value">75年</div>
           <div class="number-unit">創業</div>
-          <p class="number-desc">長崎で三代続く老舗の畳店です。</p>
+          <p class="number-desc">長崎で三代続く<br class="sp-br">老舗の畳店です。</p>
         </div>
         <div class="number-card">
           <div class="number-value">20年</div>
           <div class="number-unit">職人歴</div>
-          <p class="number-desc">確かな技術で一枚ずつ丁寧に仕上げます。</p>
+          <p class="number-desc">確かな技術で<br class="sp-br">一枚ずつ丁寧に<br class="sp-br">仕上げます。</p>
         </div>
         <div class="number-card">
           <div class="number-value">長崎駅前</div>
           <div class="number-unit">すぐ</div>
-          <p class="number-desc">長崎駅から徒歩約4分。</p>
+          <p class="number-desc">長崎駅から<br class="sp-br">徒歩約4分。</p>
         </div>
         <div class="number-card">
           <div class="number-value">１日</div>
           <div class="number-unit">仕上げ</div>
-          <p class="number-desc">朝お預かり、夕方お届け。<br><small>※2部屋程度まで</small></p>
+          <p class="number-desc">朝お預かり、<br class="sp-br">夕方お届け。<br><small>※2部屋程度まで</small></p>
         </div>
         <div class="number-card">
           <div class="number-value">1日40枚</div>
           <div class="number-unit">繁忙期 最大</div>
-          <p class="number-desc">繁忙期でも対応できる生産力。<br><small>※年末の最盛期</small></p>
+          <p class="number-desc">繁忙期でも<br class="sp-br">対応できる生産力。<br><small>※年末の最盛期</small></p>
         </div>
         <div class="number-card">
           <div class="number-value">出張費</div>
           <div class="number-unit">０円</div>
-          <p class="number-desc">対応エリア内は無料。<br><small>※エリア外は別途お見積もり</small></p>
+          <p class="number-desc">対応エリア内は<br class="sp-br">無料。<br><small>※エリア外は別途<br class="sp-br">お見積もり</small></p>
         </div>
       </div>
     </div>
@@ -2112,11 +2292,11 @@
       </p>
 
       <p class="price-notes">
-        ※表示価格はすべて税込です　※畳のサイズや素材により変動します<br class="pc-br">
-        ※正確な金額は現地でのお見積もりにてご案内します
+        ※表示価格はすべて税込です<br class="sp-br">※畳のサイズや素材により変動します<br>
+        ※正確な金額は現地での<br class="sp-br">お見積もりにてご案内します
       </p>
       <p style="text-align:center; font-size:0.88rem; color:var(--text-light); margin-top:12px;">
-        ※カラー畳（セキスイ美草・ダイケン健やか表）もお取り扱いしています → <a href="price.html#herinashi"
+        ※カラー畳<br class="sp-br">（セキスイ美草・ダイケン健やか表）も<br class="sp-br">お取り扱いしています<br class="sp-br">→ <a href="price.html#herinashi"
           style="color:var(--main); font-weight:500;">詳しくはこちら</a>
       </p>
       <div class="btn-center">
@@ -2125,7 +2305,7 @@
     </div>
   </section>
 
-  <section id="simulator" style="background-color:var(--bg-alt); background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='48'%3E%3Cpath d='M28 2L54 14L54 36L28 46L2 36L2 14Z' fill='none' stroke='%23C9A84C' stroke-width='0.5' opacity='0.14'/%3E%3C/svg%3E&quot;); background-size:56px 48px; padding: 40px 0 60px;">
+  <section id="simulator" style="background-color:var(--bg-alt); background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='48'%3E%3Cpath d='M28 2L54 14L54 36L28 46L2 36L2 14Z' fill='none' stroke='%23C9A84C' stroke-width='0.5' opacity='0.21'/%3E%3C/svg%3E&quot;); background-size:56px 48px; padding: 40px 0 60px;">
     <div class="container">
       <div class="sim-wrapper" id="simWrapper">
         <!-- Header -->
@@ -2230,7 +2410,7 @@
   </section>
 
   <!-- ── 5. お客様の声 ── -->
-  <section class="works" id="voice" style="background-color:var(--bg-alt); background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='60'%3E%3Cpath d='M20 2L38 30L20 58L2 30Z' fill='none' stroke='%23C9A84C' stroke-width='0.5' opacity='0.12'/%3E%3C/svg%3E&quot;); background-size:40px 60px;">
+  <section class="works" id="voice" style="background-color:var(--bg-alt); background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='60'%3E%3Cpath d='M20 2L38 30L20 58L2 30Z' fill='none' stroke='%23C9A84C' stroke-width='0.5' opacity='0.21'/%3E%3C/svg%3E&quot;); background-size:40px 60px;">
     <div class="container">
       <h2>お客様の声</h2>
       <div class="section-line"></div>
@@ -2240,7 +2420,7 @@
           <picture><source srcset="images/b2_05_kokusan-igusa.webp" type="image/webp"><img src="images/b2_05_kokusan-igusa.jpg" alt="長崎市筑後町 T様邸 6畳 表替え（国産い草）の施工後" loading="lazy" style="width:100%; height:180px; object-fit:cover; display:block;"></picture>
           <div style="padding:24px 26px 26px;">
             <div style="font-family:'Noto Serif JP',serif; font-size:2.6rem; color:var(--accent); opacity:0.35; line-height:0.5; height:1.4rem;">&#8220;</div>
-            <p style="font-size:1rem; line-height:1.95; color:var(--text); margin-bottom:18px;">色あせが気になっていたけど、新しい畳のい草の香りが気持ちいい。</p>
+            <p style="font-size:1rem; line-height:1.95; color:var(--text); margin-bottom:18px;">色あせが気になっていたけど、<br class="sp-br">新しい畳のい草の香りが<br class="sp-br">気持ちいい。</p>
             <div style="font-size:0.8rem; color:var(--text-light); border-top:1px solid rgba(0,0,0,0.06); padding-top:12px;">長崎市筑後町　T様邸<br>6畳 表替え（国産い草）</div>
           </div>
         </div>
@@ -2248,7 +2428,7 @@
           <picture><source srcset="images/b2_12_kokusan-igusa.webp" type="image/webp"><img src="images/b2_12_kokusan-igusa.jpg" alt="諫早市 A様邸 8畳×2部屋 表替え（国産い草）の施工後" loading="lazy" style="width:100%; height:180px; object-fit:cover; display:block;"></picture>
           <div style="padding:24px 26px 26px;">
             <div style="font-family:'Noto Serif JP',serif; font-size:2.6rem; color:var(--accent); opacity:0.35; line-height:0.5; height:1.4rem;">&#8220;</div>
-            <p style="font-size:1rem; line-height:1.95; color:var(--text); margin-bottom:18px;">家具移動もしてもらえて助かった。</p>
+            <p style="font-size:1rem; line-height:1.95; color:var(--text); margin-bottom:18px;">家具移動もしてもらえて<br class="sp-br">助かった。</p>
             <div style="font-size:0.8rem; color:var(--text-light); border-top:1px solid rgba(0,0,0,0.06); padding-top:12px;">諫早市　A様邸<br>8畳×2部屋 表替え（国産い草）</div>
           </div>
         </div>
@@ -2263,7 +2443,7 @@
   <div class="photo-band" style="background-image: url('images/b2_19_sekou-green-gradation.webp');">
     <div class="photo-band-text">
       <h3>素材の違いが、仕上がりの違い。</h3>
-      <p>い草のグレードで耐久性も香りも変わります</p>
+      <p>い草のグレードで<br class="sp-br">耐久性も香りも変わります</p>
     </div>
   </div>
 
@@ -2273,7 +2453,7 @@
     <div class="container">
       <h2>素材へのこだわり</h2>
       <div class="section-line"></div>
-      <p class="section-sub">当店では、国産い草から樹脂素材まで、お客様のご要望に合わせた畳表をご用意しています。</p>
+      <p class="section-sub">当店では、国産い草から樹脂素材まで、<br class="sp-br">お客様のご要望に合わせた<br class="sp-br">畳表をご用意しています。</p>
       <div class="quality-grid">
         <div class="quality-card" style="cursor:default;">
           <div class="quality-icon">
@@ -2330,6 +2510,12 @@
             ※ 対応エリア内の出張費は無料です。<br>
             ※ 対応エリア外は別途お見積もりとなります。
           </p>
+          <!-- 遠方のご家族への入口（2026-09-01追加・文言はcontact.html/about.htmlと同一） -->
+          <p class="area-remote" style="margin-top:18px; padding:14px 16px; background:#f7f5f0; border-left:3px solid #7a8b5a; border-radius:4px; font-size:0.95rem; line-height:1.9;">
+            <strong>遠方にお住まいのご家族の方へ</strong><br>
+            遠方にお住まいのご家族からの、ご実家の畳のご相談もお受けしています。<br>
+            <a href="contact.html" style="color:#5a6b3a; font-weight:700; text-decoration:underline;">ご相談・お問い合わせはこちら</a>
+          </p>
         </div>
       </div>
     </div>
@@ -2345,7 +2531,7 @@
           <div class="step-num">STEP<span>1</span></div>
           <div class="flow-text">
             <h3>お問い合わせ</h3>
-            <p>お電話またはLINEでお気軽にどうぞ</p>
+            <p>お電話またはLINEで<br class="sp-br">お気軽にどうぞ</p>
           </div>
         </div>
         <div class="flow-step">
@@ -2366,7 +2552,7 @@
           <div class="step-num">STEP<span>4</span></div>
           <div class="flow-text">
             <h3>施工・納品</h3>
-            <p>朝お預かり、夕方お届け。家具の移動もお任せください。当日はお出かけ・在宅どちらでも大丈夫です</p>
+            <p>朝お預かり、夕方お届け。<br class="sp-br">家具の移動もお任せください。<br class="sp-br">当日はお出かけ・在宅<br class="sp-br">どちらでも大丈夫です</p>
           </div>
         </div>
       </div>
@@ -2470,7 +2656,7 @@
         </div>
         <div class="about-text">
           <h3>大浜畳商店の大濵 健太郎です。</h3>
-          <p>当店では、お見積もりからサイズ確認、製作、納品まで、すべて職人が直接対応しています。</p>
+          <p>当店では、お見積もりから<br class="sp-br">サイズ確認、製作、納品まで、<br class="sp-br">すべて職人が直接対応しています。</p>
           <p>お部屋に合わせて1枚ずつ自社工場で丁寧に仕上げる。当たり前のことですが、ここを大切にしています。</p>
           <p>畳のことで気になることがあれば、何でもお気軽にご相談ください。</p>
           <div class="about-info">
@@ -2520,7 +2706,7 @@
   </section>
 
   <!-- ── 9. CTA ── -->
-  <section class="cta-section" id="contact">
+  <section class="cta-section dp dp--corner-kei" id="contact">
     <h2>まずはLINEで写真を送るだけ。<br class="sp-br">60秒で無料お見積もり。</h2>
     <p>
       「まだ替え時かわからない」<br class="sp-br">「とりあえず金額だけ知りたい」<br>

@@ -178,6 +178,11 @@
 
     /* Responsive */
     @media (max-width: 768px) {
+      /* スマホ：関連記事カードのサムネが大きくタイトル欄が10字/行しか残らないため縮小 */
+      .related-thumb { width: 96px; }
+      .related-card { gap: 10px; }
+      .related-body { padding: 10px 10px 10px 0; }
+
       header { padding: 0 16px; }
       nav, .header-cta { display: none; }
       .hamburger { display: block; }

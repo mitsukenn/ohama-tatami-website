@@ -128,6 +128,11 @@
     .mobile-bar .bar-phone { background: var(--main); color: var(--white); } .mobile-bar .bar-line { background: var(--line-green); color: var(--white); }
     .back-to-top { position: fixed; bottom: 24px; right: 24px; z-index: 90; width: 48px; height: 48px; background: var(--main); color: var(--white); border: none; border-radius: 50%; cursor: pointer; box-shadow: 0 2px 12px rgba(0,0,0,0.15); opacity: 0; visibility: hidden; transition: all 0.3s; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; } .back-to-top.visible { opacity: 1; visibility: visible; }
     @media (max-width: 768px) {
+      /* スマホ：関連記事カードのサムネが大きくタイトル欄が10字/行しか残らないため縮小 */
+      .related-thumb { width: 96px; }
+      .related-card { gap: 10px; }
+      .related-body { padding: 10px 10px 10px 0; }
+
       header { padding: 0 16px; }
       nav, .header-cta { display: none; }
       .hamburger { display: block; }
@@ -219,7 +224,7 @@
   <section class="article-header">
     <div class="container">
       <span class="article-tag">暮らし</span>
-      <h1>和室の使い道がない？<br>畳の部屋を活かす5つのアイデア</h1>
+      <h1>和室の使い道がない？<br>畳の部屋を活かす<br class="sp-br">5つのアイデア</h1>
       <p class="blog-lead">「和室があるけど、使い道がない…」——物置になっている和室、ありませんか？実は、畳の部屋はちょっとした工夫で書斎・ヨガスペース・子どもの遊び場など、多目的に活用できます。</p>
     </div>
   </section>

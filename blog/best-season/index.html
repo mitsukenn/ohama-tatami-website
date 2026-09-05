@@ -198,6 +198,16 @@
 
     /* Responsive */
     @media (max-width: 768px) {
+      /* 4カラム表がスマホで1文字ずつ縦に折り返す問題：横スクロール化 */
+      .article-body table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+      .article-body table th,
+      .article-body table td { white-space: nowrap; }
+
+      /* スマホ：関連記事カードのサムネが大きくタイトル欄が10字/行しか残らないため縮小 */
+      .related-thumb { width: 96px; }
+      .related-card { gap: 10px; }
+      .related-body { padding: 10px 10px 10px 0; }
+
       header { padding: 0 16px; }
       nav, .header-cta { display: none; }
       .hamburger { display: block; }
@@ -298,7 +308,7 @@
   <section class="article-header">
     <div class="container">
       <span class="article-tag">タイミング</span>
-      <h1>畳替えのベストシーズンは？<br>季節ごとのメリット・デメリット</h1>
+      <h1>畳替えのベストシーズンは？<br>季節ごとの<br class="sp-br">メリット・デメリット</h1>
       <p class="article-meta">大浜畳商店｜長崎市筑後町</p>
     </div>
   </section>
@@ -371,7 +381,7 @@
           また、カビなどの心配が少ないセキスイ美草やダイケン健やか表は年中安心して施工できます。
         </div>
 
-        <h2>「思い立ったとき」が一番のタイミング</h2>
+        <h2>「思い立ったとき」が<br class="sp-br">一番のタイミング</h2>
         <p>季節ごとの特徴をお伝えしましたが、正直に言うと、<strong>季節よりも「畳の状態」のほうが大事</strong>です。</p>
 
         <p>色あせ・毛羽立ち・踏むとフカフカする――こうした症状が気になり始めたら、季節を問わず畳替えのサインです。放置すると状態が悪化し、より費用がかかることもあります。</p>

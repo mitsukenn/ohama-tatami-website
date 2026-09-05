@@ -675,6 +675,10 @@
     }
 
 @media(max-width:768px) {
+      /* このページのインライン .sp-br{display:none} が style.css の
+         モバイル指定を打ち消していたため、ここで復帰させる */
+      .sp-br { display: inline; }
+
 
       nav { display: none; }
       .header-cta { display: none; }
@@ -813,7 +817,10 @@
   <!-- Page Divider (with margin-top:72px for fixed header offset) -->
   <div style="margin-top:72px;">
     <div class="page-banner">
-      <img src="images/banner_contact_text.webp" alt="お問い合わせ">
+      <picture>
+        <source media="(max-width:767px)" srcset="images/banner_contact_sp.webp">
+        <img src="images/banner_contact_pc.webp" alt="お問い合わせ">
+      </picture>
       <h1 class="visually-hidden">お問い合わせ</h1>
     </div>
   </div>
@@ -821,7 +828,7 @@
   <!-- Page Header -->
   <section class="page-header" style="background:var(--bg-base); background-image:url(&quot;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Cpath d='M30 0L60 15L60 45L30 60L0 45L0 15Z' fill='none' stroke='%23C9A84C' stroke-width='0.3' opacity='0.06'/%3E%3C/svg%3E&quot;); background-size:60px 60px; padding-top:32px;">
     <div class="container">
-      <p>畳のことでお悩みでしたら、お気軽にご相談ください。<br class="pc-br">お見積もりは無料です。「まだ替えるか決めていない」という段階でも大丈夫です。<br class="pc-br">遠方にお住まいのご家族からの、ご実家の畳のご相談もお受けしています。</p>
+      <p>畳のことでお悩みでしたら、<br class="sp-br">お気軽にご相談ください。<br class="pc-br">お見積もりは無料です。<br class="sp-br">「まだ替えるか決めていない」<br class="sp-br">という段階でも大丈夫です。<br class="pc-br">遠方にお住まいのご家族からの、<br class="sp-br">ご実家の畳のご相談も<br class="sp-br">お受けしています。</p>
     </div>
   </section>
 
@@ -858,7 +865,7 @@
             </svg></div>
           <h3>お電話でのご相談</h3>
           <div class="phone-number">095-823-1905</div>
-          <p>営業時間：8:30〜17:00<br>定休日：日曜・祝日（土曜不定休）<br>作業中で出られない場合は折り返します</p>
+          <p>営業時間：8:30〜17:00<br>定休日：日曜・祝日（土曜不定休）<br>作業中で出られない場合は<br class="sp-br">折り返します</p>
           <p style="font-size:0.84rem; color:var(--main); font-weight:600; margin-bottom:16px; line-height:1.7;">お電話では「ホームページを見た」とお伝えいただくだけで大丈夫です。あとはこちらから順にお伺いします。</p>
           <a href="tel:095-823-1905" class="contact-btn btn-tel">タップして電話する</a>
         </div>
@@ -871,7 +878,7 @@
               <polyline points="10 9 9 9 8 9" />
             </svg></div>
           <h3>フォームでのご相談</h3>
-          <p>下のフォームからお問い合わせいただけます。2営業日以内にご返信いたします。</p>
+          <p>下のフォームからお問い合わせ<br class="sp-br">いただけます。<br class="sp-br">2営業日以内にご返信いたします。</p>
           <a href="#form" class="contact-btn btn-form">フォームへ進む</a>
         </div>
       </div>

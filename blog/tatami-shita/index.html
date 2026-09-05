@@ -193,6 +193,11 @@
 
     /* Responsive */
     @media (max-width: 768px) {
+      /* 4カラム表がスマホで1文字ずつ縦に折り返す問題：横スクロール化 */
+      .article-body table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+      .article-body table th,
+      .article-body table td { white-space: nowrap; }
+
       header { padding: 0 16px; }
       nav, .header-cta { display: none; }
       .hamburger { display: block; }
@@ -292,7 +297,7 @@
   <section class="article-header">
     <div class="container">
       <span class="article-tag">豆知識</span>
-      <h1>畳の下に何がある？<br>畳床の種類と構造をわかりやすく解説</h1>
+      <h1>畳の下に何がある？<br>畳床の種類と構造を<br class="sp-br">わかりやすく解説</h1>
       <p class="blog-lead">「畳の下ってどうなっているの？」——畳は「畳表」「畳床」「畳縁」の3つのパーツで構成されています。特に畳床は見えない部分ですが、畳の寿命を左右する最も重要な部分です。</p>
     </div>
   </section>

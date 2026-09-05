@@ -180,6 +180,16 @@
 
     /* Responsive */
     @media (max-width: 768px) {
+      /* 4カラム表がスマホで1文字ずつ縦に折り返す問題：横スクロール化 */
+      .article-body table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+      .article-body table th,
+      .article-body table td { white-space: nowrap; }
+
+      /* スマホ：関連記事カードのサムネが大きくタイトル欄が10字/行しか残らないため縮小 */
+      .related-thumb { width: 96px; }
+      .related-card { gap: 10px; }
+      .related-body { padding: 10px 10px 10px 0; }
+
       header { padding: 0 16px; }
       nav, .header-cta { display: none; }
       .hamburger { display: block; }
@@ -282,7 +292,7 @@
   <section class="article-header">
     <div class="container">
       <span class="article-tag">費用</span>
-      <h1>6畳の畳替え、全部でいくら？<br>裏返し・表替え・新調の総額比較</h1>
+      <h1>6畳の畳替え、全部でいくら？<br>裏返し・表替え・新調の<br class="sp-br">総額比較</h1>
       <p class="blog-lead">「6畳の畳替え、全部でいくらになるの？」——畳替えを検討する際、多くの方が最初に気になるのが総額です。1畳あたりの単価は分かっても、6畳分になると金額が大きく変わります。ここでは、裏返し・表替え・新畳それぞれの6畳の総額を、追加費用も含めて比較します。</p>
     </div>
   </section>
